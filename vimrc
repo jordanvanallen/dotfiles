@@ -1,3 +1,9 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/addons')
 
 " #######
@@ -18,6 +24,9 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'dansnow/block.vim', { 'for': 'rust' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
+
+" Kotlin
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 
 " C
 Plug 'vim-scripts/c.vim', { 'for': 'c' }
