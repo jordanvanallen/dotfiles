@@ -1,3 +1,4 @@
+" Autoload VIM Plug for new machines
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -26,7 +27,7 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
 
 " Kotlin
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+Plug 'udalov/kotlin.vim', { 'for': 'kotlin' }
 
 " C
 Plug 'vim-scripts/c.vim', { 'for': 'c' }
@@ -146,6 +147,7 @@ colorscheme spacemacs-theme
 "
 " raimondi/delimitMate
 au FileType html let b:delimitMate_autoclose = 0
+au FileType eruby let b:delimitMate_autoclose = 0
 
 " Shougo/deoplete (autocompletion)
 let g:deoplete#enable_at_startup = 1
@@ -165,6 +167,19 @@ let g:closetag_filenames = '*.html,*.html.erb'
 " fzf
 let g:fzf_buffers_jump = 1
 let g:fzf_tags_command = 'ctags -R'
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " vim-test
 let test#strategy = "vimterminal"
@@ -238,7 +253,9 @@ nnoremap <Space>/ :Ack<Space>
 nmap ; :Buffers<CR>
 nnoremap <C-F> :Files<CR>
 nmap <Space>r :Tags<CR>
-nnoremap <silent> <Space>ff :CtrlPCurFile<CR>
+
+" Open Vimrc
+nnoremap <Space>fed :e ~/dotfiles/vimrc<CR>
 
 " Autocompletion
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
