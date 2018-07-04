@@ -239,6 +239,7 @@ nnoremap <silent> <Space>s :w<CR>
 " Window mappings
 nnoremap <silent> <Space>w/ :vsplit<CR>
 nnoremap <silent> <Space>w- :split<CR>
+nnoremap <silent> <Space>wq :q<CR>
 " Remap window selection to <Space>0-9
 let i = 1
 while i <= 9
