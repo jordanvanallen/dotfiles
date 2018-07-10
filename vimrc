@@ -81,7 +81,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
-
 " Autopairing
 Plug 'Raimondi/delimitMate'
 
@@ -116,10 +115,8 @@ call plug#end()
 set hidden
 let g:racer_cmd = "~/.cargo/bin"
 let g:racer_experimental_completer = 1
-" let g:ycm_rust_src_path = "/Users/xen/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
+" let g:ycm_rust_src_path =
 autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
-
-" nnoremap <silent> <Space>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Python
 "python with virtualenv support
@@ -135,8 +132,7 @@ let g:ale_linters = {
 set nobackup
 set noswapfile
 set autoindent
-" Remove toolbar for gvim
-set guioptions=m
+set guioptions=m " Remove toolbar for gvim
 
 " Pretty stuff
 "
@@ -180,6 +176,7 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
 
 " vim-test
 let test#strategy = "vimterminal"
