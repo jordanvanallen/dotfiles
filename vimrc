@@ -22,7 +22,6 @@ set encoding=utf-8
 " Remove bell
 set noeb vb t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-" set t_vb=
 
 " Last tab
 nnoremap <silent> <Space><Tab> :b#<CR>
@@ -234,6 +233,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+" {
+  vmap t :Tabularize<Space>/
+" }
 Plug 'easymotion/vim-easymotion'
 
 " ===========================
@@ -296,5 +298,7 @@ Plug 'szorfein/darkest-space'
 " Initialize plugins
 call plug#end()
 
-" Select colortheme
-colorscheme archery
+" Select colortheme and options
+set t_Co=256
+set background=dark
+colorscheme solarized8_dark_flat

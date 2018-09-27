@@ -9,6 +9,7 @@ case $- in
 esac
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/local/bin
+export TERM=xterm-256color
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -40,6 +41,7 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
+    xterm-256-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -148,6 +150,9 @@ xcape -e "Control_L=Escape"
 
 # Allow screen clearing with vi keybinds
 bind -m vi-insert "\C-l":clear-screen
+
+# DirColors
+eval `dircolors /path/to/dircolorsdb`
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/xache/.sdkman"
