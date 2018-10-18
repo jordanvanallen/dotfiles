@@ -57,6 +57,9 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <Space>' :vs <BAR> terminal<CR>
 set splitright
 
+" Open VTOP
+nnoremap <Space>v :!vtop<CR>
+
 call plug#begin('~/.vim/addons')
 
 " ===========================
@@ -214,7 +217,11 @@ Plug 'junegunn/fzf.vim'
 " }
 Plug 'wsdjeg/FlyGrep.vim'
 " {
-  nnoremap <Space>/ :FlyGrep<CR>
+  nnoremap <Space>s/ :FlyGrep<CR>
+" }
+Plug 'jremmen/vim-ripgrep'
+" {
+  nnoremap <Space>/ :Rg<Space>
 " }
 Plug 'danro/rename.vim'
 " {
@@ -234,6 +241,10 @@ Plug 'godlygeek/tabular'
   vmap t :Tabularize<Space>/
 " }
 Plug 'easymotion/vim-easymotion'
+" {
+  map <Leader>f <Plug>(easymotion-bd-f)
+  nmap <Leader>f <Plug>(easymotion-overwin-f)
+" }
 
 " ===========================
 " Autocompletion
