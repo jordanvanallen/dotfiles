@@ -152,7 +152,7 @@ xcape -e "Control_L=Escape"
 bind -m vi-insert "\C-l":clear-screen
 
 # DirColors
-eval `dircolors /path/to/dircolorsdb`
+#eval `dircolors /path/to/dircolorsdb`
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/xache/.sdkman"

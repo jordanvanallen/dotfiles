@@ -212,12 +212,9 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <Space>gt :!ctags -R<CR>
   nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 " }
-Plug 'mileszs/ack.vim'
+Plug 'wsdjeg/FlyGrep.vim'
 " {
-  if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-  endif
-  nnoremap <Space>/ :Ack<Space>
+  nnoremap <Space>/ :FlyGrep<CR>
 " }
 Plug 'danro/rename.vim'
 " {
