@@ -195,6 +195,10 @@ Plug 'junegunn/fzf.vim'
   let g:fzf_buffers_jump = 1
   let g:fzf_tags_command = 'ctags -R'
 
+  let g:fzf_action = {
+    \ 'ctrl-s': 'split',
+    \ 'ctrl-v': 'vsplit' }
+
   let g:fzf_colors =
     \ { 'fg':    ['fg', 'Normal'],
     \ 'hl':      ['fg', 'Comment'],
@@ -207,6 +211,14 @@ Plug 'junegunn/fzf.vim'
     \ 'marker':  ['fg', 'Keyword'],
     \ 'spinner': ['fg', 'Label'],
     \ 'header':  ['fg', 'Comment'] }
+
+  " Use Ripgrep
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
   nmap ; :Buffers<CR>
   nnoremap <C-F> :Files<CR>

@@ -6,7 +6,7 @@ export ZSH="/home/b2/.oh-my-zsh"
 
 # FZF
 export FZF_BASE="$HOME/.fzf"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --global "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
