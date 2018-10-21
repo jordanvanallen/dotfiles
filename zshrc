@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/b2/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # FZF
 export FZF_BASE="$HOME/.fzf"
