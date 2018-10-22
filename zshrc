@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -12,7 +12,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
+ZSH_THEME="theunraveler"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -81,6 +82,7 @@ export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 # Example aliases
 alias zshconfig="vi ~/dotfiles/zshrc"
 alias ohmyzshconfig="vi ~/.oh-my-zsh"
+alias viconfig="vi ~/dotfiles/vimrc"
 alias dd='dd status=progress'
 alias top='vtop'
 alias weather='curl wttr.in/43.6404,-79.4238'

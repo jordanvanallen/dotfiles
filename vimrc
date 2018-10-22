@@ -321,4 +321,4 @@ call plug#end()
 " Select colortheme and options
 set t_Co=256
 set background=dark
-colorscheme solarized8_dark_flat
+colorscheme solarized8_flat
