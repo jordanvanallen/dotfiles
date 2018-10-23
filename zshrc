@@ -7,6 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # FZF
 export FZF_BASE="$HOME/.fzf"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -55,14 +56,22 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   fzf
+
+  # Ruby Plugins
+  rake
   rbenv
   bundler
-  rake
+
+  # Unix Plugins
   sudo
   tmux
+
+  # Handy
   web-search
-  rust
   zsh-syntax-highlighting
+
+  # Rust
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -80,12 +89,20 @@ export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# Aliases
+#
+# Configs
 alias zshconfig="vi ~/dotfiles/zshrc"
 alias ohmyzshconfig="vi ~/.oh-my-zsh"
 alias viconfig="vi ~/dotfiles/vimrc"
+
+# Unix Command Overrides
 alias dd='dd status=progress'
 alias top='vtop'
+alias ls='exa'
+alias la='exa -la'
+
+# Handy
 alias weather='curl wttr.in/43.6404,-79.4238'
 
 # Rbenv
