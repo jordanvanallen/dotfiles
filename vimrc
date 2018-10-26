@@ -23,6 +23,13 @@ set encoding=utf-8
 set noeb vb t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" Close quickfix window
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
+			\   q :cclose<cr>:lclose<cr>
+autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
+			\   bd|
+			\   q | endif
+
 " Last tab
 nnoremap <silent> <Space><Tab> :b#<CR>
 
@@ -176,7 +183,8 @@ Plug 'w0rp/ale'
 
 Plug 'janko-m/vim-test'
 " {
-  let test#strategy = "vimterminal"
+  let test#strategy = "asyncrun"
+
   nnoremap <silent> <Space>T :TestFile<CR>
   nnoremap <silent> <Space>tn :TestNearest<CR>
   nnoremap <silent> <Space>tT :TestSuite<CR>
