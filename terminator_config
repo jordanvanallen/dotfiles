@@ -3,6 +3,15 @@
   title_font = Monospace 22
   title_transmit_bg_color = "#555753"
 [keybindings]
+  close_term = <Alt>w
+  new_tab = <Alt>t
+  reset_clear = <Alt>l
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_10 = <Alt>0
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
 [layouts]
   [[default]]
     [[[child1]]]
@@ -21,6 +30,7 @@
     use_system_font = False
   [[solarized-dark]]
     background_color = "#002b36"
+    background_darkness = 0.41
     cursor_color = "#eee8d5"
     font = Source Code Pro 13
     foreground_color = "#eee8d5"

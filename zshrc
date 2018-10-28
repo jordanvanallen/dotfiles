@@ -112,6 +112,11 @@ eval "$(rbenv init -)"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Kitty Terminal
+autoload -Uz compinit
+compinit
+kitty + complete setup zsh | source /dev/stdin
+
 # Z
 . /usr/local/share/z/z.sh
 
