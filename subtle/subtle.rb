@@ -598,6 +598,7 @@ end
 # Simple tags
 tag "terms",   "kitty"
 tag "browser", "firefox"
+tag "workspace", ""
 # tag "pentest", "zapproxy|burp"
 
 # Placement
@@ -695,6 +696,7 @@ end
 
 view "terms", "terms|default"
 view "www",   "browser"
+view "workspace", "workspace"
 view "security", "pentest"
 # view "gimp",  "gimp_.*"
 # view "dev",   "editor"
