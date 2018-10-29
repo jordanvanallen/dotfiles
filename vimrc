@@ -10,15 +10,19 @@ endif
 " ===========================
 
 let g:mapleader = "\<Space>"
+
 set number relativenumber
 set nobackup
 set noswapfile
 set autoindent
+
 " Remove toolbar/scrollbars for gvim
 set guioptions=m
+
 " Trim whitespace on save
 au BufWritePre * :%s/\s\+$//e
 set encoding=utf-8
+
 " Remove bell
 set noeb vb t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -29,6 +33,9 @@ autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
 autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
 			\   bd|
 			\   q | endif
+
+" Kitty blackbars drawing fix
+" let &t_ut=''
 
 " Last tab
 nnoremap <silent> <Space><Tab> :b#<CR>
