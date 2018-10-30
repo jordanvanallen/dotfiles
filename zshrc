@@ -14,7 +14,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="spaceship"
-ZSH_THEME="theunraveler"
+ZSH_THEME="norm"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
