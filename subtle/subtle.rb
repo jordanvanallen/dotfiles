@@ -420,7 +420,7 @@ grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
-grab "W-Return", "kitty"
+grab "W-Return", "terminator"
 grab "W-p", "dmenu_run -b -nb '#020307'"
 grab "W-C-Return", "firefox"
 
@@ -596,7 +596,7 @@ end
 #
 
 # Simple tags
-tag "terms",   "kitty"
+tag "terms",   "terminator|kitty"
 tag "browser", "firefox"
 tag "workspace", ""
 # tag "pentest", "zapproxy|burp"
