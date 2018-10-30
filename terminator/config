@@ -5,6 +5,7 @@
   title_use_system_font = False
 [keybindings]
   close_term = <Alt>w
+  layout_launcher = <Alt>F12
   new_tab = <Alt>t
   reset_clear = <Alt>l
   switch_to_tab_1 = <Alt>1
