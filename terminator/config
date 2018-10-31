@@ -1,24 +1,38 @@
 [global_config]
-  focus = system
-  title_font = Source Code Pro 16
-  title_transmit_bg_color = "#555753"
+  always_split_with_profile = True
+  borderless = True
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  tab_position = bottom
+  title_font = Source Code Pro 10
+  title_transmit_bg_color = "#babdb6"
   title_use_system_font = False
 [keybindings]
   close_term = <Alt>w
-  layout_launcher = <Alt>F12
+  close_window = <Alt>q
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_next = <Alt>Up
+  go_right = <Alt>l
+  go_up = <Alt>k
+  layout_launcher = <Alt>F11
   new_tab = <Alt>t
-  reset_clear = <Alt>l
+  reset_clear = <Alt>BackSpace
+  split_horiz = <Primary><Shift>s
+  split_vert = <Primary><Shift>v
   switch_to_tab_1 = <Alt>1
   switch_to_tab_10 = <Alt>0
   switch_to_tab_2 = <Alt>2
   switch_to_tab_3 = <Alt>3
   switch_to_tab_4 = <Alt>4
   switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = solarized-dark
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -26,21 +40,164 @@
 [plugins]
 [profiles]
   [[default]]
-    cursor_color = "#aaaaaa"
-    font = Source Code Pro 18
-    show_titlebar = False
-    use_system_font = False
-  [[solarized-dark]]
     background_color = "#002b36"
-    background_darkness = 0.41
-    cursor_color = "#eee8d5"
-    font = Source Code Pro 13
-    foreground_color = "#eee8d5"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#586e75:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    cursor_color = "#aaaaaa"
+    font = Source Code Pro 14
+    foreground_color = "#839496"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     show_titlebar = False
     use_system_font = False
-  [[solarized-light]]
-    background_color = "#eee8d5"
-    cursor_color = "#002b36"
-    foreground_color = "#002b36"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+  [[Aci]]
+    background_color = "#0d1926"
+    cursor_color = "#c4e9ff"
+    font = Source Code Pro 14
+    foreground_color = "#b4e1fd"
+    palette = "#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6:#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6"
+    show_titlebar = False
+    use_system_font = False
+  [[AdventureTime]]
+    background_color = "#1f1d45"
+    cursor_color = "#efbf38"
+    font = Source Code Pro 14
+    foreground_color = "#f8dcc0"
+    palette = "#050404:#bd0013:#4ab118:#e7741e:#0f4ac6:#665993:#70a598:#f8dcc0:#4e7cbf:#fc5f5a:#9eff6e:#efc11a:#1997c6:#9b5953:#c8faf4:#f6f5fb"
+    show_titlebar = False
+    use_system_font = False
+  [[Afterglow]]
+    background_color = "#212121"
+    cursor_color = "#d0d0d0"
+    font = Source Code Pro 14
+    foreground_color = "#d0d0d0"
+    palette = "#151515:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#d0d0d0:#505050:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#f5f5f5"
+    show_titlebar = False
+    use_system_font = False
+  [[Atom]]
+    background_color = "#161719"
+    cursor_color = "#d0d0d0"
+    font = Source Code Pro 14
+    foreground_color = "#c5c8c6"
+    palette = "#000000:#fd5ff1:#87c38a:#ffd7b1:#85befd:#b9b6fc:#85befd:#e0e0e0:#000000:#fd5ff1:#94fa36:#f5ffa8:#96cbfe:#b9b6fc:#85befd:#e0e0e0"
+    show_titlebar = False
+    use_system_font = False
+  [[Azu]]
+    background_color = "#09111a"
+    cursor_color = "#d2e8fc"
+    font = Source Code Pro 14
+    foreground_color = "#d9e6f2"
+    palette = "#000000:#ac6d74:#74ac6d:#aca46d:#6d74ac:#a46dac:#6daca4:#e6e6e6:#262626:#d6b8bc:#bcd6b8:#d6d3b8:#b8bcd6:#d3b8d6:#b8d6d3:#ffffff"
+    show_titlebar = False
+    use_system_font = False
+  [[Bim]]
+    background_color = "#012849"
+    cursor_color = "#c4d0de"
+    font = Source Code Pro 14
+    foreground_color = "#a9bed8"
+    palette = "#2c2423:#f557a0:#a9ee55:#f5a255:#5ea2ec:#a957ec:#5eeea0:#918988:#918988:#f579b2:#bbee78:#f5b378:#81b3ec:#bb79ec:#81eeb2:#f5eeec"
+    show_titlebar = False
+    use_system_font = False
+  [[Brogrammer]]
+    background_color = "#131313"
+    cursor_color = "#b9b9b9"
+    font = Source Code Pro 14
+    foreground_color = "#d6dbe5"
+    palette = "#1f1f1f:#f81118:#2dc55e:#ecba0f:#2a84d2:#4e5ab7:#1081d6:#d6dbe5:#d6dbe5:#de352e:#1dd361:#f3bd09:#1081d6:#5350b9:#0f7ddb:#ffffff"
+    show_titlebar = False
+    use_system_font = False
+  [[Chalk]]
+    background_color = "#2b2d2e"
+    cursor_color = "#708284"
+    font = Source Code Pro 14
+    foreground_color = "#d2d8d9"
+    palette = "#7d8b8f:#b23a52:#789b6a:#b9ac4a:#2a7fac:#bd4f5a:#44a799:#d2d8d9:#888888:#f24840:#80c470:#ffeb62:#4196ff:#fc5275:#53cdbd:#d2d8d9"
+    show_titlebar = False
+    use_system_font = False
+  [[Cobalt Neon]]
+    background_color = "#142838"
+    cursor_color = "#c4206f"
+    font = Source Code Pro 14
+    foreground_color = "#8ff586"
+    palette = "#142631:#ff2320:#3ba5ff:#e9e75c:#8ff586:#781aa0:#8ff586:#ba46b2:#fff688:#d4312e:#8ff586:#e9f06d:#3c7dd2:#8230a7:#6cbc67:#8ff586"
+    show_titlebar = False
+    use_system_font = False
+  [[Flat]]
+    background_color = "#002240"
+    cursor_color = "#e5be0c"
+    font = Source Code Pro 14
+    foreground_color = "#2cc55d"
+    palette = "#222d3f:#a82320:#32a548:#e58d11:#3167ac:#781aa0:#2c9370:#b0b6ba:#212c3c:#d4312e:#2d9440:#e5be0c:#3c7dd2:#8230a7:#35b387:#e7eced"
+    show_titlebar = False
+    use_system_font = False
+  [[Hardcore]]
+    background_color = "#121212"
+    cursor_color = "#bbbbbb"
+    font = Source Code Pro 14
+    foreground_color = "#a0a0a0"
+    palette = "#1b1d1e:#f92672:#a6e22e:#fd971f:#66d9ef:#9e6ffe:#5e7175:#ccccc6:#505354:#ff669d:#beed5f:#e6db74:#66d9ef:#9e6ffe:#a3babf:#f8f8f2"
+    show_titlebar = False
+    use_system_font = False
+  [[Hemisu dark]]
+    background_color = "#002b36"
+    cursor_color = "#BAFFAA"
+    font = Source Code Pro 14
+    foreground_color = "#FFFFFF"
+    palette = "#444444:#FF0054:#B1D630:#9D895E:#67BEE3:#B576BC:#569A9F:#EDEDED:#777777:#D65E75:#BAFFAA:#ECE1C8:#9FD3E5:#DEB3DF:#B6E0E5:#FFFFFF"
+    show_titlebar = False
+    use_system_font = False
+  [[Japanesque]]
+    background_color = "#1e1e1e"
+    cursor_color = "#edcf4f"
+    font = Source Code Pro 14
+    foreground_color = "#f7f6ec"
+    palette = "#343935:#cf3f61:#7bb75b:#e9b32a:#4c9ad4:#a57fc4:#389aad:#fafaf6:#595b59:#d18fa6:#767f2c:#78592f:#135979:#604291:#76bbca:#b2b5ae"
+    show_titlebar = False
+    use_system_font = False
+  [[Nebula]]
+    background_color = "#23262e"
+    cursor_color = "#00e8c6"
+    font = Source Code Pro 14
+    foreground_color = "#ffffff"
+    palette = "#2e3436:#ff007a:#84ff39:#f3d56e:#7cb7ff:#c74ded:#00e8c6:#d3d7cf:#555753:#ff007a:#84ff39:#f3d56e:#7cb7ff:#c74ded:#00e8c6:#eeeeec"
+    show_titlebar = False
+    use_system_font = False
+  [[Neopolitan]]
+    background_color = "#271f19"
+    cursor_color = "#ffffff"
+    font = Source Code Pro 14
+    foreground_color = "#ffffff"
+    palette = "#000000:#800000:#61ce3c:#fbde2d:#253b76:#ff0080:#8da6ce:#f8f8f8:#000000:#800000:#61ce3c:#fbde2d:#253b76:#ff0080:#8da6ce:#f8f8f8"
+    show_titlebar = False
+    use_system_font = False
+  [[SpaceGray]]
+    background_color = "#20242d"
+    cursor_color = "#b3b8c3"
+    font = Source Code Pro 14
+    foreground_color = "#b3b8c3"
+    palette = "#000000:#b04b57:#87b379:#e5c179:#7d8fa4:#a47996:#85a7a5:#b3b8c3:#000000:#b04b57:#87b379:#e5c179:#7d8fa4:#a47996:#85a7a5:#ffffff"
+    show_titlebar = False
+    use_system_font = False
+  [[SpaceGray Eighties]]
+    background_color = "#222222"
+    cursor_color = "#bbbbbb"
+    font = Source Code Pro 14
+    foreground_color = "#bdbaae"
+    palette = "#15171c:#ec5f67:#81a764:#fec254:#5486c0:#bf83c1:#57c2c1:#efece7:#555555:#ff6973:#93d493:#ffd256:#4d84d1:#ff55ff:#83e9e4:#ffffff"
+    show_titlebar = False
+    use_system_font = False
+  [[Vag]]
+    background_color = "#191f1d"
+    cursor_color = "#e5f0fa"
+    font = Source Code Pro 14
+    foreground_color = "#d9e6f2"
+    palette = "#303030:#a87139:#39a871:#71a839:#7139a8:#a83971:#3971a8:#8a8a8a:#494949:#b0763b:#3bb076:#76b03b:#763bb0:#b03b76:#3b76b0:#cfcfcf"
+    show_titlebar = False
+    use_system_font = False
+  [[Violet Dark]]
+    background_color = "#1c1d1f"
+    cursor_color = "#708284"
+    font = Source Code Pro 14
+    foreground_color = "#708284"
+    palette = "#56595c:#c94c22:#85981c:#b4881d:#2e8bce:#d13a82:#32a198:#c9c6bd:#45484b:#bd3613:#738a04:#a57705:#2176c7:#c61c6f:#259286:#c9c6bd"
+    show_titlebar = False
+    use_system_font = False
+  [[b2]]
+    cursor_color = "#aaaaaa"
