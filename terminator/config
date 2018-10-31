@@ -64,14 +64,6 @@
     show_titlebar = False
     use_system_font = False
   [[Afterglow]]
-    background_color = "#212121"
-    cursor_color = "#d0d0d0"
-    font = Source Code Pro 14
-    foreground_color = "#d0d0d0"
-    palette = "#151515:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#d0d0d0:#505050:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#f5f5f5"
-    show_titlebar = False
-    use_system_font = False
-  [[Atom]]
     background_color = "#161719"
     cursor_color = "#d0d0d0"
     font = Source Code Pro 14
@@ -79,6 +71,8 @@
     palette = "#000000:#fd5ff1:#87c38a:#ffd7b1:#85befd:#b9b6fc:#85befd:#e0e0e0:#000000:#fd5ff1:#94fa36:#f5ffa8:#96cbfe:#b9b6fc:#85befd:#e0e0e0"
     show_titlebar = False
     use_system_font = False
+  [[Atom]]
+    cursor_color = "#aaaaaa"
   [[Azu]]
     background_color = "#09111a"
     cursor_color = "#d2e8fc"
@@ -152,13 +146,7 @@
     show_titlebar = False
     use_system_font = False
   [[Nebula]]
-    background_color = "#23262e"
-    cursor_color = "#00e8c6"
-    font = Source Code Pro 14
-    foreground_color = "#ffffff"
-    palette = "#2e3436:#ff007a:#84ff39:#f3d56e:#7cb7ff:#c74ded:#00e8c6:#d3d7cf:#555753:#ff007a:#84ff39:#f3d56e:#7cb7ff:#c74ded:#00e8c6:#eeeeec"
-    show_titlebar = False
-    use_system_font = False
+    cursor_color = "#aaaaaa"
   [[Neopolitan]]
     background_color = "#271f19"
     cursor_color = "#ffffff"
@@ -176,13 +164,7 @@
     show_titlebar = False
     use_system_font = False
   [[SpaceGray Eighties]]
-    background_color = "#222222"
-    cursor_color = "#bbbbbb"
-    font = Source Code Pro 14
-    foreground_color = "#bdbaae"
-    palette = "#15171c:#ec5f67:#81a764:#fec254:#5486c0:#bf83c1:#57c2c1:#efece7:#555555:#ff6973:#93d493:#ffd256:#4d84d1:#ff55ff:#83e9e4:#ffffff"
-    show_titlebar = False
-    use_system_font = False
+    cursor_color = "#aaaaaa"
   [[Vag]]
     background_color = "#191f1d"
     cursor_color = "#e5f0fa"
