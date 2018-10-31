@@ -12,7 +12,10 @@
 # are dependent on the locations specified by +XDG_CONFIG_DIRS+ and
 # +XDG_CONFIG_HOME+.
 #
-
+#
+# Constants
+DEFAULT_TERMINAL    = "terminator"
+DEFAULT_WEB_BROWSER = "firefox"
 #
 # == Options
 #
@@ -420,9 +423,8 @@ grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
-grab "W-Return", "terminator"
+grab "W-Return", DEFAULT_TERMINAL
 grab "W-p", "dmenu_run -b -nb '#020307'"
-grab "W-C-Return", "firefox"
 
 # Run Ruby lambdas
 grab "S-F2" do |c|
@@ -596,9 +598,9 @@ end
 #
 
 # Simple tags
-tag "terms",   "terminator|kitty"
-tag "browser", "firefox"
-tag "workspace", ""
+tag "terms", DEFAULT_TERMINAL
+tag "browser", DEFAULT_WEB_BROWSER
+tag "workspace", "#{DEFAULT_TERMINAL}|#{DEFAULT_WEB_BROWSER}"
 # tag "pentest", "zapproxy|burp"
 
 # Placement
