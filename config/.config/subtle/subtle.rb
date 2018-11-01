@@ -785,6 +785,11 @@ view "security", "pentest"
 # === Link
 #
 # http://subforge.org/projects/subtle/wiki/Hooks
-#
+
+on :start do
+  # Start Polybar
+  system("$HOME/.config/polybar/launch.sh")
+end
+
 
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
