@@ -600,7 +600,7 @@ end
 # Simple tags
 tag "terms", DEFAULT_TERMINAL
 tag "browser", DEFAULT_WEB_BROWSER
-tag "workspace", "#{DEFAULT_TERMINAL}|#{DEFAULT_WEB_BROWSER}"
+tag "workspace", "#{DEFAULT_TERMINAL}|#{DEFAULT_WEB_BROWSER}|slack"
 # tag "pentest", "zapproxy|burp"
 
 # Placement

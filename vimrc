@@ -190,7 +190,7 @@ Plug 'w0rp/ale'
 
 Plug 'janko-m/vim-test'
 " {
-  let test#strategy = "asyncrun"
+  let test#strategy = "vimterminal"
 
   nnoremap <silent> <Space>T :TestFile<CR>
   nnoremap <silent> <Space>tn :TestNearest<CR>
