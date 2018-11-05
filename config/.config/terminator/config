@@ -2,6 +2,7 @@
   always_split_with_profile = True
   borderless = True
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 0.2
   tab_position = bottom
   title_font = Source Code Pro 10
   title_transmit_bg_color = "#babdb6"
