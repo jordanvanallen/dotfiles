@@ -1,4 +1,6 @@
-# If you come from bash you might have to change your $PATH.
+# Set monitor
+export MONITOR="DP1"
+
 export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -101,6 +103,8 @@ alias dd='dd status=progress'
 alias top='vtop'
 alias ls='exa'
 alias la='exa -la'
+
+alias vi='vim'
 
 # Handy
 alias weather='curl wttr.in/43.6404,-79.4238'

@@ -153,19 +153,26 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-bar {
-        status_command i3status -t
-}
+# bar {
+#         status_command i3status -t
+# }
 
 # ============
 # Custom
 # ============
 
+# Pulseaudio
+exec --no-startup-id pulseaudio --start
+
 # Set desktop background
+exec_always --no-startup-id source ~/.fehbg
 exec --no-startup-id betterlockscreen
 
 # Polybar
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Run display setup through XRANDR script
+exec_always --no-startup-id $HOME/bin/set_display
 
 # Bind for lockscreen
 bindsym $mod+shift+x exec betterlockscreen -l dim
