@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -94,19 +94,19 @@ export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 #
 # Aliases
 #
+# Unix Command Overrides
+alias dd='dd status=progress'
+alias top='vtop'
+alias ls='exa'
+alias la='exa -la'
+alias vi='nvim'
+
 # Configs
 alias zshconfig="vi ~/dotfiles/.zshrc"
 alias ohmyzshconfig="vi ~/.oh-my-zsh"
 alias viconfig="vi ~/dotfiles/.vimrc"
 
 alias sourcezsh="source ~/.zshrc"
-
-# Unix Command Overrides
-alias dd='dd status=progress'
-alias top='vtop'
-alias ls='exa'
-alias la='exa -la'
-alias vi='vim'
 
 # Handy
 alias weather='curl wttr.in/43.6404,-79.4238'

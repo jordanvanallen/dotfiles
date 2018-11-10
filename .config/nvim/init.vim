@@ -71,18 +71,21 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " Open vimrc file
 nnoremap <Leader>fed :e ~/dotfiles/vimrc<CR>
 
+" Open VTOP
+nnoremap <Leader>v :!vtop<CR>
+
+call plug#begin('~/.config/nvim/plugged')
+
 " ===========================
 " Terminal
 " ===========================
+
+Plug 'kassio/neoterm'
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <Leader>' :vs <BAR> terminal<CR>
 set splitright
 
-" Open VTOP
-nnoremap <Leader>v :!vtop<CR>
-
-call plug#begin('~/.config/nvim/plugged')
 
 " ===========================
 " Ruby on Rails
