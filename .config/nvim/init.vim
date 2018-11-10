@@ -1,8 +1,8 @@
 " Autoload VIM Plug for new machines
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd VimEnter * PlugInstall
 endif
 
 " ===========================
@@ -74,7 +74,7 @@ set splitright
 " Open VTOP
 nnoremap <Space>v :!vtop<CR>
 
-call plug#begin('~/.vim/addons')
+call plug#begin('~/.config/nvim/plugged')
 
 " ===========================
 " Ruby on Rails
@@ -190,7 +190,7 @@ Plug 'w0rp/ale'
 
 Plug 'janko-m/vim-test'
 " {
-  let test#strategy = "vimterminal"
+  let test#strategy = "asyncrun"
 
   nnoremap <silent> <Space>T :TestFile<CR>
   nnoremap <silent> <Space>tn :TestNearest<CR>
@@ -250,7 +250,10 @@ Plug 'jremmen/vim-ripgrep'
 " {
   nnoremap <Space>/ :Rg<Space>
 " }
-Plug 'tpope/vim-eunuch'
+Plug 'danro/rename.vim'
+" {
+  nnoremap <silent> <Space>fR :Rename<Space>
+" }
 
 " ===========================
 " Editing
@@ -274,12 +277,10 @@ Plug 'easymotion/vim-easymotion'
 " Autocompletion
 " ===========================
 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " {
   let g:deoplete#enable_at_startup = 1
 " }
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"

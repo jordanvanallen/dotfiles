@@ -95,9 +95,11 @@ export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 # Aliases
 #
 # Configs
-alias zshconfig="vi ~/dotfiles/zshrc"
+alias zshconfig="vi ~/dotfiles/.zshrc"
 alias ohmyzshconfig="vi ~/.oh-my-zsh"
-alias viconfig="vi ~/dotfiles/vimrc"
+alias viconfig="vi ~/dotfiles/.vimrc"
+
+alias sourcezsh="source ~/.zshrc"
 
 # Unix Command Overrides
 alias dd='dd status=progress'
