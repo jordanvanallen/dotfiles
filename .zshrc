@@ -106,11 +106,11 @@ alias dd='dd status=progress'
 alias top='vtop'
 alias ls='exa'
 alias la='exa -la'
-
 alias vi='vim'
 
 # Handy
 alias weather='curl wttr.in/43.6404,-79.4238'
+alias yt="mpsyt"
 
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"

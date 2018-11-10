@@ -61,7 +61,7 @@ map <C-L> <C-W>l
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
 " Open vimrc file
-nnoremap <Space>fed :e ~/dotfiles/vimrc<CR>
+nnoremap <Space>fed :e ~/dotfiles/.vimrc<CR>
 
 " ===========================
 " Terminal

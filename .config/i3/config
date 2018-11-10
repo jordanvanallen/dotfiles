@@ -163,6 +163,7 @@ bindsym $mod+r mode "resize"
 
 # Pulseaudio
 exec --no-startup-id pulseaudio --start
+exec --no-startup-id start-pulseaudio-x11
 
 # Set desktop background
 exec_always --no-startup-id source ~/.fehbg
