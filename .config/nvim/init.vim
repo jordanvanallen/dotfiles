@@ -27,27 +27,35 @@ set encoding=utf-8
 set noeb vb t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Close quickfix window
+" Quickfix window
+augroup vimrc
+  " Don't allow quickfix window to take focus after test run
+  autocmd QuickFixCmdPre * let g:mybufname=bufname('%')
+  autocmd QuickFixCmdPost * botright copen 8 | exec bufwinnr(g:mybufname) . 'wincmd w'
+augroup END
+" Close quickfix window with q
 autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
 			\   q :cclose<cr>:lclose<cr>
 autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
 			\   bd|
 			\   q | endif
 
+nnoremap <silent> <Leader>q :ccl<CR>
+
 " Kitty blackbars drawing fix
 " let &t_ut=''
 
 " Last tab
-nnoremap <silent> <Space><Tab> :b#<CR>
+nnoremap <silent> <Leader><Tab> :b#<CR>
 
 " Splits
-nnoremap <silent> <Space>w/ :vsplit<CR>
-nnoremap <silent> <Space>w- :split<CR>
+nnoremap <silent> <Leader>w/ :vsplit<CR>
+nnoremap <silent> <Leader>w- :split<CR>
 
-" Remap window selection to <Space>0-9
+" Remap window selection to <Leader>0-9
 let i = 1
 while i <= 9
-    execute 'nnoremap <Space>' . i . ' :' . i . 'wincmd w<CR>'
+    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
     let i = i + 1
 endwhile
 
@@ -61,18 +69,18 @@ map <C-L> <C-W>l
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
 " Open vimrc file
-nnoremap <Space>fed :e ~/dotfiles/vimrc<CR>
+nnoremap <Leader>fed :e ~/dotfiles/vimrc<CR>
 
 " ===========================
 " Terminal
 " ===========================
 
 tnoremap <Esc> <C-\><C-n>
-nnoremap <silent> <Space>' :vs <BAR> terminal<CR>
+nnoremap <silent> <Leader>' :vs <BAR> terminal<CR>
 set splitright
 
 " Open VTOP
-nnoremap <Space>v :!vtop<CR>
+nnoremap <Leader>v :!vtop<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -91,14 +99,14 @@ autocmd FileType eruby setlocal expandtab sw=2 ts=2
 autocmd FileType html setlocal expandtab sw=4 ts=4
 autocmd FileType yaml setlocal expandtab sw=2 ts=2
 
-nnoremap <silent> <Space>rr :Einitializer<CR>
-nnoremap <silent> <Space>ra :Eenvironment<CR>
-nnoremap <silent> <Space>rt :Eintegrationtest<CR>
-nnoremap <silent> <Space>rc :Econtroller<CR>
-nnoremap <silent> <Space>rm :Emodel<CR>
-nnoremap <silent> <Space>rv :Eview<CR>
-nnoremap <silent> <Space>a :A<CR>
-nnoremap <silent> <Space>A :vsplit<CR><C-W>l :A<CR>
+nnoremap <silent> <Leader>rr :Einitializer<CR>
+nnoremap <silent> <Leader>ra :Eenvironment<CR>
+nnoremap <silent> <Leader>rt :Eintegrationtest<CR>
+nnoremap <silent> <Leader>rc :Econtroller<CR>
+nnoremap <silent> <Leader>rm :Emodel<CR>
+nnoremap <silent> <Leader>rv :Eview<CR>
+nnoremap <silent> <Leader>a :A<CR>
+nnoremap <silent> <Leader>A :vsplit<CR><C-W>l :A<CR>
 
 " ===========================
 " HTML / CSS
@@ -156,7 +164,7 @@ autocmd FileType *.py
     \ setlocal autoindent
     \ setlocal fileformat=unix
 
-nnoremap <buffer> <Space>p :w<CR>:!clear;python3 %<CR>
+nnoremap <buffer> <Leader>p :w<CR>:!clear;python3 %<CR>
 
 " ===========================
 " Misc. Files
@@ -188,16 +196,17 @@ Plug 'w0rp/ale'
 " Testing
 " ===========================
 
+Plug 'skywind3000/asyncrun.vim'
 Plug 'janko-m/vim-test'
 " {
   let test#strategy = "asyncrun"
 
-  nnoremap <silent> <Space>T :TestFile<CR>
-  nnoremap <silent> <Space>tn :TestNearest<CR>
-  nnoremap <silent> <Space>tT :TestSuite<CR>
-  nnoremap <silent> <Space>ta :TestSuite<CR>
-  nnoremap <silent> <Space>tl :TestLast<CR>
-  nnoremap <silent> <Space>tv :TestVisit<CR>
+  nnoremap <silent> <Leader>T :TestFile<CR>
+  nnoremap <silent> <Leader>tn :TestNearest<CR>
+  nnoremap <silent> <Leader>tT :TestSuite<CR>
+  nnoremap <silent> <Leader>ta :TestSuite<CR>
+  nnoremap <silent> <Leader>tl :TestLast<CR>
+  nnoremap <silent> <Leader>tv :TestVisit<CR>
 " }
 
 " ===========================
@@ -239,20 +248,20 @@ Plug 'junegunn/fzf.vim'
   nnoremap <C-F> :Files<CR>
 
   set tags=./tags,tags;$home
-  nnoremap <silent> <Space>gt :!ctags -R<CR>
+  nnoremap <silent> <Leader>gt :!ctags -R<CR>
   nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 " }
 Plug 'wsdjeg/FlyGrep.vim'
 " {
-  nnoremap <Space>s/ :FlyGrep<CR>
+  nnoremap <Leader>s/ :FlyGrep<CR>
 " }
 Plug 'jremmen/vim-ripgrep'
 " {
-  nnoremap <Space>/ :Rg<Space>
+  nnoremap <Leader>/ :Rg<Leader>
 " }
 Plug 'danro/rename.vim'
 " {
-  nnoremap <silent> <Space>fR :Rename<Space>
+  nnoremap <silent> <Leader>fR :Rename<Leader>
 " }
 
 " ===========================
@@ -265,7 +274,7 @@ Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 " {
-  vmap t :Tabularize<Space>/
+  vmap t :Tabularize<Leader>/
 " }
 Plug 'easymotion/vim-easymotion'
 " {
@@ -302,17 +311,17 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'tpope/vim-fugitive'
 " {
-  nnoremap <silent> <Space>gs :Gwrite<CR>
-  nnoremap <silent> <Space>gd :Gdiff<CR>
-  nnoremap <silent> <Space>gp :diffput<CR>
-  nnoremap <silent> <Space>gb :Gblame<CR>
-  nnoremap <silent> <Space>gc :Gcommit<CR>
-  nnoremap <silent> <Space>fD :Gdelete<CR>
-  nnoremap <silent> <Space>gm :Gmove<CR>
-  nnoremap <silent> <Space>fR :Gmove<CR>
-  nnoremap <silent> <Space>gl :Glog<CR>
-  nnoremap <silent> <Space>gr :Gread<CR>
-  nnoremap <silent> <Space>G :Git<Space>
+  nnoremap <silent> <Leader>gs :Gwrite<CR>
+  nnoremap <silent> <Leader>gd :Gdiff<CR>
+  nnoremap <silent> <Leader>gp :diffput<CR>
+  nnoremap <silent> <Leader>gb :Gblame<CR>
+  nnoremap <silent> <Leader>gc :Gcommit<CR>
+  nnoremap <silent> <Leader>fD :Gdelete<CR>
+  nnoremap <silent> <Leader>gm :Gmove<CR>
+  nnoremap <silent> <Leader>fR :Gmove<CR>
+  nnoremap <silent> <Leader>gl :Glog<CR>
+  nnoremap <silent> <Leader>gr :Gread<CR>
+  nnoremap <silent> <Leader>G :Git<Leader>
 " }
 
 " ===========================
