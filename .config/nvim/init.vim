@@ -42,8 +42,11 @@ autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
 
 nnoremap <silent> <Leader>q :ccl<CR>
 
-" Kitty blackbars drawing fix
+" Kitty Terminal Settings
 " let &t_ut=''
+set termguicolors
+let &t_8f = "\e[38;2;%lu;%lu;%lum"
+let &t_8b = "\e[48;2;%lu;%lu;%lum"
 
 " Last tab
 nnoremap <silent> <Leader><Tab> :b#<CR>
@@ -337,6 +340,7 @@ Plug 'Yggdroot/indentLine'
 " Colorschemes
 Plug 'lifepillar/vim-solarized8'
 Plug 'colepeters/spacemacs-theme.vim'
+Plug 'liuchengxu/space-vim-dark'
 Plug 'Badacadabra/vim-archery'
 Plug 'szorfein/darkest-space'
 
@@ -346,4 +350,4 @@ call plug#end()
 " Select colortheme and options
 set t_Co=256
 set background=dark
-colorscheme darkest-space
+colorscheme space-vim-dark
