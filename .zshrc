@@ -101,6 +101,7 @@ alias top='vtop'
 alias ls='exa'
 alias la='exa -la'
 alias vi='nvim'
+alias tmux='tmux -f $HOME/.tmux.conf'
 
 # Configs
 alias zshconfig="vi ~/dotfiles/.zshrc"
@@ -130,3 +131,8 @@ kitty + complete setup zsh | source /dev/stdin
 
 # Control to escape when tapped
 xcape -e "Control_L=Escape"
+
+# Start TMUX
+if [ "$TMUX" -eq "" ]; then
+  tmux new-session
+fi 2>/dev/null
