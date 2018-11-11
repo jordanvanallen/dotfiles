@@ -16,7 +16,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="spaceship"
-ZSH_THEME="norm"
+# ZSH_THEME="norm"
+ZSH_THEME="theunraveler"
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -120,9 +121,9 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Kitty Terminal
-# autoload -Uz compinit
-# compinit
-# kitty + complete setup zsh | source /dev/stdin
+autoload -Uz compinit
+compinit
+kitty + complete setup zsh | source /dev/stdin
 
 # Z
 . /usr/local/share/z/z.sh
