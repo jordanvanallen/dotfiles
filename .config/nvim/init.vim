@@ -72,7 +72,7 @@ map <C-L> <C-W>l
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
 " Open vimrc file
-nnoremap <Leader>fed :e ~/dotfiles/vimrc<CR>
+nnoremap <Leader>fed :e ~/dotfiles/.config/nvim/init.vim<CR>
 
 " Open VTOP
 nnoremap <Leader>v :!vtop<CR>
@@ -85,7 +85,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'kassio/neoterm'
 
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <Leader>' :vs <BAR> terminal<CR>
 set splitright
 
