@@ -17,8 +17,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="spaceship"
 # ZSH_THEME="norm"
-ZSH_THEME="theunraveler"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="theunraveler"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
