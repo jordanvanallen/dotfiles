@@ -84,7 +84,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'kassio/neoterm'
 
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <Leader>' :vs <BAR> terminal<CR>
 set splitright
 
