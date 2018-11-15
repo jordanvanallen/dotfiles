@@ -44,7 +44,6 @@ nnoremap <silent> <Leader>q :ccl<CR>
 
 " Kitty Terminal Settings
 " let &t_ut=''
-set termguicolors
 let &t_8f = "\e[38;2;%lu;%lu;%lum"
 let &t_8b = "\e[48;2;%lu;%lu;%lum"
 
@@ -72,7 +71,7 @@ map <C-L> <C-W>l
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
 " Open vimrc file
-nnoremap <Leader>fed :e ~/dotfiles/vimrc<CR>
+nnoremap <Leader>fed :e ~/dotfiles/.config/nvim/init.vim<CR>
 
 " Open VTOP
 nnoremap <Leader>v :!vtop<CR>
@@ -88,7 +87,6 @@ Plug 'kassio/neoterm'
 tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> <Leader>' :vs <BAR> terminal<CR>
 set splitright
-
 
 " ===========================
 " Ruby on Rails
@@ -351,3 +349,8 @@ call plug#end()
 set t_Co=256
 set background=dark
 colorscheme space-vim-dark
+set termguicolors
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+
