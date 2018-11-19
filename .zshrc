@@ -30,6 +30,9 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
 POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=205
 POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 
+# Import colorscheme from wal
+(cat ~/.cache/wal/sequences &)
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
