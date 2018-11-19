@@ -335,6 +335,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 
+" Icons
+Plug 'ryanoasis/vim-devicons'
+
 " Colorschemes
 Plug 'lifepillar/vim-solarized8'
 Plug 'colepeters/spacemacs-theme.vim'

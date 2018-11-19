@@ -21,7 +21,14 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Powerlevel9k Settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon dir vcs)
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_MODE="nerdfont-complete"
+
+# Powerlevel9k icons
+POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
+POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=205
+POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
