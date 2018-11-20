@@ -170,7 +170,7 @@ exec_always --no-startup-id source ~/.fehbg
 exec --no-startup-id betterlockscreen
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Run display setup through XRANDR script
 exec_always --no-startup-id $HOME/bin/set_display
