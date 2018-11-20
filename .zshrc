@@ -131,6 +131,8 @@ alias sourcezsh="source ~/.zshrc"
 alias weather='curl wttr.in/43.6404,-79.4238'
 alias yt="mpsyt"
 
+alias set_colours='wal -i ~/.background.jpg -a 25 -b 2d2d2c'
+
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
