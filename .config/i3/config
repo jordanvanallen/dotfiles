@@ -172,6 +172,9 @@ exec --no-startup-id betterlockscreen
 # Polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Start redshift to not burn out your retinas
+exec --no-startup-id redshift
+
 # Run display setup through XRANDR script
 exec_always --no-startup-id $HOME/bin/set_display
 
