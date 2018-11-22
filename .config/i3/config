@@ -161,6 +161,9 @@ bindsym $mod+r mode "resize"
 # Custom
 # ============
 
+# Fix black bars
+for_window [class="^.*"] border pixel 0
+
 # Pulseaudio
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id start-pulseaudio-x11
