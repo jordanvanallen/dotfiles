@@ -80,9 +80,18 @@ call plug#begin('~/.config/nvim/plugged')
 " ===========================
 
 Plug 'kassio/neoterm'
+Plug 'Lenovsky/nuake'
+" {
+  " Keybinds
+  nnoremap <silent> <F4> :Nuake<CR>
+  inoremap <silent> <F4> <C-\><C-n>:Nuake<CR>
+  tnoremap <silent> <F4> <C-\><C-n>:Nuake<CR>
+
+  " Settings
+  let g:nuake_position = 1 " 1 = Vertical, 0 = Horizontal
+" }
 
 tnoremap <C-w> <C-\><C-n><C-w>
-nnoremap <silent> <Leader>' :vs <BAR> terminal<CR>
 set splitright
 
 " ===========================
