@@ -181,5 +181,8 @@ exec --no-startup-id redshift
 # Run display setup through XRANDR script
 exec_always --no-startup-id $HOME/bin/set_display
 
+# Compton
+exec --no-startup-id compton -b
+
 # Bind for lockscreen
 bindsym $mod+shift+x exec betterlockscreen -l dim
