@@ -161,12 +161,11 @@ bindsym $mod+r mode "resize"
 # Custom
 # ============
 
+# Run display setup through XRANDR script
+exec_always --no-startup-id $HOME/bin/set_display
+
 # Fix black bars
 for_window [class="^.*"] border pixel 0
-
-# Pulseaudio
-exec --no-startup-id pulseaudio --start
-exec --no-startup-id start-pulseaudio-x11
 
 # Set desktop background
 exec_always --no-startup-id source ~/.fehbg
@@ -178,11 +177,26 @@ exec --no-startup-id betterlockscreen
 # Start redshift to not burn out your retinas
 exec --no-startup-id redshift
 
-# Run display setup through XRANDR script
-exec_always --no-startup-id $HOME/bin/set_display
-
 # Compton
 exec --no-startup-id compton -b
 
 # Bind for lockscreen
 bindsym $mod+shift+x exec betterlockscreen -l dim
+
+### Volume ###
+#
+# Pulseaudio
+exec --no-startup-id pulseaudio --start
+exec --no-startup-id start-pulseaudio-x11
+
+set $volumepath ~/.i3-volume
+set $volumestep 5
+
+bindsym XF86AudioRaiseVolume exec $volumepath/volume -np -i $volumestep
+bindsym XF86AudioLowerVolume exec $volumepath/volume -np -d $volumestep
+bindsym XF86AudioMute        exec $volumepath/volume -mn
+
+# Setup media keys
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
