@@ -333,7 +333,11 @@ Plug 'tpope/vim-fugitive'
   nnoremap <silent> <Leader>fR :Gmove<CR>
   nnoremap <silent> <Leader>gl :Glog<CR>
   nnoremap <silent> <Leader>gr :Gread<CR>
-  nnoremap <silent> <Leader>G :Git<Leader>
+" }
+
+Plug 'jreybert/vimagit'
+" {
+  nnoremap <silent> <Leader>G :Magit<CR>
 " }
 
 " ===========================
