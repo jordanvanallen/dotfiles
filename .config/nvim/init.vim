@@ -91,6 +91,8 @@ Plug 'Lenovsky/nuake'
   let g:nuake_position = 1 " 1 = Vertical, 0 = Horizontal
 " }
 
+Plug 'edkolev/tmuxline.vim'
+
 tnoremap <C-w> <C-\><C-n><C-w>
 set splitright
 
