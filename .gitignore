@@ -1,2 +1,4 @@
 /.config/nvim/plugged/*
 /.config/nvim/autoload
+/.config/nvim/.netrwhist
+/.config/nvim/pack/*

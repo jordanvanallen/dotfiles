@@ -16,6 +16,10 @@ set nobackup
 set noswapfile
 set autoindent
 
+" Sensible autocomplete window movement
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
 " Remove toolbar/scrollbars for gvim
 set guioptions=m
 
@@ -300,9 +304,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " {
   let g:deoplete#enable_at_startup = 1
 " }
-
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " ===========================
 " Autopairing
