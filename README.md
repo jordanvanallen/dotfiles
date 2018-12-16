@@ -39,7 +39,7 @@
     <li>amethyst_tools</li>
     <li>racer</li>
   </ul>
-  <li>rustup component add rls-preview rust-analysis rust-src</li>
+  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li>
 <ul>
 
 * [Solargraph](https://github.com/castwide/solargraph)
