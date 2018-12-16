@@ -1,3 +1,6 @@
+### Operating System
+* [Manjaro Linux](https://manjaro.org/)
+
 ### Dependencies
 
 <code>sudo pacman -Syu \\
@@ -19,13 +22,13 @@
   xcape</code>
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+
 * [Z (Jump Around)](https://github.com/rupa/z)
+
 * [Oh My ZSH]()
-<ul>
-  <li>Powerlevel9k Theme</li>
-  <li>Pathced Powerline Font (Hack)</li>
-</ul>
 * [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+* [Powerlevel9k (ZSH Theme)](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
+
 * [Rust](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 <ul>
   <li>cargo install</li>
