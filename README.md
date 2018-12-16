@@ -1,21 +1,21 @@
 ### Dependencies
 
-<code>sudo pacman -Syu \
-  i3-gaps \
-  zsh \
-  kitty \
-  tmux \
-  nvim \
-  rofi \
-  compton \
-  ranger \
-  pulseaudio \
-  mutt \
-  mps-youtube \
-  ruby \
-  rbenv \
-  feh \
-  python-pywal \
+<code>sudo pacman -Syu \\
+  i3-gaps \\
+  zsh \\
+  kitty \\
+  tmux \\
+  nvim \\
+  rofi \\
+  compton \\
+  ranger \\
+  pulseaudio \\
+  mutt \\
+  mps-youtube \\
+  ruby \\
+  rbenv \\
+  feh \\
+  python-pywal \\
   xcape</code>
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
