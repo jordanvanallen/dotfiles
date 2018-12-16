@@ -4,7 +4,7 @@
 ### Dependencies
 
 <code>sudo pacman -Syu \\
-  i3-gaps \\
+  \ti3-gaps \\
   zsh \\
   kitty \\
   tmux \\
