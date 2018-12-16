@@ -198,7 +198,7 @@ Plug 'gu-fan/riv.vim'
 Plug 'fisadev/FixedTaskList.vim'
 
 " ===========================
-" Linting
+" Linting / Language Server
 " ===========================
 
 Plug 'w0rp/ale'
@@ -208,7 +208,7 @@ Plug 'w0rp/ale'
 
   " Linting
   let g:ale_linters = {
-  \ 'ruby': ['ruby', 'brakeman', 'reek'],
+  \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
   \ }
 
   " Keybinds
@@ -219,6 +219,7 @@ Plug 'w0rp/ale'
 " Testing
 " ===========================
 
+Plug 'prabirshrestha/async.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'janko-m/vim-test'
 " {
@@ -309,10 +310,7 @@ Plug 'easymotion/vim-easymotion'
 " Autocompletion
 " ===========================
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" {
-  let g:deoplete#enable_at_startup = 1
-" }
+" See ALE
 
 " ===========================
 " Autopairing
