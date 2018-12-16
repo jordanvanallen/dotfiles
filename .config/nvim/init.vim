@@ -95,6 +95,8 @@ Plug 'Lenovsky/nuake'
   let g:nuake_position = 1 " 1 = Vertical, 0 = Horizontal
 " }
 
+Plug 'edkolev/tmuxline.vim'
+
 tnoremap <C-w> <C-\><C-n><C-w>
 set splitright
 
@@ -332,7 +334,11 @@ Plug 'tpope/vim-fugitive'
   nnoremap <silent> <Leader>fR :Gmove<CR>
   nnoremap <silent> <Leader>gl :Glog<CR>
   nnoremap <silent> <Leader>gr :Gread<CR>
-  nnoremap <silent> <Leader>G :Git<Leader>
+" }
+
+Plug 'jreybert/vimagit'
+" {
+  nnoremap <silent> <Leader>G :Magit<CR>
 " }
 
 " ===========================
@@ -340,6 +346,13 @@ Plug 'tpope/vim-fugitive'
 " ===========================
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" {
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = ''
+  let g:airline_theme = 'violet'
+" }
 Plug 'Yggdroot/indentLine'
 
 " Icons
