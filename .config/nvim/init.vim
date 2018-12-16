@@ -20,6 +20,9 @@ set autoindent
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
+" Clipboard
+set clipboard=unnamedplus
+
 " Remove toolbar/scrollbars for gvim
 set guioptions=m
 
