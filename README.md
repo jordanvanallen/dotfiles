@@ -37,10 +37,5 @@
     <li>ripgrep</li>
     <li>amethyst_tools</li>
   </ul>
-  <li>rustup component add</li>
-  <ul>
-    <li>rls-preview</li>
-    <li>rust-analysis</li>
-    <li>rust-src</li>
-  </ul>
+  <li>rustup component add rls-preview rust-analysis rust-src</li>
 <ul>
