@@ -1,7 +1,6 @@
 ### Dependencies
 
-<code>
-sudo pacman -Syu \
+<code>sudo pacman -Syu \
   i3-gaps \
   zsh \
   kitty \
@@ -17,8 +16,7 @@ sudo pacman -Syu \
   rbenv \
   feh \
   python-pywal \
-  xcape
-</code>
+  xcape</code>
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 * [Z (Jump Around)](https://github.com/rupa/z)
