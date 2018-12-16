@@ -22,17 +22,25 @@ sudo pacman -Syu \
 </code>
 
 * Z (Jump Around)
-* Oh My ZSH
-  > Powerlevel9k Theme
-  > Pathced Powerline Font (Hack)
+Oh My ZSH
+<ul>
+  <li>Powerlevel9k Theme</li>
+  <li>Pathced Powerline Font (Hack)</li>
+</ul>
 * zsh-syntax-highlighting
 * Rust (Rustup)
-  > cargo install
-    > exa
-    > ripgrep
-    > amethyst_tools
-  > rustup component add
-    > rls-preview
-    > rust-analysis
-    > rust-src
+<ul>
+  <li>cargo install</li>
+  <ul>
+    <li>exa</li>
+    <li>ripgrep</li>
+    <li>amethyst_tools</li>
+  </ul>
+  <li>rustup component add</li>
+  <ul>
+    <li>rls-preview</li>
+    <li>rust-analysis</li>
+    <li>rust-src</li>
+  </ul>
+<ul>
 * Rbenv (Ruby version manager)
