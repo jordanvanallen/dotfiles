@@ -32,13 +32,7 @@
 * [Powerlevel9k (ZSH Theme)](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
 * [Rust](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 <ul>
-  <li>cargo install</li>
-  <ul>
-    <li>exa</li>
-    <li>ripgrep</li>
-    <li>amethyst_tools</li>
-    <li>racer</li>
-  </ul>
+  <li><code>cargo install exa ripgrep amethyst_tools racer</code></li>
   <li><code>rustup component add rls-preview rust-analysis rust-src</code></li>
 <ul>
 
