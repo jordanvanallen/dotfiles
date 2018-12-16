@@ -203,9 +203,16 @@ Plug 'fisadev/FixedTaskList.vim'
 
 Plug 'w0rp/ale'
 " {
+  let g:ale_completion_enabled = 1
+
+
+  " Linting
   let g:ale_linters = {
   \ 'ruby': ['ruby', 'brakeman', 'reek'],
   \ }
+
+  " Keybinds
+  nnoremap <silent> <C-]> :ALEGoToDefinition<CR>
 " }
 
 " ===========================
@@ -352,6 +359,9 @@ Plug 'vim-airline/vim-airline-themes'
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = ''
   let g:airline_theme = 'violet'
+
+  " Display ALE errors on status line
+  let g:airline#extensions#ale#enabled = 1
 " }
 Plug 'Yggdroot/indentLine'
 
