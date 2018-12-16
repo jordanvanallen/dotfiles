@@ -30,11 +30,9 @@
 * [Oh My ZSH]()
 * [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 * [Powerlevel9k (ZSH Theme)](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
-* [Rust](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-<ul>
+* [Rust](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)<ul>
   <li><code>cargo install exa ripgrep amethyst_tools racer</code></li>
-  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li>
-<ul>
+  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li><ul>
 
 
 * [Solargraph](https://github.com/castwide/solargraph)
