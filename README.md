@@ -36,6 +36,7 @@
   <li><code>rustup component add rls-preview rust-analysis rust-src</code></li>
 <ul>
 
+
 * [Solargraph](https://github.com/castwide/solargraph)
 <code>gem install solargraph</code>
 
