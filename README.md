@@ -20,6 +20,7 @@
   rbenv \\
   feh \\
   python-pywal \\
+  npm \\
   xcape</code>
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
@@ -42,3 +43,8 @@
 <ul>
 
 * [Solargraph](https://github.com/castwide/solargraph)
+<code>gem install solargraph</code>
+
+<code>gem install neovim
+npm install neovim vtop tldr
+pip install neovim</code>
