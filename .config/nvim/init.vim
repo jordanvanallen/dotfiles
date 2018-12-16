@@ -203,23 +203,116 @@ Plug 'fisadev/FixedTaskList.vim'
 
 Plug 'w0rp/ale'
 " {
-  let g:ale_completion_enabled = 1
-
-
   " Linting
   let g:ale_linters = {
   \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
   \ }
+" }
+
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+Plug 'wellle/tmux-complete.vim'
+Plug 'keremc/asyncomplete-racer.vim'
+Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
+if executable('ctags')
+  Plug 'prabirshrestha/asyncomplete-tags.vim'
+  Plug 'ludovicchabant/vim-gutentags'
+endif
+" {
+  " Server Registration
+  "
+  " RUBY
+  " `gem install solargraph`
+  if executable('solargraph')
+    " gem install solargraph
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'solargraph',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+        \ 'initialization_options': {"diagnostics": "true"},
+        \ 'whitelist': ['ruby'],
+        \ })
+  endif
+
+  "RUST
+  if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
+        \ 'whitelist': ['rust'],
+        \ })
+  endif
+
+  " BUFFERS
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+
+  " FILES
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+  " TMUX
+  let g:tmuxcomplete#asyncomplete_source_options = {
+            \ 'name':      'tmuxcomplete',
+            \ 'whitelist': ['*'],
+            \ 'config': {
+            \     'splitmode':      'words',
+            \     'filter_prefix':   1,
+            \     'show_incomplete': 1,
+            \     'sort_candidates': 0,
+            \     'scrollback':      0,
+            \     'truncate':        0
+            \     }
+            \ }
+
+  " RACER (RUST)
+  " `cargo install racer`
+  autocmd User asyncomplete_setup call asyncomplete#register_source(
+    \ asyncomplete#sources#racer#get_source_options())
+
+  " SYNTAX
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
+      \ 'name': 'necosyntax',
+      \ 'whitelist': ['*'],
+      \ 'completor': function('asyncomplete#sources#necosyntax#completor'),
+      \ }))
+
+  " TAGS
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
+      \ 'name': 'tags',
+      \ 'whitelist': ['c'],
+      \ 'completor': function('asyncomplete#sources#tags#completor'),
+      \ 'config': {
+      \    'max_file_size': 50000000,
+      \  },
+      \ }))
 
   " Keybinds
-  nnoremap <silent> <C-]> :ALEGoToDefinition<CR>
+  imap <C-Space> <Plug>(asyncomplete_force_refresh)
+
+  " Settings
+  let g:asyncomplete_smart_completion = 1
+  let g:asyncomplete_auto_popup = 1
+  set completeopt+=preview
+  autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " }
 
 " ===========================
 " Testing
 " ===========================
 
-Plug 'prabirshrestha/async.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'janko-m/vim-test'
 " {
@@ -384,4 +477,3 @@ set termguicolors
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
-

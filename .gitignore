@@ -2,3 +2,4 @@
 /.config/nvim/autoload
 /.config/nvim/.netrwhist
 /.config/nvim/pack/*
+tags
