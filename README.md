@@ -9,6 +9,7 @@
   kitty \\
   tmux \\
   nvim \\
+  ctags \\
   rofi \\
   compton \\
   ranger \\
@@ -28,7 +29,6 @@
 * [Oh My ZSH]()
 * [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 * [Powerlevel9k (ZSH Theme)](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
-
 * [Rust](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 <ul>
   <li>cargo install</li>
@@ -36,6 +36,9 @@
     <li>exa</li>
     <li>ripgrep</li>
     <li>amethyst_tools</li>
+    <li>racer</li>
   </ul>
   <li>rustup component add rls-preview rust-analysis rust-src</li>
 <ul>
+
+* [Solargraph](https://github.com/castwide/solargraph)

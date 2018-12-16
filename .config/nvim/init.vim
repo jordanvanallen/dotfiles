@@ -183,8 +183,6 @@ autocmd FileType *.py
     \ setlocal autoindent
     \ setlocal fileformat=unix
 
-nnoremap <buffer> <Leader>p :w<CR>:!clear;python3 %<CR>
-
 " ===========================
 " Misc. Files
 " ===========================
@@ -366,7 +364,7 @@ Plug 'junegunn/fzf.vim'
   \   <bang>0)
 
   nmap ; :Buffers<CR>
-  nnoremap <C-F> :Files<CR>
+  nnoremap ,f :Files<CR>
 
   set tags=./tags,tags;$home
   nnoremap <silent> <Leader>gt :!ctags -R<CR>
@@ -407,7 +405,7 @@ Plug 'easymotion/vim-easymotion'
 " Autocompletion
 " ===========================
 
-" See ALE
+" See Language Server (Asyncomplete)
 
 " ===========================
 " Autopairing
@@ -424,23 +422,9 @@ Plug 'Raimondi/delimitMate'
 " Git
 " ===========================
 
-Plug 'tpope/vim-fugitive'
-" {
-  nnoremap <silent> <Leader>gs :Gwrite<CR>
-  nnoremap <silent> <Leader>gd :Gdiff<CR>
-  nnoremap <silent> <Leader>gp :diffput<CR>
-  nnoremap <silent> <Leader>gb :Gblame<CR>
-  nnoremap <silent> <Leader>gc :Gcommit<CR>
-  nnoremap <silent> <Leader>fD :Gdelete<CR>
-  nnoremap <silent> <Leader>gm :Gmove<CR>
-  nnoremap <silent> <Leader>fR :Gmove<CR>
-  nnoremap <silent> <Leader>gl :Glog<CR>
-  nnoremap <silent> <Leader>gr :Gread<CR>
-" }
-
 Plug 'jreybert/vimagit'
 " {
-  nnoremap <silent> <Leader>G :Magit<CR>
+  nnoremap <silent> ,g :Magit<CR>
 " }
 
 " ===========================
