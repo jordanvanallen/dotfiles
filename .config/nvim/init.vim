@@ -127,6 +127,9 @@ nnoremap <silent> <Leader>rv :Eview<CR>
 nnoremap <silent> <Leader>a :A<CR>
 nnoremap <silent> <Leader>A :vsplit<CR><C-W>l :A<CR>
 
+nnoremap <silent> ,b obinding.pry<ESC>
+nnoremap <silent> ,d obinding.pry<ESC>
+
 " ===========================
 " HTML / CSS
 " ===========================
