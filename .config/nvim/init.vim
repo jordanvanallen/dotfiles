@@ -133,6 +133,7 @@ nnoremap <silent> ,b obinding.pry<ESC>
 " HTML / CSS
 " ===========================
 
+Plug 'othree/html5.vim', { 'for': ['eruby', 'html'] }
 Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
 " {
   let g:closetag_filenames = '*.html,*.html.erb'
@@ -144,6 +145,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 " Rust
 " ===========================
 
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " {
   let g:racer_cmd = "~/.cargo/bin"
@@ -202,7 +204,6 @@ Plug 'fisadev/FixedTaskList.vim'
 " Linting / Language Server
 " ===========================
 
-Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 " {
   " Linting
