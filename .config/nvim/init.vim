@@ -204,6 +204,7 @@ Plug 'fisadev/FixedTaskList.vim'
 " Linting / Language Server
 " ===========================
 
+Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 " {
   " Linting
