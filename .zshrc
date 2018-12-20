@@ -1,5 +1,6 @@
 # Set monitor
 export MONITOR="DP1"
+export TERM='xterm-kitty'
 
 export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$PATH
 

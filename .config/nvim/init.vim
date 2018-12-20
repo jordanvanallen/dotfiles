@@ -307,7 +307,7 @@ endif
 
   " Settings
   let g:asyncomplete_remove_duplicates = 1
-  let g:asyncomplete_smart_completion = 1
+  " let g:asyncomplete_smart_completion = 1
   let g:asyncomplete_auto_popup = 1
   set completeopt+=preview
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
