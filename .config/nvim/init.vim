@@ -306,7 +306,7 @@ endif
   imap <C-Space> <Plug>(asyncomplete_force_refresh)
 
   " Settings
-  let g:asyncomplete_remove_duplicates = 1
+  " let g:asyncomplete_remove_duplicates = 1
   " let g:asyncomplete_smart_completion = 1
   let g:asyncomplete_auto_popup = 1
   set completeopt+=preview
@@ -341,7 +341,7 @@ Plug 'junegunn/fzf.vim'
   let g:fzf_tags_command = 'ctags -R'
 
   let g:fzf_action = {
-    \ 'ctrl-s': 'split',
+    \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
 
   let g:fzf_colors =
@@ -427,6 +427,14 @@ Plug 'Raimondi/delimitMate'
 Plug 'jreybert/vimagit'
 " {
   nnoremap <silent> ,g :Magit<CR>
+" }
+
+Plug 'tpope/vim-fugitive'
+" {
+  nnoremap <silent> <Leader>gb :Gblame<CR>
+  nnoremap <silent> <Leader>gd :Gdiff<CR>
+  nnoremap <silent> <Leader>fD :Gdelete<CR>
+  nnoremap <silent> <Leader>gl :Glog<CR>
 " }
 
 " ===========================
