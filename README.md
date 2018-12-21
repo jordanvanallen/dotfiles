@@ -16,6 +16,7 @@
   pulseaudio \\
   mutt \\
   mps-youtube \\
+  mpv \\
   ruby \\
   rbenv \\
   feh \\
