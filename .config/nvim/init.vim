@@ -429,6 +429,14 @@ Plug 'jreybert/vimagit'
   nnoremap <silent> ,g :Magit<CR>
 " }
 
+Plug 'tpope/vim-fugitive'
+" {
+  nnoremap <silent> <Leader>gb :Gblame<CR>
+  nnoremap <silent> <Leader>gd :Gdiff<CR>
+  nnoremap <silent> <Leader>fD :Gdelete<CR>
+  nnoremap <silent> <Leader>gl :Glog<CR>
+" }
+
 " ===========================
 " Pretty stuff
 " ===========================
