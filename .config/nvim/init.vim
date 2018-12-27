@@ -307,7 +307,7 @@ endif
 
   " Settings
   let g:asyncomplete_remove_duplicates = 1
-  let g:asyncomplete_smart_completion = 1
+  " let g:asyncomplete_smart_completion = 1
   let g:asyncomplete_auto_popup = 1
   set completeopt+=preview
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -341,7 +341,7 @@ Plug 'junegunn/fzf.vim'
   let g:fzf_tags_command = 'ctags -R'
 
   let g:fzf_action = {
-    \ 'ctrl-s': 'split',
+    \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
 
   let g:fzf_colors =
