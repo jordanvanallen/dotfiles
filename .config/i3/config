@@ -185,8 +185,7 @@ bindsym $mod+shift+x exec betterlockscreen -l dim
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id start-pulseaudio-x11
 
-set $volumestep 5
-bindsym XF86AudioRaiseVolume exec amixer set Master playback $volumestep+
-bindsym XF86AudioLowerVolume exec amixer set Master playback $volumestep-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master playback 5+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master playback 5-
 # bindsym XF86AudioMute exec amixer set Master toggle
 
