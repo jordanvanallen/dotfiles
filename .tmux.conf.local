@@ -289,6 +289,10 @@ bind -n M-l select-pane -R
 bind -n M-k select-pane -U
 bind -n M-j select-pane -D
 
+# Clear screen
+# bind-key -n C-l send-keys -R
+bind -r C-l send-keys -R
+
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
 # unbind C-a
