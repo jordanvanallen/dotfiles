@@ -24,7 +24,7 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 set clipboard=unnamedplus
 
 " Remove toolbar/scrollbars for gvim
-set guioptions=m
+" set guioptions=m
 
 " Trim whitespace on save
 au BufWritePre * :%s/\s\+$//e
@@ -86,18 +86,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Terminal
 " ===========================
 
-Plug 'kassio/neoterm'
-Plug 'Lenovsky/nuake'
-" {
-  " Keybinds
-  nnoremap <silent> <F4> :Nuake<CR>
-  inoremap <silent> <F4> <C-\><C-n>:Nuake<CR>
-  tnoremap <silent> <F4> <C-\><C-n>:Nuake<CR>
-
-  " Settings
-  let g:nuake_position = 1 " 1 = Vertical, 0 = Horizontal
-" }
-
 Plug 'edkolev/tmuxline.vim'
 
 tnoremap <C-w> <C-\><C-n><C-w>
@@ -114,6 +102,7 @@ Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-ragtag'
 
 autocmd FileType ruby setlocal expandtab sw=2 ts=2
+autocmd FileType javascript setlocal expandtab sw=2 ts=2
 autocmd FileType eruby setlocal expandtab sw=2 ts=2
 autocmd FileType html setlocal expandtab sw=4 ts=4
 autocmd FileType yaml setlocal expandtab sw=2 ts=2
