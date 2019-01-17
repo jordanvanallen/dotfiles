@@ -92,6 +92,12 @@ tnoremap <C-w> <C-\><C-n><C-w>
 set splitright
 
 " ===========================
+" Docker
+" ===========================
+
+Plug 'ekalinin/Dockerfile.vim'
+
+" ===========================
 " Ruby on Rails
 " ===========================
 
