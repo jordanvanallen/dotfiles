@@ -131,7 +131,7 @@ alias sourcezsh="source ~/.zshrc"
 
 # Handy
 alias weather='curl wttr.in/43.6404,-79.4238'
-alias yt="mpsyt"
+alias yt="mpv"
 
 alias set_colours='wal -i ~/.background.jpg -a 25 -b 2d2d2c'
 
