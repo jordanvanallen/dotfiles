@@ -466,7 +466,7 @@ call plug#end()
 set t_Co=256
 set background=dark
 colorscheme space-vim-dark
-set termguicolors
+" set termguicolors
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
