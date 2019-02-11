@@ -157,3 +157,6 @@ xcape -e "Control_L=Escape"
 if [ "$TMUX" -eq "" ]; then
   tmux new-session
 fi 2>/dev/null
+if [ -f ~/.fehbg ]; then
+  source ~/.fehbg
+fi

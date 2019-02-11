@@ -90,6 +90,7 @@ Plug 'edkolev/tmuxline.vim'
 
 tnoremap <C-w> <C-\><C-n><C-w>
 set splitright
+autocmd FileType sh setlocal expandtab sw=4 ts=4
 
 " ===========================
 " Docker
