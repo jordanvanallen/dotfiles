@@ -157,7 +157,6 @@ xcape -e "Control_L=Escape"
 if [ "$TMUX" -eq "" ]; then
   tmux new-session
 fi 2>/dev/null
-<<<<<<< HEAD
 
 export PATH=$PATH:/home/sombra/bin
 
@@ -165,8 +164,7 @@ export PATH=$PATH:/home/sombra/bin
 export PATH=$PATH:/opt/BurpSuitePro
 
 source '/home/sombra/lib/azure-cli/az.completion'
-=======
+
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi
->>>>>>> 6eda5f52210d53be59feacb9fe5104474c9dc651
