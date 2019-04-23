@@ -160,3 +160,7 @@ fi 2>/dev/null
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi
+
+export PATH=$PATH:/home/b2/bin
+
+source '/home/b2/lib/azure-cli/az.completion'
