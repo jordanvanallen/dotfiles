@@ -97,6 +97,13 @@ autocmd FileType sh setlocal expandtab sw=4 ts=4
 " ===========================
 
 Plug 'ekalinin/Dockerfile.vim'
+autocmd FileType dockerfile setlocal expandtab sw=2 ts=2
+
+" ===========================
+" Shell (sh/bash)
+" ===========================
+
+autocmd FileType sh setlocal expandtab sw=4 ts=4
 
 " ===========================
 " Ruby on Rails
@@ -208,7 +215,7 @@ Plug 'w0rp/ale'
   \ }
 " }
 
-Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete.vim', { 'branch': 'v2' }
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -303,7 +310,6 @@ endif
 
   " Settings
   let g:asyncomplete_remove_duplicates = 1
-  " let g:asyncomplete_smart_completion = 1
   let g:asyncomplete_auto_popup = 1
   set completeopt+=preview
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
