@@ -4,25 +4,25 @@
 ### Dependencies
 
 <code>sudo pacman -Syu \\</code><br />
-  <code>i3-gaps \\</code>
-  <code>zsh \\</code>
-  <code>kitty \\</code>
-  <code>tmux \\</code>
-  <code>nvim \\</code>
-  <code>ctags \\</code>
-  <code>rofi \\</code>
-  <code>compton \\</code>
-  <code>ranger \\</code>
-  <code>pulseaudio \\</code>
-  <code>mutt \\</code>
-  <code>mps-youtube \\</code>
-  <code>mpv \\</code>
-  <code>ruby \\</code>
-  <code>rbenv \\</code>
-  <code>feh \\</code>
-  <code>python-pywal \\</code>
-  <code>npm \\</code>
-  <code>xcape</code>
+  <code>i3-gaps \\</code><br />
+  <code>zsh \\</code><br />
+  <code>kitty \\</code><br />
+  <code>tmux \\</code><br />
+  <code>nvim \\</code><br />
+  <code>ctags \\</code><br />
+  <code>rofi \\</code><br />
+  <code>compton \\</code><br />
+  <code>ranger \\</code><br />
+  <code>pulseaudio \\</code><br />
+  <code>mutt \\</code><br />
+  <code>mps-youtube \\</code><br />
+  <code>mpv \\</code><br />
+  <code>ruby \\</code><br />
+  <code>rbenv \\</code><br />
+  <code>feh \\</code><br />
+  <code>python-pywal \\</code><br />
+  <code>npm \\</code><br />
+  <code>xcape</code><br />
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 
@@ -39,6 +39,6 @@
 * [Solargraph](https://github.com/castwide/solargraph)
 <code>gem install solargraph</code>
 
-<code>gem install neovim</code>
-<code>npm install neovim vtop tldr</code>
-<code>pip install neovim</code>
+<code>gem install neovim</code><br />
+<code>npm install neovim vtop tldr</code><br />
+<code>pip install neovim</code><br />
