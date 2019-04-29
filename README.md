@@ -31,14 +31,10 @@
 * [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh)
 * [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 * [Powerlevel9k (ZSH Theme)](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
+* [Solargraph](https://github.com/castwide/solargraph) <code>gem install solargraph</code>
 * [Rust](https://rustup.rs/)<ul>
   <li><code>cargo install exa ripgrep amethyst_tools racer</code></li>
-  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li>
-<ul>
-
-
-* [Solargraph](https://github.com/castwide/solargraph)
-<code>gem install solargraph</code>
+  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li> <ul>
 
 <code>gem install neovim</code><br />
 <code>npm install neovim vtop tldr</code><br />
