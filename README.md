@@ -33,7 +33,8 @@
 * [Powerlevel9k (ZSH Theme)](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
 * [Rust](https://rustup.rs/)<ul>
   <li><code>cargo install exa ripgrep amethyst_tools racer</code></li>
-  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li><ul>
+  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li>
+<ul>
 
 
 * [Solargraph](https://github.com/castwide/solargraph)
