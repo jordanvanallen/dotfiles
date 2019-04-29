@@ -34,7 +34,7 @@
 * [Solargraph](https://github.com/castwide/solargraph) <code>gem install solargraph</code>
 * [Rust](https://rustup.rs/)<ul>
   <li><code>cargo install exa ripgrep amethyst_tools racer</code></li>
-  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li> <ul>
+  <li><code>rustup component add rls-preview rust-analysis rust-src</code></li></ul>
 
 <code>gem install neovim</code><br />
 <code>npm install neovim vtop tldr</code><br />
