@@ -3,26 +3,26 @@
 
 ### Dependencies
 
-<code>sudo pacman -Syu \\
-  i3-gaps \\
-  zsh \\
-  kitty \\
-  tmux \\
-  nvim \\
-  ctags \\
-  rofi \\
-  compton \\
-  ranger \\
-  pulseaudio \\
-  mutt \\
-  mps-youtube \\
-  mpv \\
-  ruby \\
-  rbenv \\
-  feh \\
-  python-pywal \\
-  npm \\
-  xcape</code>
+<code>sudo pacman -Syu \\</code>
+  <code>i3-gaps \\</code>
+  <code>zsh \\</code>
+  <code>kitty \\</code>
+  <code>tmux \\</code>
+  <code>nvim \\</code>
+  <code>ctags \\</code>
+  <code>rofi \\</code>
+  <code>compton \\</code>
+  <code>ranger \\</code>
+  <code>pulseaudio \\</code>
+  <code>mutt \\</code>
+  <code>mps-youtube \\</code>
+  <code>mpv \\</code>
+  <code>ruby \\</code>
+  <code>rbenv \\</code>
+  <code>feh \\</code>
+  <code>python-pywal \\</code>
+  <code>npm \\</code>
+  <code>xcape</code>
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 
@@ -39,6 +39,6 @@
 * [Solargraph](https://github.com/castwide/solargraph)
 <code>gem install solargraph</code>
 
-<code>gem install neovim
-npm install neovim vtop tldr
-pip install neovim</code>
+<code>gem install neovim</code>
+<code>npm install neovim vtop tldr</code>
+<code>pip install neovim</code>
