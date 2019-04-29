@@ -3,7 +3,7 @@
 
 ### Dependencies
 
-<code>sudo pacman -Syu \\</code>
+<code>sudo pacman -Syu \\</code>&nbsp;
   <code>i3-gaps \\</code>
   <code>zsh \\</code>
   <code>kitty \\</code>
