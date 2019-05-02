@@ -91,7 +91,6 @@ plugins=(
 
   # Handy
   web-search
-  zsh-syntax-highlighting
 
   # Rust
   rust
@@ -162,8 +161,6 @@ export PATH=$PATH:/home/sombra/bin
 
 # Burp Suite Pro
 export PATH=$PATH:/opt/BurpSuitePro
-
-source '/home/sombra/lib/azure-cli/az.completion'
 
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg

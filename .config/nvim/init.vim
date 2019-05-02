@@ -215,7 +215,7 @@ Plug 'w0rp/ale'
   \ }
 " }
 
-Plug 'prabirshrestha/asyncomplete.vim', { 'branch': 'v2' }
+Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
