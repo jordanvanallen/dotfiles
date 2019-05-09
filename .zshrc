@@ -161,8 +161,10 @@ export PATH=$PATH:/home/sombra/bin
 # Burp Suite Pro
 export PATH=$PATH:/opt/BurpSuitePro
 
-source '/home/sombra/lib/azure-cli/az.completion'
-
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi
+
+export PATH=$PATH:/home/b2/bin
+
+source '/home/b2/lib/azure-cli/az.completion'
