@@ -5,337 +5,147 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
-" ===========================
-" General Settings
-" ===========================
+" =======
+" General
+" =======
 
-let g:mapleader = "\<Space>"
+let g:mapleader = ","
 
+set encoding=utf-8
 set number relativenumber
+
 set nobackup
 set noswapfile
+
 set autoindent
 
-" Sensible autocomplete window movement
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-" Clipboard
-set clipboard=unnamedplus
-
-" Remove toolbar/scrollbars for gvim
-" set guioptions=m
+" Open vimrc file
+nnoremap <Space>fed :e ~/dotfiles/.config/nvim/init.vim<CR>
 
 " Trim whitespace on save
 au BufWritePre * :%s/\s\+$//e
-set encoding=utf-8
 
 " Remove bell
 set noeb vb t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Quickfix window
-augroup vimrc
-  " Don't allow quickfix window to take focus after test run
-  autocmd QuickFixCmdPre * let g:mybufname=bufname('%')
-  autocmd QuickFixCmdPost * botright copen 8 | exec bufwinnr(g:mybufname) . 'wincmd w'
-augroup END
-" Close quickfix window with q
+" Close quickfix window
 autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
 			\   q :cclose<cr>:lclose<cr>
 autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
 			\   bd|
 			\   q | endif
 
-nnoremap <silent> <Leader>q :ccl<CR>
-
-" Kitty Terminal Settings
-" let &t_ut=''
-let &t_8f = "\e[38;2;%lu;%lu;%lum"
-let &t_8b = "\e[48;2;%lu;%lu;%lum"
-
 " Last tab
-nnoremap <silent> <Leader><Tab> :b#<CR>
+nnoremap <silent> <Space><Tab> :b#<CR>
 
-" Splits
-nnoremap <silent> <Leader>w/ :vsplit<CR>
-nnoremap <silent> <Leader>w- :split<CR>
+" Window Splits
+nnoremap <silent> <Space>w/ :vsplit<CR>
+nnoremap <silent> <Space>w- :split<CR>
 
-" Remap window selection to <Leader>0-9
-let i = 1
-while i <= 9
-    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-    let i = i + 1
-endwhile
-
-" Better buffer movement
+" Sensible buffer movement
 map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-" Remove search highlight on enter
-nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
-" Open vimrc file
-nnoremap <Leader>fed :e ~/dotfiles/.config/nvim/init.vim<CR>
-
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/addons')
 
 " ===========================
-" Terminal
+" General
 " ===========================
 
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'terryma/vim-multiple-cursors'
+
+" TMUX Airline integration
 Plug 'edkolev/tmuxline.vim'
 
-tnoremap <C-w> <C-\><C-n><C-w>
-set splitright
-autocmd FileType sh setlocal expandtab sw=4 ts=4
-
-" ===========================
-" Docker
-" ===========================
-
-Plug 'ekalinin/Dockerfile.vim'
-autocmd FileType dockerfile setlocal expandtab sw=2 ts=2
-
-" ===========================
-" Shell (sh/bash)
-" ===========================
-
-autocmd FileType sh setlocal expandtab sw=4 ts=4
-
-" ===========================
-" Ruby on Rails
-" ===========================
-
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-ragtag'
-
-autocmd FileType ruby setlocal expandtab sw=2 ts=2
-autocmd FileType javascript setlocal expandtab sw=2 ts=2
-autocmd FileType eruby setlocal expandtab sw=2 ts=2
-autocmd FileType html setlocal expandtab sw=4 ts=4
-autocmd FileType yaml setlocal expandtab sw=2 ts=2
-
-nnoremap <silent> <Leader>rr :Einitializer<CR>
-nnoremap <silent> <Leader>ra :Eenvironment<CR>
-nnoremap <silent> <Leader>rt :Eintegrationtest<CR>
-nnoremap <silent> <Leader>rc :Econtroller<CR>
-nnoremap <silent> <Leader>rm :Emodel<CR>
-nnoremap <silent> <Leader>rv :Eview<CR>
-nnoremap <silent> <Leader>a :A<CR>
-nnoremap <silent> <Leader>A :vsplit<CR><C-W>l :A<CR>
-
-nnoremap <silent> ,b obinding.pry<ESC>
-
-" ===========================
-" HTML / CSS
-" ===========================
-
-Plug 'othree/html5.vim', { 'for': ['eruby', 'html'] }
-Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
+" Tableize things!
+Plug 'godlygeek/tabular'
 " {
-  let g:closetag_filenames = '*.html,*.html.erb'
-" }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-
-
-" ===========================
-" Rust
-" ===========================
-
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-" {
-  let g:racer_cmd = "~/.cargo/bin"
-  let g:racer_experimental_completer = 1
-" }
-Plug 'dansnow/block.vim', { 'for': 'rust' }
-Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'timonv/vim-cargo', { 'for': 'rust' }
-
-set hidden
-autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
-
-" ===========================
-" C
-" ===========================
-
-Plug 'vim-scripts/c.vim', { 'for': 'c' }
-autocmd FileType c setlocal expandtab sw=4 ts=4
-
-" ===========================
-" Python
-" ===========================
-
-Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
-Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-Plug 'nvie/vim-flake8', { 'for': 'python' }
-
-let python_highlight_all=1
-let g:SimpylFold_docstring_preview = 1
-
-autocmd FileType *.py
-    \ setlocal tabstop=4
-    \ setlocal softtabstop=4
-    \ setlocal shiftwidth=4
-    \ setlocal textwidth=79
-    \ setlocal expandtab
-    \ setlocal autoindent
-    \ setlocal fileformat=unix
-
-" ===========================
-" Misc. Files
-" ===========================
-
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-Plug 'elzr/vim-json', { 'for': 'json'}
-
-" ===========================
-" Notes
-" ===========================
-
-Plug 'gu-fan/riv.vim'
-Plug 'fisadev/FixedTaskList.vim'
-
-" ===========================
-" Linting / Language Server
-" ===========================
-
-Plug 'w0rp/ale'
-" {
-  " Linting
-  let g:ale_linters = {
-  \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
-  \ }
+  vmap t :Tabularize<Space>/
 " }
 
-Plug 'prabirshrestha/asyncomplete.vim', { 'branch': 'v2' }
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
-Plug 'wellle/tmux-complete.vim'
-Plug 'keremc/asyncomplete-racer.vim'
-Plug 'prabirshrestha/asyncomplete-necosyntax.vim'
+" Autocompletion
+Plug 'zxqfl/tabnine-vim'
+
+" Sensible navigation of completion buffers
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+" TODO - Remove me if tabnine works out
+" Plug 'lifepillar/vim-mucomplete'
+" {
+  " set completeopt+=menuone,noselect
+  " set shortmess+=c " Shut off completion messages
+
+
+  " let g:mucomplete#enable_auto_at_startup = 1
+" }
+
+" Linting
+" Plug 'w0rp/ale'
+" " {
+"   let g:ale_linters = {
+"   \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
+"   \ }
+" " }
+
+" Tagging
 if executable('ctags')
-  Plug 'prabirshrestha/asyncomplete-tags.vim'
   Plug 'ludovicchabant/vim-gutentags'
 endif
+
+" Status Bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " {
-  " Server Registration
-  "
-  " RUBY
-  " `gem install solargraph`
-  if executable('solargraph')
-    " gem install solargraph
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'solargraph',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-        \ 'initialization_options': {"diagnostics": "true"},
-        \ 'whitelist': ['ruby'],
-        \ })
-  endif
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = ''
+  let g:airline_theme = 'violet'
 
-  "RUST
-  if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
-        \ 'whitelist': ['rust'],
-        \ })
-  endif
+  " Display ALE errors on status line
+  let g:airline#extensions#ale#enabled = 1
+" }
+Plug 'Yggdroot/indentLine'
 
-  " BUFFERS
-  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-    \ 'name': 'buffer',
-    \ 'whitelist': ['*'],
-    \ 'blacklist': ['go'],
-    \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ }))
+" Colourscheme
+Plug 'liuchengxu/space-vim-dark'
 
-  " FILES
-  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
-    \ 'name': 'file',
-    \ 'whitelist': ['*'],
-    \ 'priority': 10,
-    \ 'completor': function('asyncomplete#sources#file#completor')
-    \ }))
+" Icons
+Plug 'ryanoasis/vim-devicons'
 
-  " TMUX
-  let g:tmuxcomplete#asyncomplete_source_options = {
-            \ 'name':      'tmuxcomplete',
-            \ 'whitelist': ['*'],
-            \ 'config': {
-            \     'splitmode':      'words',
-            \     'filter_prefix':   1,
-            \     'show_incomplete': 1,
-            \     'sort_candidates': 0,
-            \     'scrollback':      0,
-            \     'truncate':        0
-            \     }
-            \ }
-
-  " RACER (RUST)
-  " `cargo install racer`
-  autocmd User asyncomplete_setup call asyncomplete#register_source(
-    \ asyncomplete#sources#racer#get_source_options())
-
-  " SYNTAX
-  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
-      \ 'name': 'necosyntax',
-      \ 'whitelist': ['*'],
-      \ 'completor': function('asyncomplete#sources#necosyntax#completor'),
-      \ }))
-
-  " TAGS
-  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
-      \ 'name': 'tags',
-      \ 'whitelist': ['c'],
-      \ 'completor': function('asyncomplete#sources#tags#completor'),
-      \ 'config': {
-      \    'max_file_size': 50000000,
-      \  },
-      \ }))
-
-  " Keybinds
-  imap <C-Space> <Plug>(asyncomplete_force_refresh)
-
-  " Settings
-  let g:asyncomplete_remove_duplicates = 1
-  let g:asyncomplete_auto_popup = 1
-  set completeopt+=preview
-  autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+" Autopairing
+Plug 'Raimondi/delimitMate'
+" {
+  let delimitMate_expand_cr=1
+  au FileType html let b:delimitMate_autoclose = 0
+  au FileType eruby let b:delimitMate_autoclose = 0
 " }
 
-" ===========================
-" Testing
-" ===========================
-
-Plug 'skywind3000/asyncrun.vim'
-Plug 'janko-m/vim-test'
+" Rename files easily
+Plug 'danro/rename.vim'
 " {
-  let test#strategy = "asyncrun"
-
-  nnoremap <silent> <Leader>T :TestFile<CR>
-  nnoremap <silent> <Leader>tn :TestNearest<CR>
-  nnoremap <silent> <Leader>tT :TestSuite<CR>
-  nnoremap <silent> <Leader>ta :TestSuite<CR>
-  nnoremap <silent> <Leader>tl :TestLast<CR>
-  nnoremap <silent> <Leader>tv :TestVisit<CR>
+  nnoremap <silent> <Leader>fR :Rename<Leader>
 " }
 
-" ===========================
-" Files (Management/Searching)
-" ===========================
+" Fast project text finding
+Plug 'jremmen/vim-ripgrep'
+" {
+  nnoremap <Leader>s :Rg<Leader>
+" }
+Plug 'wsdjeg/FlyGrep.vim'
+" {
+  nnoremap <Leader>S :FlyGrep<CR>
+" }
 
+" Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " {
@@ -368,59 +178,121 @@ Plug 'junegunn/fzf.vim'
   \   <bang>0)
 
   nmap ; :Buffers<CR>
-  nnoremap ,f :Files<CR>
+  nnoremap <Leader>f :Files<CR>
 
   set tags=./tags,tags;$home
   nnoremap <silent> <Leader>gt :!ctags -R<CR>
   nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 " }
-Plug 'wsdjeg/FlyGrep.vim'
-" {
-  nnoremap <Leader>s/ :FlyGrep<CR>
-" }
-Plug 'jremmen/vim-ripgrep'
-" {
-  nnoremap <Leader>/ :Rg<Leader>
-" }
-Plug 'danro/rename.vim'
-" {
-  nnoremap <silent> <Leader>fR :Rename<Leader>
-" }
 
 " ===========================
-" Editing
+" Testing
 " ===========================
 
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
+" Plug 'skywind3000/asyncrun.vim'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'janko-m/vim-test'
 " {
-  vmap t :Tabularize<Leader>/
-" }
-Plug 'easymotion/vim-easymotion'
-" {
-  map <Leader>f <Plug>(easymotion-bd-f)
-  nmap <Leader>f <Plug>(easymotion-overwin-f)
+  let test#strategy = "vtr"
+  nnoremap <silent> <Leader>t :TestFile<CR>
 " }
 
 " ===========================
-" Autocompletion
+" Rust
 " ===========================
 
-" See Language Server (Asyncomplete)
-
-" ===========================
-" Autopairing
-" ===========================
-
-Plug 'Raimondi/delimitMate'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " {
-  let delimitMate_expand_cr=1
-  au FileType html let b:delimitMate_autoclose = 0
-  au FileType eruby let b:delimitMate_autoclose = 0
+  let g:racer_cmd = "~/.cargo/bin"
+  let g:racer_experimental_completer = 1
 " }
+Plug 'dansnow/block.vim', { 'for': 'rust' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'timonv/vim-cargo', { 'for': 'rust' }
+
+set hidden
+autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
+
+" ===========================
+" C
+" ===========================
+
+Plug 'vim-scripts/c.vim', { 'for': 'c' }
+autocmd FileType c setlocal expandtab sw=4 ts=4
+
+" ===========================
+" Ruby on Rails
+" ===========================
+
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-ragtag'
+
+" Markdown for README.md
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+
+" Set ruby standard for spacing
+autocmd FileType ruby setlocal expandtab sw=2 ts=2
+autocmd FileType eruby setlocal expandtab sw=2 ts=2
+autocmd FileType html setlocal expandtab sw=4 ts=4
+autocmd FileType yaml setlocal expandtab sw=2 ts=2
+
+" Swap between test file and implementation
+nnoremap <silent> <Leader>a :A<CR>
+
+" ===========================
+" Python
+" ===========================
+
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+Plug 'nvie/vim-flake8', { 'for': 'python' }
+
+let python_highlight_all=1
+let g:SimpylFold_docstring_preview = 1
+
+autocmd FileType *.py
+    \ setlocal tabstop=4
+    \ setlocal softtabstop=4
+    \ setlocal shiftwidth=4
+    \ setlocal textwidth=79
+    \ setlocal expandtab
+    \ setlocal autoindent
+    \ setlocal fileformat=unix
+
+" ===========================
+" HTML / CSS
+" ===========================
+
+Plug 'othree/html5.vim', { 'for': ['eruby', 'html'] }
+Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
+" {
+  let g:closetag_filenames = '*.html,*.html.erb'
+" }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+
+" ===========================
+" Shell (sh/bash)
+" ===========================
+
+autocmd FileType sh setlocal expandtab sw=4 ts=4
+
+" ===========================
+" Docker
+" ===========================
+
+Plug 'ekalinin/Dockerfile.vim'
+autocmd FileType dockerfile setlocal expandtab sw=2 ts=2
+
+" ===========================
+" Misc. Files
+" ===========================
+
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'elzr/vim-json', { 'for': 'json'}
 
 " ===========================
 " Git
@@ -428,7 +300,7 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'jreybert/vimagit'
 " {
-  nnoremap <silent> ,g :Magit<CR>
+  nnoremap <silent> <Leader>g :Magit<CR>
 " }
 
 Plug 'tpope/vim-fugitive'
@@ -439,41 +311,15 @@ Plug 'tpope/vim-fugitive'
   nnoremap <silent> <Leader>gl :Glog<CR>
 " }
 
-" ===========================
-" Pretty stuff
-" ===========================
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" {
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = ''
-  let g:airline_theme = 'violet'
-
-  " Display ALE errors on status line
-  let g:airline#extensions#ale#enabled = 1
-" }
-Plug 'Yggdroot/indentLine'
-
-" Icons
-Plug 'ryanoasis/vim-devicons'
-
-" Colorschemes
-Plug 'lifepillar/vim-solarized8'
-Plug 'colepeters/spacemacs-theme.vim'
-Plug 'liuchengxu/space-vim-dark'
-Plug 'Badacadabra/vim-archery'
-Plug 'szorfein/darkest-space'
-
-" Initialize plugins
 call plug#end()
 
-" Select colortheme and options
+" Select colourtheme and options
 set t_Co=256
 set background=dark
 colorscheme space-vim-dark
+
 " set termguicolors
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
+

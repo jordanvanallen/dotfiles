@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -119,7 +119,7 @@ alias dd='dd status=progress'
 alias top='vtop'
 alias ls='exa'
 alias la='exa -la'
-alias vi='nvim'
+alias vi='vim'
 alias tmux='tmux -f $HOME/.tmux.conf'
 
 # Configs

@@ -5,23 +5,25 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" ===========================
-" General Settings
-" ===========================
+" =======
+" General
+" =======
 
-let g:mapleader = "\<Space>"
+let g:mapleader = ","
 
+set encoding=utf-8
 set number relativenumber
+
 set nobackup
 set noswapfile
+
 set autoindent
 
-" Remove toolbar/scrollbars for gvim
-set guioptions=m
+" Open vimrc file
+nnoremap <Space>fed :e ~/dotfiles/.vimrc<CR>
 
 " Trim whitespace on save
 au BufWritePre * :%s/\s\+$//e
-set encoding=utf-8
 
 " Remove bell
 set noeb vb t_vb=
@@ -34,83 +36,163 @@ autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
 			\   bd|
 			\   q | endif
 
-" Kitty blackbars drawing fix
-" let &t_ut=''
-
 " Last tab
 nnoremap <silent> <Space><Tab> :b#<CR>
 
-" Splits
+" Window Splits
 nnoremap <silent> <Space>w/ :vsplit<CR>
 nnoremap <silent> <Space>w- :split<CR>
 
-" Remap window selection to <Space>0-9
-let i = 1
-while i <= 9
-    execute 'nnoremap <Space>' . i . ' :' . i . 'wincmd w<CR>'
-    let i = i + 1
-endwhile
-
-" Better buffer movement
+" Sensible buffer movement
 map <C-H> <C-W>h
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-" Remove search highlight on enter
-nnoremap <silent> <CR> :nohlsearch<CR><CR>
-
-" Open vimrc file
-nnoremap <Space>fed :e ~/dotfiles/.vimrc<CR>
-
-" ===========================
-" Terminal
-" ===========================
-
-tnoremap <Esc> <C-\><C-n>
-nnoremap <silent> <Space>' :vs <BAR> terminal<CR>
-set splitright
-
-" Open VTOP
-nnoremap <Space>v :!vtop<CR>
-
 call plug#begin('~/.vim/addons')
 
 " ===========================
-" Ruby on Rails
+" General
 " ===========================
 
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'terryma/vim-multiple-cursors'
 
-autocmd FileType ruby setlocal expandtab sw=2 ts=2
-autocmd FileType eruby setlocal expandtab sw=2 ts=2
-autocmd FileType html setlocal expandtab sw=4 ts=4
-autocmd FileType yaml setlocal expandtab sw=2 ts=2
+" TMUX Airline integration
+Plug 'edkolev/tmuxline.vim'
 
-nnoremap <silent> <Space>rr :Einitializer<CR>
-nnoremap <silent> <Space>ra :Eenvironment<CR>
-nnoremap <silent> <Space>rt :Eintegrationtest<CR>
-nnoremap <silent> <Space>rc :Econtroller<CR>
-nnoremap <silent> <Space>rm :Emodel<CR>
-nnoremap <silent> <Space>rv :Eview<CR>
-nnoremap <silent> <Space>a :A<CR>
-nnoremap <silent> <Space>A :vsplit<CR><C-W>l :A<CR>
-
-" ===========================
-" HTML / CSS
-" ===========================
-
-Plug 'othree/html5.vim', { 'for': ['eruby', 'html'] }
-Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
+" Tableize things!
+Plug 'godlygeek/tabular'
 " {
-  let g:closetag_filenames = '*.html,*.html.erb'
+  vmap t :Tabularize<Space>/
 " }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 
+" Autocompletion
+Plug 'lifepillar/vim-mucomplete'
+" {
+  set completeopt+=menuone,noselect
+  set shortmess+=c " Shut off completion messages
+
+  " Sensible navigation of completion buffers
+  inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+  inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+  let g:mucomplete#enable_auto_at_startup = 1
+" }
+
+" Linting
+Plug 'w0rp/ale'
+" {
+  let g:ale_linters = {
+  \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
+  \ }
+" }
+
+" Tagging
+if executable('ctags')
+  Plug 'ludovicchabant/vim-gutentags'
+endif
+
+" Status Bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" {
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = ''
+  let g:airline_theme = 'violet'
+
+  " Fugitive fix
+  let g:airline#extensions#branch#enabled = 0
+
+  " Display ALE errors on status line
+  let g:airline#extensions#ale#enabled = 1
+" }
+Plug 'Yggdroot/indentLine'
+
+" Colourscheme
+Plug 'liuchengxu/space-vim-dark'
+
+" Icons
+Plug 'ryanoasis/vim-devicons'
+
+" Autopairing
+Plug 'Raimondi/delimitMate'
+" {
+  let delimitMate_expand_cr=1
+  au FileType html let b:delimitMate_autoclose = 0
+  au FileType eruby let b:delimitMate_autoclose = 0
+" }
+
+" Rename files easily
+Plug 'danro/rename.vim'
+" {
+  nnoremap <silent> <Space>fR :Rename<Space>
+" }
+
+" Fast project text finding
+Plug 'jremmen/vim-ripgrep'
+" {
+  nnoremap <Leader>s :Rg<Space>
+" }
+Plug 'wsdjeg/FlyGrep.vim'
+" {
+  nnoremap <Leader>S :FlyGrep<CR>
+" }
+
+" Fuzzy finding
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" {
+  let g:fzf_buffers_jump = 1
+  let g:fzf_tags_command = 'ctags -R'
+
+  let g:fzf_action = {
+    \ 'ctrl-x': 'split',
+    \ 'ctrl-v': 'vsplit' }
+
+  let g:fzf_colors =
+    \ { 'fg':    ['fg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
+
+  " Use Ripgrep
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+  nmap ; :Buffers<CR>
+  nnoremap <Leader>f :Files<CR><Space>
+
+  set tags=./tags,tags;$home
+  nnoremap <silent> <Leader>gt :!ctags -R<CR>
+  nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
+" }
+
+" ===========================
+" Testing
+" ===========================
+
+Plug 'christoomey/vim-tmux-runner'
+Plug 'janko-m/vim-test'
+" {
+  let test#strategy = "vtr"
+  nnoremap <silent> <Leader>t :TestFile<CR>
+" }
 
 " ===========================
 " Rust
@@ -137,6 +219,27 @@ Plug 'vim-scripts/c.vim', { 'for': 'c' }
 autocmd FileType c setlocal expandtab sw=4 ts=4
 
 " ===========================
+" Ruby on Rails
+" ===========================
+
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-ragtag'
+
+" Markdown for README.md
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+
+" Set ruby standard for spacing
+autocmd FileType ruby setlocal expandtab sw=2 ts=2
+autocmd FileType eruby setlocal expandtab sw=2 ts=2
+autocmd FileType html setlocal expandtab sw=4 ts=4
+autocmd FileType yaml setlocal expandtab sw=2 ts=2
+
+" Swap between test file and implementation
+nnoremap <silent> <Leader>a :A<CR>
+
+" ===========================
 " Python
 " ===========================
 
@@ -156,7 +259,29 @@ autocmd FileType *.py
     \ setlocal autoindent
     \ setlocal fileformat=unix
 
-nnoremap <buffer> <Space>p :w<CR>:!clear;python3 %<CR>
+" ===========================
+" HTML / CSS
+" ===========================
+
+Plug 'othree/html5.vim', { 'for': ['eruby', 'html'] }
+Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
+" {
+  let g:closetag_filenames = '*.html,*.html.erb'
+" }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+
+" ===========================
+" Shell (sh/bash)
+" ===========================
+
+autocmd FileType sh setlocal expandtab sw=4 ts=4
+
+" ===========================
+" Docker
+" ===========================
+
+Plug 'ekalinin/Dockerfile.vim'
+autocmd FileType dockerfile setlocal expandtab sw=2 ts=2
 
 " ===========================
 " Misc. Files
@@ -167,170 +292,22 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'elzr/vim-json', { 'for': 'json'}
 
 " ===========================
-" Notes
-" ===========================
-
-Plug 'gu-fan/riv.vim'
-Plug 'fisadev/FixedTaskList.vim'
-
-" ===========================
-" Linting
-" ===========================
-
-Plug 'w0rp/ale'
-" {
-  let g:ale_linters = {
-  \ 'ruby': ['ruby', 'brakeman', 'reek'],
-  \ }
-" }
-
-" ===========================
-" Testing
-" ===========================
-
-Plug 'janko-m/vim-test'
-" {
-  let test#strategy = "vimterminal"
-
-  nnoremap <silent> <Space>T :TestFile<CR>
-  nnoremap <silent> <Space>tn :TestNearest<CR>
-  nnoremap <silent> <Space>tT :TestSuite<CR>
-  nnoremap <silent> <Space>ta :TestSuite<CR>
-  nnoremap <silent> <Space>tl :TestLast<CR>
-  nnoremap <silent> <Space>tv :TestVisit<CR>
-" }
-
-" ===========================
-" Files (Management/Searching)
-" ===========================
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" {
-  let g:fzf_buffers_jump = 1
-  let g:fzf_tags_command = 'ctags -R'
-
-  let g:fzf_action = {
-    \ 'ctrl-s': 'split',
-    \ 'ctrl-v': 'vsplit' }
-
-  let g:fzf_colors =
-    \ { 'fg':    ['fg', 'Normal'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] }
-
-  " Use Ripgrep
-  command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
-  nmap ; :Buffers<CR>
-  nnoremap <C-F> :Files<CR>
-
-  set tags=./tags,tags;$home
-  nnoremap <silent> <Space>gt :!ctags -R<CR>
-  nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
-" }
-Plug 'wsdjeg/FlyGrep.vim'
-" {
-  nnoremap <Space>s/ :FlyGrep<CR>
-" }
-Plug 'jremmen/vim-ripgrep'
-" {
-  nnoremap <Space>/ :Rg<Space>
-" }
-Plug 'tpope/vim-eunuch'
-
-" ===========================
-" Editing
-" ===========================
-
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
-" {
-  vmap t :Tabularize<Space>/
-" }
-Plug 'easymotion/vim-easymotion'
-" {
-  map <Leader>f <Plug>(easymotion-bd-f)
-  nmap <Leader>f <Plug>(easymotion-overwin-f)
-" }
-
-" ===========================
-" Autocompletion
-" ===========================
-
-Plug 'Shougo/deoplete.nvim'
-" {
-  let g:deoplete#enable_at_startup = 1
-" }
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-" ===========================
-" Autopairing
-" ===========================
-
-Plug 'Raimondi/delimitMate'
-" {
-  let delimitMate_expand_cr=1
-  au FileType html let b:delimitMate_autoclose = 0
-  au FileType eruby let b:delimitMate_autoclose = 0
-" }
-
-" ===========================
 " Git
 " ===========================
 
-Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 " {
-  nnoremap <silent> <Space>gs :Gwrite<CR>
-  nnoremap <silent> <Space>gd :Gdiff<CR>
-  nnoremap <silent> <Space>gp :diffput<CR>
-  nnoremap <silent> <Space>gb :Gblame<CR>
-  nnoremap <silent> <Space>gc :Gcommit<CR>
-  nnoremap <silent> <Space>fD :Gdelete<CR>
-  nnoremap <silent> <Space>gm :Gmove<CR>
-  nnoremap <silent> <Space>fR :Gmove<CR>
-  nnoremap <silent> <Space>gl :Glog<CR>
-  nnoremap <silent> <Space>gr :Gread<CR>
-  nnoremap <silent> <Space>G :Git<Space>
+  nnoremap <silent> <Leader>g :Magit<CR>
 " }
 
-" ===========================
-" Pretty stuff
-" ===========================
-
-Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
-
-" Colorschemes
-Plug 'lifepillar/vim-solarized8'
-Plug 'colepeters/spacemacs-theme.vim'
-Plug 'Badacadabra/vim-archery'
-Plug 'szorfein/darkest-space'
-
-" Initialize plugins
 call plug#end()
 
-" Select colortheme and options
+" Select colourtheme and options
 set t_Co=256
 set background=dark
-colorscheme darkest-space
+colorscheme space-vim-dark
+
+" set termguicolors
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
