@@ -29,19 +29,10 @@ au BufWritePre * :%s/\s\+$//e
 set noeb vb t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Close quickfix window
-autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
-			\   q :cclose<cr>:lclose<cr>
-autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
-			\   bd|
-			\   q | endif
-
-" Last tab
-nnoremap <silent> <Space><Tab> :b#<CR>
-
-" Window Splits
+" Windows
 nnoremap <silent> <Space>w/ :vsplit<CR>
 nnoremap <silent> <Space>w- :split<CR>
+nnoremap <silent> <Space><Tab> :b#<CR>
 
 " Sensible buffer movement
 map <C-H> <C-W>h
@@ -55,20 +46,13 @@ call plug#begin('~/.vim/addons')
 " General
 " ===========================
 
+" Make VIM sensible
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-multiple-cursors'
-
-" TMUX Airline integration
-Plug 'edkolev/tmuxline.vim'
-
-" Tableize things!
-Plug 'godlygeek/tabular'
-" {
-  vmap t :Tabularize<Space>/
-" }
+Plug 'Yggdroot/indentLine'
 
 " Autocompletion
 Plug 'lifepillar/vim-mucomplete'
@@ -83,42 +67,6 @@ Plug 'lifepillar/vim-mucomplete'
   let g:mucomplete#enable_auto_at_startup = 1
 " }
 
-" Linting
-Plug 'w0rp/ale'
-" {
-  let g:ale_linters = {
-  \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
-  \ }
-" }
-
-" Tagging
-if executable('ctags')
-  Plug 'ludovicchabant/vim-gutentags'
-endif
-
-" Status Bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" {
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = ''
-  let g:airline_theme = 'violet'
-
-  " Fugitive fix
-  let g:airline#extensions#branch#enabled = 0
-
-  " Display ALE errors on status line
-  let g:airline#extensions#ale#enabled = 1
-" }
-Plug 'Yggdroot/indentLine'
-
-" Colourscheme
-Plug 'liuchengxu/space-vim-dark'
-
-" Icons
-Plug 'ryanoasis/vim-devicons'
-
 " Autopairing
 Plug 'Raimondi/delimitMate'
 " {
@@ -127,20 +75,12 @@ Plug 'Raimondi/delimitMate'
   au FileType eruby let b:delimitMate_autoclose = 0
 " }
 
-" Rename files easily
-Plug 'danro/rename.vim'
+" Linting
+Plug 'w0rp/ale'
 " {
-  nnoremap <silent> <Space>fR :Rename<Space>
-" }
-
-" Fast project text finding
-Plug 'jremmen/vim-ripgrep'
-" {
-  nnoremap <Leader>s :Rg<Space>
-" }
-Plug 'wsdjeg/FlyGrep.vim'
-" {
-  nnoremap <Leader>S :FlyGrep<CR>
+  let g:ale_linters = {
+  \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
+  \ }
 " }
 
 " Fuzzy finding
@@ -181,6 +121,46 @@ Plug 'junegunn/fzf.vim'
   set tags=./tags,tags;$home
   nnoremap <silent> <Leader>gt :!ctags -R<CR>
   nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
+" }
+
+" Status Bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'edkolev/tmuxline.vim'
+" {
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = ''
+  let g:airline_theme = 'violet'
+
+  " Display ALE errors on status line
+  let g:airline#extensions#ale#enabled = 1
+" }
+
+" Fast project text finding
+Plug 'jremmen/vim-ripgrep'
+" {
+  nnoremap <Leader>s :Rg<Space>
+" }
+Plug 'wsdjeg/FlyGrep.vim'
+" {
+  nnoremap <Leader>S :FlyGrep<CR>
+" }
+
+" Colourscheme
+Plug 'liuchengxu/space-vim-dark'
+
+" Tableize things!
+Plug 'godlygeek/tabular'
+" {
+  vmap t :Tabularize<Space>/
+" }
+
+" Rename files easily
+Plug 'danro/rename.vim'
+" {
+  nnoremap <silent> <Space>fR :Rename<Space>
 " }
 
 " ===========================
