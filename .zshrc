@@ -50,7 +50,7 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -86,12 +86,10 @@ plugins=(
   bundler
 
   # Unix Plugins
-  sudo
   tmux
 
   # Handy
   web-search
-  zsh-syntax-highlighting
 
   # Rust
   rust
