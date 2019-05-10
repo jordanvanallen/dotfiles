@@ -168,6 +168,10 @@ Plug 'danro/rename.vim'
 " ===========================
 
 Plug 'christoomey/vim-tmux-runner'
+" {
+  nnoremap <silent> <Leader>c :VtrClearRunner<CR>
+  nnoremap <silent> <Leader>A :VtrAttachToPane<CR>
+" }
 Plug 'janko-m/vim-test'
 " {
   let test#strategy = "vtr"
