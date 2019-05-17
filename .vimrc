@@ -75,13 +75,13 @@ Plug 'Raimondi/delimitMate'
   au FileType eruby let b:delimitMate_autoclose = 0
 " }
 
-" Linting
-Plug 'w0rp/ale'
-" {
-  let g:ale_linters = {
-  \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
-  \ }
-" }
+" " Linting
+" Plug 'w0rp/ale'
+" " {
+"   let g:ale_linters = {
+"   \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
+"   \ }
+" " }
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -168,6 +168,10 @@ Plug 'danro/rename.vim'
 " ===========================
 
 Plug 'christoomey/vim-tmux-runner'
+" {
+  nnoremap <silent> <Leader>A :VtrAttachToPane<CR>
+  nnoremap <silent> <Leader>c :VtrClearRunner<CR>
+" }
 Plug 'janko-m/vim-test'
 " {
   let test#strategy = "vtr"
