@@ -161,10 +161,11 @@ export PATH=$PATH:/home/sombra/bin
 # Burp Suite Pro
 export PATH=$PATH:/opt/BurpSuitePro
 
+# Android Studio
+export PATH=$PATH:/opt/android-studio/bin
+
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi
 
 export PATH=$PATH:/home/b2/bin
-
-source '/home/b2/lib/azure-cli/az.completion'
