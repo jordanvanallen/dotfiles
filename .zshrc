@@ -131,7 +131,11 @@ alias sourcezsh="source ~/.zshrc"
 alias weather='curl wttr.in/43.6404,-79.4238'
 alias yt="mpv"
 
+# Colourscheme
 alias set_colours='wal -i ~/.background.jpg -a 25 -b 2d2d2c'
+
+# Games
+alias runelite="RuneLite &"
 
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
