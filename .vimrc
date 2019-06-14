@@ -9,6 +9,7 @@ endif
 " General
 " ===========================
 
+
 " VIM Sensible
 syntax enable
 filetype plugin indent on
@@ -140,7 +141,8 @@ Plug 'wsdjeg/FlyGrep.vim'
 " }
 
 " Colourscheme
-Plug 'liuchengxu/space-vim-dark'
+" Plug 'liuchengxu/space-vim-dark'
+
 
 " Tableize things!
 Plug 'godlygeek/tabular'
@@ -278,6 +280,10 @@ Plug 'jreybert/vimagit'
 call plug#end()
 
 " Select colourtheme and options
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 set t_Co=256
 set background=dark
 colorscheme space-vim-dark
