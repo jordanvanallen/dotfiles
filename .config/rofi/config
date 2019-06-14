@@ -1,0 +1,11 @@
+rofi.color-enabled: true
+rofi.color-window: #101010, #875faf, #875faf
+rofi.color-normal: #101010, #ffffff, #181818, #875faf, #ffffff
+rofi.color-active: #101010, #875faf, #181818, #875faf, #ffffff
+rofi.color-urgent: #101010, #f3843d, #181818, #875faf, #ffc39c
+rofi.separator-style:solid
+rofi.font:xos4 Hack 13
+rofi.bw: 2
+rofi.width: -80
+rofi.scroll-method: 1
+rofi.fixed-num-lines: false

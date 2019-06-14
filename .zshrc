@@ -2,7 +2,7 @@
 export MONITOR="DP1"
 export TERM='xterm-kitty'
 
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -171,5 +171,3 @@ export PATH=$PATH:/opt/android-studio/bin
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi
-
-export PATH=$PATH:/home/b2/bin

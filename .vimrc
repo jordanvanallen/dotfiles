@@ -9,6 +9,10 @@ endif
 " General
 " ===========================
 
+" VIM Sensible
+syntax enable
+filetype plugin indent on
+
 let g:mapleader = ","
 
 set encoding=utf-8
@@ -68,20 +72,7 @@ Plug 'lifepillar/vim-mucomplete'
 " }
 
 " Autopairing
-Plug 'Raimondi/delimitMate'
-" {
-  let delimitMate_expand_cr=1
-  au FileType html let b:delimitMate_autoclose = 0
-  au FileType eruby let b:delimitMate_autoclose = 0
-" }
-
-" " Linting
-" Plug 'w0rp/ale'
-" " {
-"   let g:ale_linters = {
-"   \ 'ruby': ['ruby', 'brakeman', 'reek', 'solargraph', 'standardrb', 'rufo'],
-"   \ }
-" " }
+Plug 'jiangmiao/auto-pairs'
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
