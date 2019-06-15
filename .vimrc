@@ -9,10 +9,21 @@ endif
 " General
 " ===========================
 
+" Fix slowdowns with Powerline/Airline when switching to and from insert mode
+" https://github.com/vim-airline/vim-airline/issues/421
+" https://medium.com/usevim/powerline-escape-fix-e849fd07aad0
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
 
-" VIM Sensible
 syntax enable
-filetype plugin indent on
+
+set backspace=indent,eol,start
 
 let g:mapleader = ","
 
@@ -22,6 +33,7 @@ set number relativenumber
 set nobackup
 set noswapfile
 
+filetype plugin indent on
 set autoindent
 
 " Open vimrc file
@@ -73,7 +85,7 @@ Plug 'lifepillar/vim-mucomplete'
 " }
 
 " Autopairing
-Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/auto-pairs-gentle'
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -141,8 +153,8 @@ Plug 'wsdjeg/FlyGrep.vim'
 " }
 
 " Colourscheme
-" Plug 'liuchengxu/space-vim-dark'
-
+" Plug 'raphamorim/lucario'
+Plug 'romainl/Apprentice'
 
 " Tableize things!
 Plug 'godlygeek/tabular'
@@ -286,7 +298,7 @@ endif
 
 set t_Co=256
 set background=dark
-colorscheme space-vim-dark
+colorscheme apprentice
 
 " set termguicolors
 hi Normal     ctermbg=NONE guibg=NONE
