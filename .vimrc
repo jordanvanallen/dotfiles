@@ -70,6 +70,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
+Plug 'wellle/targets.vim'
 
 " Autocompletion
 Plug 'lifepillar/vim-mucomplete'
@@ -153,7 +154,6 @@ Plug 'wsdjeg/FlyGrep.vim'
 " }
 
 " Colourscheme
-" Plug 'raphamorim/lucario'
 Plug 'romainl/Apprentice'
 
 " Tableize things!
