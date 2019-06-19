@@ -21,6 +21,9 @@ if ! has('gui_running')
   augroup END
 endif
 
+set lazyredraw
+set regexpengine=1
+
 syntax enable
 
 set backspace=indent,eol,start
@@ -65,12 +68,22 @@ call plug#begin('~/.vim/addons')
 
 " Make VIM sensible
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
 Plug 'wellle/targets.vim'
+
+" Dim all but active code block
+Plug 'junegunn/limelight.vim'
+" {
+  let g:limelight_conceal_ctermfg = 'gray'
+" }
+
+" Distration free writing when needed
+Plug 'junegunn/goyo.vim'
 
 " Autocompletion
 Plug 'lifepillar/vim-mucomplete'
@@ -83,6 +96,14 @@ Plug 'lifepillar/vim-mucomplete'
   inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
   let g:mucomplete#enable_auto_at_startup = 1
+
+  " https://github.com/vim-scripts/SyntaxComplete/blob/192a6c160a4f8968182952dd711e9006e76ae0da/README#L20
+  if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+      \	if &omnifunc == "" |
+      \	  setlocal omnifunc=syntaxcomplete#Complete |
+      \	endif
+  endif
 " }
 
 " Autopairing
@@ -155,7 +176,10 @@ Plug 'wsdjeg/FlyGrep.vim'
 " }
 
 " Colourscheme
-Plug 'romainl/Apprentice'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'sickill/vim-monokai'
+Plug 'chriskempson/base16-vim'
+nnoremap <Leader>C :colorscheme<Space>
 
 " Tableize things!
 Plug 'godlygeek/tabular'
@@ -216,6 +240,12 @@ Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-ragtag'
+
+" ===========================
+" Typescript
+" ===========================
+Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
+Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 
 " Markdown for README.md
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
@@ -298,8 +328,8 @@ if (has("termguicolors"))
 endif
 
 set t_Co=256
-set background=dark
-colorscheme apprentice
+set background=light
+colorscheme base16-unikitty-dark
 
 " set termguicolors
 hi Normal     ctermbg=NONE guibg=NONE
