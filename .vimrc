@@ -176,7 +176,11 @@ Plug 'wsdjeg/FlyGrep.vim'
 " }
 
 " Colourscheme
+Plug 'liuchengxu/space-vim-theme'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'chriskempson/base16-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+nnoremap <Leader>C :colorscheme base16-
 
 " Tableize things!
 Plug 'godlygeek/tabular'
@@ -325,8 +329,8 @@ if (has("termguicolors"))
 endif
 
 set t_Co=256
-set background=light
-colorscheme space-vim-dark
+set background=dark
+colorscheme space_vim_theme
 
 " set termguicolors
 hi Normal     ctermbg=NONE guibg=NONE
