@@ -76,14 +76,11 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
 Plug 'wellle/targets.vim'
 
-" Dim all but active code block
-Plug 'junegunn/limelight.vim'
-" {
-  let g:limelight_conceal_ctermfg = 'gray'
-" }
-
 " Distration free writing when needed
 Plug 'junegunn/goyo.vim'
+" {
+  nnoremap <Leader>G :Goyo<CR>
+" }
 
 " Autocompletion
 Plug 'lifepillar/vim-mucomplete'
