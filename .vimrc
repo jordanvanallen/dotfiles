@@ -130,16 +130,9 @@ Plug 'junegunn/fzf.vim'
     \ 'spinner': ['fg', 'Label'],
     \ 'header':  ['fg', 'Comment'] }
 
-  " Use Ripgrep
-  command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
   nmap ; :Buffers<CR>
   nnoremap <Leader>f :Files<CR><Space>
+  nnoremap <Leader>s :Rg<CR>
 
   set tags=./tags,tags;$home
   nnoremap <silent> <Leader>gt :!ctags -R<CR>
@@ -162,11 +155,6 @@ Plug 'edkolev/tmuxline.vim'
   let g:airline#extensions#ale#enabled = 1
 " }
 
-" Fast project text finding
-Plug 'jremmen/vim-ripgrep'
-" {
-  nnoremap <Leader>s :Rg<Space>
-" }
 Plug 'wsdjeg/FlyGrep.vim'
 " {
   nnoremap <Leader>S :FlyGrep<CR>
