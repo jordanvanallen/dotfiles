@@ -229,12 +229,10 @@ Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-ragtag'
 
 " ===========================
-" Typescript
+" Typescript/Javascript
 " ===========================
+Plug 'ternjs/tern_for_vim', { 'for': ['typescript', 'javascript'] }
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
-
-" Markdown for README.md
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 
 " Set ruby standard for spacing
 autocmd FileType ruby setlocal expandtab sw=2 ts=2
