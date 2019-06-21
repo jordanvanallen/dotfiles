@@ -133,6 +133,8 @@ Plug 'junegunn/fzf.vim'
   nmap ; :Buffers<CR>
   nnoremap <Leader>f :Files<CR><Space>
   nnoremap <Leader>s :Rg<CR>
+  nnoremap <Leader>h :History<CR>
+  nnoremap <Leader>H :History:<CR>
 
   set tags=./tags,tags;$home
   nnoremap <silent> <Leader>gt :!ctags -R<CR>
@@ -177,6 +179,12 @@ Plug 'godlygeek/tabular'
 Plug 'danro/rename.vim'
 " {
   nnoremap <silent> <Space>fR :Rename<Space>
+" }
+
+" Deal with REPL easier
+Plug 'jpalardy/vim-slime'
+" {
+  let g:slime_target = "tmux"
 " }
 
 " ===========================
