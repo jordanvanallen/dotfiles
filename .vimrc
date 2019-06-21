@@ -76,6 +76,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
 Plug 'wellle/targets.vim'
 
+" VIM language pack
+Plug 'sheerun/vim-polyglot'
+
 " Distration free writing when needed
 Plug 'junegunn/goyo.vim'
 " {
@@ -93,14 +96,6 @@ Plug 'lifepillar/vim-mucomplete'
   inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
   let g:mucomplete#enable_auto_at_startup = 1
-
-  " https://github.com/vim-scripts/SyntaxComplete/blob/192a6c160a4f8968182952dd711e9006e76ae0da/README#L20
-  if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-      \	if &omnifunc == "" |
-      \	  setlocal omnifunc=syntaxcomplete#Complete |
-      \	endif
-  endif
 " }
 
 " Autopairing
@@ -206,7 +201,6 @@ Plug 'janko-m/vim-test'
 " Rust
 " ===========================
 
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " {
   let g:racer_cmd = "~/.cargo/bin"
@@ -223,7 +217,6 @@ autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
 " C
 " ===========================
 
-Plug 'vim-scripts/c.vim', { 'for': 'c' }
 autocmd FileType c setlocal expandtab sw=4 ts=4
 
 " ===========================
@@ -238,7 +231,6 @@ Plug 'tpope/vim-ragtag'
 " ===========================
 " Typescript
 " ===========================
-Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 
 " Markdown for README.md
@@ -277,7 +269,6 @@ autocmd FileType *.py
 " HTML / CSS
 " ===========================
 
-Plug 'othree/html5.vim', { 'for': ['eruby', 'html'] }
 Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
 " {
   let g:closetag_filenames = '*.html,*.html.erb'
@@ -294,16 +285,13 @@ autocmd FileType sh setlocal expandtab sw=4 ts=4
 " Docker
 " ===========================
 
-Plug 'ekalinin/Dockerfile.vim'
 autocmd FileType dockerfile setlocal expandtab sw=2 ts=2
 
 " ===========================
 " Misc. Files
 " ===========================
 
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-Plug 'elzr/vim-json', { 'for': 'json'}
 
 " ===========================
 " Git
