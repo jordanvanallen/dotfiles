@@ -139,7 +139,6 @@ Plug 'junegunn/fzf.vim'
   nnoremap <Leader>H :History:<CR>
 
   set tags=./tags,tags;$home
-  nnoremap <silent> <Leader>gt :!ctags -R<CR>
   nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 " }
 
@@ -304,7 +303,7 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 Plug 'jreybert/vimagit'
 " {
-  nnoremap <silent> <Leader>g :Magit<CR>
+  nnoremap <silent> <Leader>g :MagitOnly<CR>
 " }
 
 call plug#end()
