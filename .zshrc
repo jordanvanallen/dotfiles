@@ -118,6 +118,7 @@ alias top='vtop'
 alias ls='exa'
 alias la='exa -la'
 alias vi='vim'
+alias magit='vim -c MagitOnly'
 alias tmux='tmux -f $HOME/.tmux.conf'
 
 # Configs
