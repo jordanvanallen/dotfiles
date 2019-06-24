@@ -83,6 +83,13 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
 " {
   nnoremap <Leader>G :Goyo<CR>
+
+  " Enable relative line numbers in Goyo
+  function! s:goyo_enter()
+    set relativenumber
+  endfunction
+
+  autocmd! User GoyoEnter call <SID>goyo_enter()
 " }
 
 " Autocompletion
