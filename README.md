@@ -9,6 +9,7 @@
   <code>kitty \\</code><br />
   <code>tmux \\</code><br />
   <code>nvim \\</code><br />
+  <code>vim \\</code><br />
   <code>ctags \\</code><br />
   <code>rofi \\</code><br />
   <code>compton \\</code><br />
@@ -21,6 +22,7 @@
   <code>rbenv \\</code><br />
   <code>feh \\</code><br />
   <code>python-pywal \\</code><br />
+  <code>python-greenlet \\</code><br />
   <code>npm \\</code><br />
   <code>xcape</code><br />
 

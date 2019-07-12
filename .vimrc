@@ -93,16 +93,31 @@ Plug 'junegunn/goyo.vim'
 " }
 
 " Autocompletion
-Plug 'lifepillar/vim-mucomplete'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'wokalski/autocomplete-flow', { 'for': 'javascript' }
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+let g:deoplete#enable_at_startup = 1
+
+" Function argument completion
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+let g:neosnippet#enable_completed_snipppet = 1
+
+" Linting
+Plug 'w0rp/ale'
 " {
-  set completeopt+=menuone,noselect
-  set shortmess+=c " Shut off completion messages
+  let g:ale_fixers = {
+    \ 'javascript': ['eslint']
+    \ }
 
-  " Sensible navigation of completion buffers
-  inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-  inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-  let g:mucomplete#enable_auto_at_startup = 1
+  nmap <leader>d <Plug>(ale_fix)
 " }
 
 " Autopairing
@@ -239,6 +254,8 @@ Plug 'tpope/vim-ragtag'
 " ===========================
 Plug 'ternjs/tern_for_vim', { 'for': ['typescript', 'javascript'] }
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
+" npm install -g prettier / yarn global add prettier
+autocmd Filetype javascript set formatprg=prettier\ --stdin
 
 " Set ruby standard for spacing
 autocmd FileType ruby setlocal expandtab sw=2 ts=2
@@ -278,24 +295,6 @@ Plug 'alvan/vim-closetag', { 'for': ['eruby', 'html'] }
   let g:closetag_filenames = '*.html,*.html.erb'
 " }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-
-" ===========================
-" Shell (sh/bash)
-" ===========================
-
-autocmd FileType sh setlocal expandtab sw=4 ts=4
-
-" ===========================
-" Docker
-" ===========================
-
-autocmd FileType dockerfile setlocal expandtab sw=2 ts=2
-
-" ===========================
-" Misc. Files
-" ===========================
-
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 " ===========================
 " Git

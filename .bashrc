@@ -155,5 +155,5 @@ bind -m vi-insert "\C-l":clear-screen
 #eval `dircolors /path/to/dircolorsdb`
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/xache/.sdkman"
-[[ -s "/home/xache/.sdkman/bin/sdkman-init.sh" ]] && source "/home/xache/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
