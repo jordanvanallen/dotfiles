@@ -252,6 +252,7 @@ Plug 'tpope/vim-ragtag'
 " ===========================
 " Typescript/Javascript
 " ===========================
+Plug 'moll/vim-node', { 'for': ['typescript', 'javascript'] }
 Plug 'ternjs/tern_for_vim', { 'for': ['typescript', 'javascript'] }
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 " npm install -g prettier / yarn global add prettier
