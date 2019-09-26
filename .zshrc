@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -115,10 +115,10 @@ export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 # Unix Command Overrides
 alias dd='dd status=progress'
 alias top='vtop'
-alias ls='exa'
-alias la='exa -la'
-alias vi='vim'
-alias magit='vim -c MagitOnly'
+alias ls='exa --icons'
+alias la='exa -la --icons'
+alias vi='nvim'
+alias magit='nvim -c MagitOnly'
 alias tmux='tmux -f $HOME/.tmux.conf'
 
 # Configs
@@ -169,6 +169,11 @@ export PATH=$PATH:/opt/BurpSuitePro
 # Android Studio
 export PATH=$PATH:/opt/android-studio/bin
 
+# Arduino IDE
+export PATH=$PATH:/usr/local/share/arduino-ide
+
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi
+
+nvim -c ":q"
