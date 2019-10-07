@@ -1,55 +1,19 @@
 " ===========================
 " Plugins Settings
 " ===========================
-" TODO sort me nicely!
 
 ""
-" Shougo/denite.nvim
+" mhinz/vim-startify
+"   @ Startup Screen Header
 "
-" call denite#custom#option('default', 'prompt', 'λ')
-" call denite#custom#var('file/rec', 'command', ['fd', '-H', '--full-path'])
-" call denite#custom#var('grep', 'command', ['rg'])
-" call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--smart-case'])
-" call denite#custom#var('grep', 'recursive_opts', [])
-" call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-" call denite#custom#var('grep', 'separator', ['--'])
-" call denite#custom#var('grep', 'final_opts', [])
-
-
-" autocmd FileType denite call s:denite_settings()
-" autocmd FileType denite-filter call s:denite_filter_actions()
-
-" function! s:denite_filter_actions() abort
-" endfunction
-
-" function! s:denite_settings() abort
-"   " Automatically go into buffer filter when denite opens
-"   call denite#call_map('open_filter_buffer')
-"   call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-"   call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-"   nnoremap <silent><buffer><expr> <CR>
-"         \ denite#do_map('do_action')
-"   nnoremap <silent><buffer><expr> <C-v>
-"         \ denite#do_map('do_action', 'vsplit')
-"   nnoremap <silent><buffer><expr> d
-"         \ denite#do_map('do_action', 'delete')
-"   nnoremap <silent><buffer><expr> p
-"         \ denite#do_map('do_action', 'preview')
-"   nnoremap <silent><buffer><expr> <Esc>
-"         \ denite#do_map('quit')
-"   nnoremap <silent><buffer><expr> q
-"         \ denite#do_map('quit')
-"   nnoremap <silent><buffer><expr> i
-"         \ denite#do_map('open_filter_buffer')
-" endfunction
-
-" autocmd FileType denite-filter call s:denite_filter_settings()
-
-" function! s:denite_filter_settings() abort
-"   nmap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
-" endfunction
-
-" hi link deniteMatchedChar Special
+let g:startify_custom_header = [
+      \ '   ███████╗███╗   ██╗ █████╗  ██████╗██╗  ██╗    ██████╗  █████╗ ██╗██████╗ ███████╗██████╗ ███████╗',
+      \ '   ██╔════╝████╗  ██║██╔══██╗██╔════╝██║ ██╔╝    ██╔══██╗██╔══██╗██║██╔══██╗██╔════╝██╔══██╗██╔════╝',
+      \ '   ███████╗██╔██╗ ██║███████║██║     █████╔╝     ██████╔╝███████║██║██║  ██║█████╗  ██████╔╝███████╗',
+      \ '   ╚════██║██║╚██╗██║██╔══██║██║     ██╔═██╗     ██╔══██╗██╔══██║██║██║  ██║██╔══╝  ██╔══██╗╚════██║',
+      \ '   ███████║██║ ╚████║██║  ██║╚██████╗██║  ██╗    ██║  ██║██║  ██║██║██████╔╝███████╗██║  ██║███████║',
+      \ '   ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝'
+      \ ]
 
 ""
 " junegunn/fzf.vim

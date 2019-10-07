@@ -91,6 +91,9 @@ Plug 'janko-m/vim-test'
 " Provide cargo commands
 Plug 'timonv/vim-cargo', { 'for': 'rust' }
 
+" Startup screen
+Plug 'mhinz/vim-startify'
+
 " Colourschemes
 Plug 'liuchengxu/space-vim-theme'
 Plug 'chriskempson/base16-vim'
