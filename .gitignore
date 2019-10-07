@@ -4,3 +4,4 @@
 /.config/nvim/.netrwhist
 /.config/nvim/pack/*
 tags
+/.local/*
