@@ -1,0 +1,2 @@
+# Add Postgres and Python bin to PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin:$HOME/Library/Python/3.7/bin

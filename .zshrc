@@ -1,30 +1,29 @@
-# Set monitor
-export MONITOR="DP1"
-export TERM='xterm-kitty'
-
 export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export NVM_AUTO_USE=true # Needed for zsh-nvm plugin
+export NVM_LAZY_LOAD=true
+
 # FZF
 export FZF_BASE="$HOME/.fzf"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
+# export FZF_DEFAULT_OPTS="-e --hidden --follow --glob \"!.git/*\""
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="spaceship"
-# ZSH_THEME="norm"
-# ZSH_THEME="theunraveler"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="lambda-pure"
 
 # Powerlevel9k Settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_peace_icon dir vcs)
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_DIR_BACKGROUND=182
+POWERLEVEL9K_VCS_BACKGROUND=182
 
 # Powerlevel9k icons
 POWERLEVEL9K_CUSTOM_PEACE_ICON="echo "
@@ -36,8 +35,6 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=182 # Pink
 # POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=97 # Purple
 POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 
-# Import colorscheme from wal
-(cat ~/.cache/wal/sequences &)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -70,6 +67,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+source $ZSH/oh-my-zsh.sh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -79,6 +77,12 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   fzf
+
+  # NodeJS
+  npm
+  zsh-nvm
+
+  zsh-autosuggestions
 
   # Ruby Plugins
   rake
@@ -95,11 +99,10 @@ plugins=(
   rust
 )
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -117,11 +120,11 @@ alias dd='dd status=progress'
 alias top='vtop'
 alias ls='exa --icons'
 alias la='exa -la --icons'
-alias vi='nvim'
-alias magit='nvim -c MagitOnly'
+alias magit='vim -c MagitOnly'
 alias tmux='tmux -f $HOME/.tmux.conf'
-
-# Configs
+alias vi="nvim"
+#
+# Config Aliases
 alias zshconfig="vi ~/dotfiles/.zshrc"
 alias ohmyzshconfig="vi ~/.oh-my-zsh"
 alias viconfig="vi ~/dotfiles/.vimrc"
@@ -135,33 +138,21 @@ alias yt="mpv"
 # Colourscheme
 alias set_colours='wal -i ~/.background.jpg -a 25 -b 2d2d2c'
 
-# Games
-alias runelite="RuneLite &"
-
-# Rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# Kitty Terminal
-autoload -Uz compinit
-compinit
-kitty + complete setup zsh | source /dev/stdin
 
 # Z
 . /usr/local/share/z/z.sh
 
-# Control to escape when tapped
-xcape -e "Control_L=Escape"
+# Rbenv (Ruby Version Manager)
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-# Start TMUX
-if [ "$TMUX" -eq "" ]; then
-  tmux new-session
-fi 2>/dev/null
+# NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
-export PATH=$PATH:/home/sombra/bin
+export PATH=$PATH:$HOME/bin
 
 # Burp Suite Pro
 export PATH=$PATH:/opt/BurpSuitePro
@@ -169,11 +160,15 @@ export PATH=$PATH:/opt/BurpSuitePro
 # Android Studio
 export PATH=$PATH:/opt/android-studio/bin
 
-# Arduino IDE
-export PATH=$PATH:/usr/local/share/arduino-ide
-
-if [ -f ~/.fehbg ]; then
-  source ~/.fehbg
+if [ -f /usr/bin/sw_vers ]; then # Mac
+  source ~/.config/zsh/mac
+else # Linux
+  source ~/.config/zsh/linux
 fi
 
-nvim -c ":q"
+# Start TMUX
+if [ "$TMUX" -eq "" ]; then
+  tmux new-session
+fi 2>/dev/null
+
+vi -c ":q"
