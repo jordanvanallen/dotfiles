@@ -1,5 +1,5 @@
 ### Operating System
-* [Manjaro Linux](https://manjaro.org/)
+* [Arch Linux](https://www.archlinux.org)
 
 ### Dependencies
 
@@ -24,6 +24,7 @@
   <code>python-pywal \\</code><br />
   <code>python-greenlet \\</code><br />
   <code>npm \\</code><br />
+  <code>stow \\</code><br />
   <code>xcape</code><br />
 
 * [Hack Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
@@ -39,5 +40,5 @@
   <li><code>rustup component add rls-preview rust-analysis rust-src</code></li></ul>
 
 <code>gem install neovim</code><br />
-<code>npm install neovim vtop tldr</code><br />
+<code>npm install -g neovim vtop tldr</code><br />
 <code>pip install neovim</code><br />
