@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-repeat'
 
 " Ruby end for blocks
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 
 " Helps with indenting by FileType
 Plug 'tpope/vim-sleuth'
@@ -27,7 +27,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-surround'
 
 " Allow gcc keybind for easy commenting
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary', { 'on': ['<Plug>Commentary', 'Commentary'] }
 
 " Bring in sensible settings such as allowing 'u' keybind for undo
 Plug 'tpope/vim-sensible'
@@ -36,7 +36,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 
 " Git editing for commits and diffs
-Plug 'jreybert/vimagit'
+Plug 'jreybert/vimagit', { 'on': ['<Plug>Magit', '<Plug>MagitOnly', 'MagitOnly', 'Magit'] }
 
 " Auto pairing
 Plug 'Raimondi/delimitMate'
@@ -51,7 +51,7 @@ Plug 'wellle/targets.vim'
 Plug 'prurigro/vim-polyglot-darkcloud'
 
 " Distration free writing when needed
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', { 'on': ['<Plug>Goyo', 'Goyo'] }
 
 " Visual Studio like completion framework
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
@@ -82,7 +82,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 
 " Tableize things!
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', { 'on': ['<Plug>Tabularize', 'Tabularize'] }
 
 " Testing and send tests to TMUX
 Plug 'christoomey/vim-tmux-runner'
