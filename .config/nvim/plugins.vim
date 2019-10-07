@@ -97,6 +97,7 @@ Plug 'mhinz/vim-startify'
 " Colourschemes
 Plug 'liuchengxu/space-vim-theme'
 Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 Plug 'taigacute/gruvbox9'
 
 call plug#end()
