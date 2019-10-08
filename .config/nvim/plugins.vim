@@ -62,7 +62,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Tags
 Plug 'universal-ctags/ctags'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle', '<Plug>TagbarToggle'] }
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

@@ -111,6 +111,12 @@ let g:delimitMate_autoclose = 1
 let g:delimitMate_expand_cr = 1
 
 ""
+" majutsushi/tags
+"   @ Display tags on the fly
+"
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+""
 " scrooloose/nerdtree
 "   @ File explorer
 "

@@ -61,6 +61,12 @@ nnoremap <Leader>H :History:<CR>
 nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 
 ""
+" majutsushi/tags
+"   @ Display tags on the fly
+"
+map <silent> <C-t> :TagbarToggle<CR>
+
+""
 " scrooloose/nerdtree
 "   @ File explorer
 "
