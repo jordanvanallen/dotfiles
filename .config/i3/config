@@ -179,12 +179,8 @@ exec --no-startup-id compton -b
 # Bind for lockscreen
 bindsym $mod+shift+x exec betterlockscreen -l dim
 
-### Volume ###
-#
-# Pulseaudio
-exec --no-startup-id pulseaudio --start
-
+# HHKB audio key mappings
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master playback 5+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master playback 5-
-# bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioMute exec amixer set Master toggle
 
