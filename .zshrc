@@ -43,6 +43,19 @@ function _prompt_purs_precmd() {
 }
 add-zsh-hook precmd _prompt_purs_precmd
 
+# Make Ctrl-z also resume background process
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zleush-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 plugins=(
   fzf
   # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
