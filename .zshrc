@@ -16,24 +16,24 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lambda-pure"
+# ZSH_THEME="lambda-pure"
 
 # Powerlevel9k Settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_peace_icon dir vcs)
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_MODE="nerdfont-complete"
-POWERLEVEL9K_DIR_BACKGROUND=182
-POWERLEVEL9K_VCS_BACKGROUND=182
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_peace_icon dir vcs)
+# POWERLEVEL9K_DISABLE_RPROMPT=true
+# POWERLEVEL9K_MODE="nerdfont-complete"
+# POWERLEVEL9K_DIR_BACKGROUND=182
+# POWERLEVEL9K_VCS_BACKGROUND=182
 
-# Powerlevel9k icons
-POWERLEVEL9K_CUSTOM_PEACE_ICON="echo "
-POWERLEVEL9K_CUSTOM_PEACE_ICON_BACKGROUND=182
-POWERLEVEL9K_CUSTOM_PEACE_ICON_FOREGROUND=015
+# # Powerlevel9k icons
+# POWERLEVEL9K_CUSTOM_PEACE_ICON="echo "
+# POWERLEVEL9K_CUSTOM_PEACE_ICON_BACKGROUND=182
+# POWERLEVEL9K_CUSTOM_PEACE_ICON_FOREGROUND=015
 
-POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
-POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=182 # Pink
-# POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=97 # Purple
-POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
+# POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
+# POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=182 # Pink
+# # POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=97 # Purple
+# POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -68,6 +68,20 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 source $ZSH/oh-my-zsh.sh
+
+function zle-line-init zle-keymap-select {
+  PROMPT=`$HOME/sources/purs/target/release/purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+autoload -Uz add-zsh-hook
+
+function _prompt_purs_precmd() {
+  $HOME/sources/purs/target/release/purs precmd
+}
+add-zsh-hook precmd _prompt_purs_precmd
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*

@@ -67,6 +67,13 @@ nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 map <silent> <C-t> :TagbarToggle<CR>
 
 ""
+" liuchengxu/vista.vim
+"   @ Tag explorer with LSP integration
+"
+nnoremap <silent> <Leader>vv :Vista!!<CR>
+nnoremap <silent> <Leader>vf :Vista finder<CR>
+
+""
 " scrooloose/nerdtree
 "   @ File explorer
 "

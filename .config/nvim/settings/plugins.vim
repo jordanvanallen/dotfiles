@@ -117,6 +117,16 @@ let g:delimitMate_expand_cr = 1
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 ""
+" liuchengxu/vista.vim
+"   @ Tag explorer with LSP integration
+"
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:cist_default_executive = 'ctags'
+let g:vista_Fzf_preview = ['right:35%']
+let g:vista#renderer#enable_icon = 1
+
+
+""
 " scrooloose/nerdtree
 "   @ File explorer
 "
