@@ -27,7 +27,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-surround'
 
 " Allow gcc keybind for easy commenting
-Plug 'tpope/vim-commentary', { 'on': ['<Plug>Commentary', 'Commentary'] }
+Plug 'tpope/vim-commentary'
 
 " Bring in sensible settings such as allowing 'u' keybind for undo
 Plug 'tpope/vim-sensible'
@@ -62,7 +62,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Tags
 Plug 'universal-ctags/ctags'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle', '<Plug>TagbarToggle'] }
+Plug 'liuchengxu/vista.vim', { 'on': ['Vista', 'Vista!!'] }
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
