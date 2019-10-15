@@ -49,6 +49,33 @@ command! -bang -nargs=* Rg
 
 set tags=./tags,tags;$home
 
+" Don't use line numbers in FZF menu
+au FileType fzf set nonu nornu
+
+
+" Make FZF a floating window
+let $FZF_DEFAULT_OPTS='--layout=reverse'
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+
+  let height = &lines - (&lines / 2)
+  let width = float2nr(&columns - (&columns * 2 / 10))
+  let col = float2nr((&columns - width) / 2)
+
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': 1,
+        \ 'col': col,
+        \ 'width': width,
+        \ 'height': height
+        \ }
+
+  call nvim_open_win(buf, v:true, opts)
+endfunction
+
 ""
 " christoomey/vim-tmux-runner
 "   @ Creates a socket between VIM and TMUX for easy test running
