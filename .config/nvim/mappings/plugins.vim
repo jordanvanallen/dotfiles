@@ -52,7 +52,7 @@ nnoremap <silent> <Leader>tv :TestVisit<CR>
 "   @ FZF Fuzzing finding ft. Ripgrep
 "
 nmap ; :Buffers<CR>
-nnoremap <Leader>f :GFiles<CR>
+nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>F :GFiles?<CR>
 nnoremap <Leader>s :Rg<CR>
 nnoremap <Leader>S :Rg <C-r><C-W><CR>
