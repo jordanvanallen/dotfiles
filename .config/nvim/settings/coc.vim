@@ -13,6 +13,9 @@
 "   @ coc-eslint
 "     => ESLint support
 "
+"   @ coc-go
+"     => Golang Support
+"
 "   @ coc-html
 "     => HTML LSP
 "
@@ -52,6 +55,7 @@
 let g:coc_global_extensions = [
   \ 'coc-diagnostic',
   \ 'coc-eslint',
+  \ 'cic-go',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-python',
