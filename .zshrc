@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$PATH
 
 # Oh my ZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -11,6 +11,9 @@ COMPLETION_WAITING_DOTS="true"
 export FZF_BASE="$HOME/.fzf"
 export FZF_DEFAULT_COMMAND="rg --files --hidden"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Go
+export GOPATH="$HOME/.go"
 
 # NVM
 export NVM_AUTO_USE=true

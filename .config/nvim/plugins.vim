@@ -38,6 +38,9 @@ Plug 'tpope/vim-fugitive'
 " Git editing for commits and diffs
 Plug 'jreybert/vimagit', { 'on': ['<Plug>Magit', '<Plug>MagitOnly', 'MagitOnly', 'Magit'] }
 
+" Debugging
+Plug 'sebdah/vim-delve', { 'for': 'go' }
+
 " Auto pairing
 Plug 'Raimondi/delimitMate'
 

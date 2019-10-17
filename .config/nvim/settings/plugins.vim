@@ -137,6 +137,11 @@ let g:prettier#quickfix_auto_focus = 0 " Don't autofocus quickfix window
 "
 let g:delimitMate_autoclose = 1
 let g:delimitMate_expand_cr = 1
+""
+" sebdah/vim-delve
+"   @ Golang Debugger
+"
+let g:delve_backend = 'native'
 
 ""
 " majutsushi/tags

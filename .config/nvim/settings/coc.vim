@@ -55,7 +55,7 @@
 let g:coc_global_extensions = [
   \ 'coc-diagnostic',
   \ 'coc-eslint',
-  \ 'cic-go',
+  \ 'coc-go',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-python',
