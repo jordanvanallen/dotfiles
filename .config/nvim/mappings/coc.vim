@@ -51,18 +51,12 @@ endfunction
 "
 nmap f <Plug>(coc-smartf-forward)
 nmap F <Plug>(coc-smartf-backward)
-nmap ; <Plug>(coc-smartf-repeat)
 
 ""
 " coc-snippets
 "
-imap <C-l> <Plug>(coc-snippets-expand)
-vmap <C-j> <Plug>(coc-snippets-select)
-
-augroup Smartf
-  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
-  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
-augroup end
+inoremap <C-l> <Plug>(coc-snippets-expand)
+vnoremap <C-j> <Plug>(coc-snippets-select)
 
 ""
 " coc-yank
