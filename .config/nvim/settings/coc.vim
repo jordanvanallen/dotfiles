@@ -71,12 +71,6 @@ let g:coc_global_extensions = [
   \ ]
 
 ""
-" coc-snippets
-"
-let g:coc_snippet_next = '<a-j>'
-let g:coc_snippet_prev = '<a-k>'
-
-""
 " coc-smartf
 "
 augroup Smartf

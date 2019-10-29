@@ -56,7 +56,9 @@ nmap F <Plug>(coc-smartf-backward)
 " coc-snippets
 "
 inoremap <C-l> <Plug>(coc-snippets-expand)
-vnoremap <C-j> <Plug>(coc-snippets-select)
+vnoremap <C-j> <Plug>(coc-snippets-expand-jump)
+
+inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 ""
 " coc-yank
