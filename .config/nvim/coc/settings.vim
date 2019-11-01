@@ -69,6 +69,13 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-yank',
   \ ]
+""
+" General COC Settings
+"
+set nocompatible
+set runtimepath^=~/.config/nvim/plugged/coc.nvim
+syntax on
+set updatetime=300
 
 ""
 " coc-smartf
@@ -77,3 +84,5 @@ augroup Smartf
   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
+
+

@@ -77,6 +77,7 @@
 "   \'　　　　　`ｰ--‐ ``^´　　　　　 　 　 |　　　　　 ∨　|／　　　　　　　　　　　　 /　　　　　　　　　 ￣'
 "   \ ]
 
+" Gundam Unicorn
 let g:startify_custom_header = [
   \'　 　 ＼　　 ＼丶　＼',
   \'　　　　 ＼　　 ＼＼　li　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　_.斗',
@@ -251,7 +252,6 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:cist_default_executive = 'ctags'
 let g:vista_Fzf_preview = ['right:35%']
 let g:vista#renderer#enable_icon = 1
-
 
 ""
 " scrooloose/nerdtree
