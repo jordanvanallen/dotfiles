@@ -17,6 +17,9 @@ Plug 'tpope/vim-repeat'
 " Ruby end for blocks
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 
+" Easy rails directory navigations
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+
 " Helps with indenting by FileType
 Plug 'tpope/vim-sleuth'
 
