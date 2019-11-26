@@ -69,12 +69,13 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-yank',
   \ ]
-
 ""
-" coc-snippets
+" General COC Settings
 "
-let g:coc_snippet_next = '<a-j>'
-let g:coc_snippet_prev = '<a-k>'
+set nocompatible
+set runtimepath^=~/.config/nvim/plugged/coc.nvim
+syntax on
+set updatetime=300
 
 ""
 " coc-smartf
@@ -83,3 +84,5 @@ augroup Smartf
   autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
+
+

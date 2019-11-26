@@ -11,16 +11,16 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 ""
 " Jump to definitions, implementations, and references
 "
-nnoremap <silent> <Leader>gd <Plug>(coc-definition)
-nnoremap <silent> <Leader>gt <Plug>(coc-type-definition)
-nnoremap <silent> <Leader>gi <Plug>(coc-implementation)
-nnoremap <silent> <Leader>gf <Plug>(coc-references)
+" nnoremap <silent> <Leader>gd <Plug>(coc-definition)
+" nnoremap <silent> <Leader>gt <Plug>(coc-type-definition)
+" nnoremap <silent> <Leader>gi <Plug>(coc-implementation)
+" nnoremap <silent> <Leader>gf <Plug>(coc-references)
 
 " Alternative mappings to above
-" nnoremap <silent> <Leader>gd :call CocActionAsync('jumpDefinition')<CR>
-" nnoremap <silent> <Leader>gt :call CocActionAsync('jumpTypeDefinition')<CR>
-" nnoremap <silent> <Leader>gi :call CocActionAsync('jumpImplementation')<CR>
-" nnoremap <silent> <Leader>gr :call CocActionAsync('jumpReferences')<CR>
+nnoremap <silent> <Leader>gd :call CocAction('jumpDefinition')<CR>
+nnoremap <silent> <Leader>gt :call CocAction('jumpTypeDefinition')<CR>
+nnoremap <silent> <Leader>gi :call CocAction('jumpImplementation')<CR>
+nnoremap <silent> <Leader>gr :call CocAction('jumpReferences')<CR>
 
 " Diagnostics navigation
 nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -56,7 +56,9 @@ nmap F <Plug>(coc-smartf-backward)
 " coc-snippets
 "
 inoremap <C-l> <Plug>(coc-snippets-expand)
-vnoremap <C-j> <Plug>(coc-snippets-select)
+vnoremap <C-j> <Plug>(coc-snippets-expand-jump)
+
+inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 ""
 " coc-yank
