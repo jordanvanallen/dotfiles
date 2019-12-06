@@ -171,7 +171,7 @@ exec --no-startup-id betterlockscreen
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start redshift to not burn out your retinas
-exec --no-startup-id redshift
+exec --no-startup-id redshift -O 3900
 
 # Compton
 exec --no-startup-id compton -b
