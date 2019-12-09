@@ -9,6 +9,13 @@
 nnoremap <silent> <Leader>gb :Gblame<CR>
 
 ""
+" tpope/vim-rails
+"   @ Easy rails directory navigations
+"
+nnoremap <silent> <Leader>a :A<CR>
+nnoremap <silent> <Leader>r :R<CR>
+
+""
 " jreybert/vimagit
 "   @ Brings up Git Magit window
 "
