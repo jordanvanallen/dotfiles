@@ -171,7 +171,7 @@ exec --no-startup-id betterlockscreen
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start redshift to not burn out your retinas
-exec --no-startup-id redshift -O 3900
+exec --no-startup-id redshift -O 4000
 
 # Compton
 exec --no-startup-id compton -b
@@ -180,7 +180,7 @@ exec --no-startup-id compton -b
 bindsym $mod+Shift+x exec "betterlockscreen -l dim"
 
 # HHKB audio key mappings
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master playback 5+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master playback 5-
-bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec artup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec artup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec -D pulse set Master 1+ toggle
 
