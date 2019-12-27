@@ -83,6 +83,7 @@ alias top='vtop'
 alias ls='exa --icons'
 alias la='exa -la --icons'
 alias magit='vim -c MagitOnly'
+alias guard='guard --no-bundler-warning'
 alias tmux='tmux -f $HOME/.tmux.conf'
 alias vi="nvim"
 

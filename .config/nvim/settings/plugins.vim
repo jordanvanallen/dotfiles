@@ -202,18 +202,19 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 "   @ Tag settings for Universal CTAGS
 "
 set tags=~/.cache/tags/.tags;,.tags
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project', 'Gemfile']
 let g:gutentags_ctags_tagfile = '.tags'
 
 let g:gutentags_modules = ['ctags']
 
 let g:gutentags_cache_dir = expand('~/.cache/tags')
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
-let g:gutentags_ctags_extra_args += ['--exclude=node_modules']
-let g:tagbar_ctags_bin = '/usr/bin/ctags'
+" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+" let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+" let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+" let g:gutentags_ctags_extra_args += ['--exclude=node_modules']
+let g:tagbar_ctags_bin = '/sbin/ctags'
+let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options --recursive'
 
 ""
 " prettier/vim-prettier
@@ -249,8 +250,8 @@ let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 "   @ Tag explorer with LSP integration
 "
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:cist_default_executive = 'ctags'
-let g:vista_Fzf_preview = ['right:35%']
+let g:vista_default_executive = 'ctags'
+let g:vista_fzf_preview = ['right:65%']
 let g:vista#renderer#enable_icon = 1
 
 ""

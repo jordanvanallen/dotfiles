@@ -11,6 +11,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline_theme = 'gruvbox'
+set statusline+=%{gutentags#statusline()}
 
 " Fix slowdowns with Powerline/Airline when switching to and from insert mode
 " https://github.com/vim-airline/vim-airline/issues/421

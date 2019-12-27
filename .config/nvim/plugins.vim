@@ -14,6 +14,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Make VIM sensible
 Plug 'tpope/vim-repeat'
 
+" Org Mode from Emacs
+Plug 'jceb/vim-orgmode'
+
 " Ruby end for blocks
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 
@@ -22,12 +25,13 @@ Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rbenv', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
+Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 
 " Helps with indenting by FileType
 Plug 'tpope/vim-sleuth'
 
 " Prettier formatting
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript'] }
 
 " Allow for S to group in visual mode and then surround text object with brackets, etc.
 Plug 'tpope/vim-surround'

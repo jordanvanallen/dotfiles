@@ -17,10 +17,10 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " nnoremap <silent> <Leader>gf <Plug>(coc-references)
 
 " Alternative mappings to above
-nnoremap <silent> <Leader>gd :call CocAction('jumpDefinition')<CR>
+nnoremap <silent> gd :call CocAction('jumpDefinition')<CR>
+nnoremap <silent> gr :call CocAction('jumpReferences')<CR>
 nnoremap <silent> <Leader>gt :call CocAction('jumpTypeDefinition')<CR>
 nnoremap <silent> <Leader>gi :call CocAction('jumpImplementation')<CR>
-nnoremap <silent> <Leader>gr :call CocAction('jumpReferences')<CR>
 
 " Diagnostics navigation
 nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
