@@ -62,6 +62,9 @@ Plug 'prurigro/vim-polyglot-darkcloud'
 " Distration free writing when needed
 Plug 'junegunn/goyo.vim', { 'on': ['<Plug>Goyo', 'Goyo'] }
 
+" Async Linting
+Plug 'dense-analysis/ale'
+
 " Visual Studio like completion framework
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
@@ -105,9 +108,12 @@ Plug 'mhinz/vim-startify'
 
 " Colourschemes
 Plug 'liuchengxu/space-vim-theme'
-Plug 'chriskempson/base16-vim'
-Plug 'morhetz/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'taigacute/gruvbox9'
+Plug 'morhetz/gruvbox'
+Plug 'dylanaraps/wal.vim'
+Plug 'YorickPeterse/happy_hacking.vim'
+Plug 'cocopon/iceberg.vim'
 
 call plug#end()
 " END OF PLUGINS

@@ -1,8 +1,5 @@
 rofi.color-enabled: true
-rofi.color-window: #101010, #3dd465, #3dd465
-rofi.color-normal: #101010, #ffffff, #181818, #3dd465, #ffffff
-rofi.color-active: #101010, #3dd465, #181818, #3dd465, #ffffff
-rofi.color-urgent: #101010, #f3843d, #181818, #3dd465, #ffc39c
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
 rofi.separator-style:solid
 rofi.font:xos4 Hack 13
 rofi.bw: 2
