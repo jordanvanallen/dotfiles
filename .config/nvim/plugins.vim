@@ -18,7 +18,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 
 " Easy rails directory navigations
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-rbenv', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
 
 " Helps with indenting by FileType
 Plug 'tpope/vim-sleuth'

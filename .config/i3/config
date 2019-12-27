@@ -165,7 +165,7 @@ for_window [class="^.*"] border pixel 0
 
 # Set desktop background
 exec_always --no-startup-id source ~/.fehbg
-exec --no-startup-id betterlockscreen
+# exec --no-startup-id betterlockscreen
 
 # Polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -177,7 +177,7 @@ exec --no-startup-id redshift -O 4000
 #exec --no-startup-id compton -b
 
 # Bind for lockscreen
-bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
+bindsym $mod+Shift+x exec betterlockscreen -l dim
 
 # HHKB audio key mappings
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+

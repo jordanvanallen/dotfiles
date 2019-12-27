@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.emacs.d/bin:$PATH
 
 # Oh my ZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -111,7 +111,7 @@ fi
 # Start TMUX
 if [ "$TMUX" -eq "" ]; then
   tmux new-session
+  # Auto-enable TMUX statusline from nvim
+  vi -c ":q"
 fi 2>/dev/null
 
-# Auto-enable TMUX statusline from nvim
-vi -c ":q"
