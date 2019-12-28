@@ -17,11 +17,15 @@ Plug 'tpope/vim-repeat'
 " Org Mode from Emacs
 Plug 'jceb/vim-orgmode'
 
-" Ruby end for blocks
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
+" Dates made easy
+Plug 'tpope/vim-speeddating'
+
+" See whats changed!
+Plug 'airblade/vim-gitgutter'
 
 " Easy rails directory navigations
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rbenv', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }

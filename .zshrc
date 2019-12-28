@@ -111,8 +111,7 @@ fi
 
 # Start TMUX
 if [ "$TMUX" -eq "" ]; then
-  tmux new-session
+  vi -c ":q" && tmux new-session
   # Auto-enable TMUX statusline from nvim
-  vi -c ":q"
 fi 2>/dev/null
 
