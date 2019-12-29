@@ -26,28 +26,32 @@ rspec_options = {
 }
 
 guard 'rspec', rspec_options do
-  watch(%r{/^spec\/.+_spec\.rb/})
-  watch(%r{/^app\/.+\.rb/})                          { |m| 'spec/concepts' }
-  watch(%r{/^app\/.+\/.+\.rb/})                      { |m| 'spec/concepts' }
-  watch(%r{/^lib\/.+\.rb/})                          { |m| "spec/lib/#{m[1]}_spec.rb" }
-  watch('spec/spec_helper.rb')                       { 'spec' }
-  watch('config/routes.rb')                          { 'spec/concepts' }
-  watch('app/controllers/application_controller.rb') { 'spec/controllers' }
-  watch(%r{^lib/(.+)\.rb$})                          { |m| ['spec/concepts', "spec/lib/#{m[1]}_spec.rb"] }
-  watch('spec/factories.rb')                         { ['spec/concepts', 'spec/models'] }
+  require 'guard/rspec/dsl'
+  dsl = Guard::RSpec::Dsl.new(self)
+  rspec = dsl.rspec
+
+  # Specs
+  watch(rspec.spec_helper) { rspec.spec_dir }
+  watch(rspec.spec_support) { rspec.spec_dir }
+  watch(rspec.spec_files)
+
+  # Ruby files
+  ruby = dsl.ruby
+  dsl.watch_spec_files_for(ruby.lib_files)
+
+  # Rails files
+  rails = dsl.rails(view_extensions: %w(erb haml slim))
+  dsl.watch_spec_files_for(rails.app_files)
+  dsl.watch_spec_files_for(rails.views)
+
+  watch(rails.controllers) do |m|
+    [
+      rspec.spec.call("routing/#{m[1]}_routing"),
+      rspec.spec.call("controllers/#{m[1]}_controller"),
+      rspec.spec.call("acceptance/#{m[1]}")
+    ]
+  end
 end
-
-
-# ctags_bundler_options = {
-#   binary: '~/bin/rtags',
-#   arguments: '-R',
-#   bundler_tags_file: 'tags'
-# }
-
-# guard 'ctags-bundler', ctags_bundler_options do
-#   watch(%r{/^(app|lib|spec)(\/.*)+\.rb$/})
-#   watch('Gemfile.lock')
-# end
 
 yard_options = {
   server: true,
