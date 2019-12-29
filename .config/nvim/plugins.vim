@@ -17,9 +17,6 @@ Plug 'tpope/vim-repeat'
 " Dates made easy
 Plug 'tpope/vim-speeddating'
 
-" See whats changed!
-Plug 'airblade/vim-gitgutter'
-
 " Easy rails directory navigations
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }

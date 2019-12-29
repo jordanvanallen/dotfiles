@@ -13,6 +13,9 @@
 "   @ coc-eslint
 "     => ESLint support
 "
+"   @ coc-git
+"     => Git integration
+"
 "   @ coc-go
 "     => Golang Support
 "
@@ -58,6 +61,7 @@
 let g:coc_global_extensions = [
   \ 'coc-diagnostic',
   \ 'coc-eslint',
+  \ 'coc-git',
   \ 'coc-go',
   \ 'coc-html',
   \ 'coc-json',

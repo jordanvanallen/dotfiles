@@ -11,13 +11,11 @@
 #
 # Parts taken from https://stackoverflow.com/a/14203146/171364 and https://github.com/tmm1/ripper-tags/issues/49
 #
-echo 0
 POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
 key="$1"
 
-echo 1
 case $key in
     -f)
     TAGS_FILE_NAME="$2"
@@ -32,7 +30,6 @@ esac
 done
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
-echo 2
 if [[ $* = *"--append"* ]]; then
   cat ${TAGS_FILE_NAME} \
     | (cat && ripper-tags --ignore-unsupported-options --extra=q -f - ${*/--append}) \
@@ -42,4 +39,3 @@ if [[ $* = *"--append"* ]]; then
 else
   ripper-tags --ignore-unsupported-options --extra=q $*
 fi
-echo 3
