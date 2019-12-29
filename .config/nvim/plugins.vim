@@ -77,7 +77,6 @@ Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Tags
-Plug 'universal-ctags/ctags'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim' ", { 'on': ['Vista', 'Vista!!'] }
 

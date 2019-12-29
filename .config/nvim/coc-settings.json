@@ -1,10 +1,16 @@
 {
   // Solargraph
-  "solargraph.useBundler": true,
+  //"solargraph.useBundler": true,
   "solargraph.completion": true,
   "solargraph.hover": true,
   "solargraph.autoformat": true,
   "solargraph.definitions": true,
   "solargraph.rename": true,
-  "solargraph.references": true
+  "solargraph.references": true,
+  "solargraph.diagnostics": true,
+  "solargraph.transport": "socket",
+
+  // smartf
+  "smartf.timeout": 750,
+  "smartf.wordJump": false
 }

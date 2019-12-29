@@ -27,8 +27,8 @@ rspec_options = {
 
 guard 'rspec', rspec_options do
   watch(%r{/^spec\/.+_spec\.rb/})
-  watch(%r{/^app\/.+\.rb/})                          { |m| "spec/concepts" }
-  watch(%r{/^app\/.+\/.+\.rb/})                      { |m| "spec/concepts" }
+  watch(%r{/^app\/.+\.rb/})                          { |m| 'spec/concepts' }
+  watch(%r{/^app\/.+\/.+\.rb/})                      { |m| 'spec/concepts' }
   watch(%r{/^lib\/.+\.rb/})                          { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')                       { 'spec' }
   watch('config/routes.rb')                          { 'spec/concepts' }
@@ -39,13 +39,13 @@ end
 
 
 ctags_bundler_options = {
-  binary: '~/.rbenv/shims/ripper-tags',
+  binary: '~/bin/rtags',
   arguments: '-R --exclude=vendor',
   bundler_tags_file: 'tags'
 }
 
 guard 'ctags-bundler', ctags_bundler_options do
-  watch(/^(app|lib|spec)\/.*\.rb$/)
+  watch(%r{/^(app|lib|spec)\/.*\.rb$/})
   watch('Gemfile.lock')
 end
 

@@ -37,6 +37,9 @@
 "   @ coc-solargraph
 "     => Ruby LSP
 "
+"   @ coc-syntax
+"     => Syntax list
+"
 "   @ coc-tag
 "     => Tags support
 "
@@ -63,6 +66,7 @@ let g:coc_global_extensions = [
   \ 'coc-smartf',
   \ 'coc-snippets',
   \ 'coc-solargraph',
+  \ 'coc-syntax',
   \ 'coc-tag',
   \ 'coc-tslint-plugin',
   \ 'coc-tsserver',

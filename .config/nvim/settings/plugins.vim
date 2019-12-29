@@ -201,9 +201,11 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 " ludovicchabant/vim-gutentags
 "   @ Tag settings for Universal CTAGS
 "
-set tags=~/.cache/tags/.tags;,.tags
+" set tags=~/.cache/tags/.tags;,.tags
+set tags+=tags
+" set tags+=~/.cache/tags/
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project', 'Gemfile']
-let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_ctags_tagfile = 'tags'
 
 let g:gutentags_modules = ['ctags']
 
@@ -213,8 +215,8 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 " let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 " let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 " let g:gutentags_ctags_extra_args += ['--exclude=node_modules']
-let g:tagbar_ctags_bin = '/sbin/ctags'
-let g:gutentags_ctags_executable_ruby = 'ripper-tags --ignore-unsupported-options --recursive'
+" let g:tagbar_ctags_bin = '/sbin/ctags'
+let g:gutentags_ctags_executable_ruby = 'rtags'
 
 ""
 " prettier/vim-prettier
