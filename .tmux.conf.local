@@ -302,3 +302,4 @@ bind -r C-l send-keys -R
 
 # move status line to top
 #set -g status-position top
+set -s escape-time 0

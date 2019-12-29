@@ -98,13 +98,6 @@ else
   source ~/.config/zsh/linux
 fi
 
-# Vi
-#
-# Easier, more vim-like editor opening
-bindkey -M vicmd "^V" edit-command-line
-export KEYTIMEOUT=1
-
-
 # Start TMUX
 if [ "$TMUX" -eq "" ]; then
   vi -c ":q" && tmux new-session
