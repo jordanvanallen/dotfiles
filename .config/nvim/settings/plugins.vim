@@ -210,13 +210,13 @@ let g:gutentags_ctags_tagfile = 'tags'
 let g:gutentags_modules = ['ctags']
 
 let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_ctags_executable_ruby = 'rtags'
 " let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 " let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 " let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 " let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 " let g:gutentags_ctags_extra_args += ['--exclude=node_modules']
 " let g:tagbar_ctags_bin = '/sbin/ctags'
-let g:gutentags_ctags_executable_ruby = 'rtags'
 
 ""
 " prettier/vim-prettier

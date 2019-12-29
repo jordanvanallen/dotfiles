@@ -38,16 +38,16 @@ guard 'rspec', rspec_options do
 end
 
 
-ctags_bundler_options = {
-  binary: '~/bin/rtags',
-  arguments: '-R --exclude=vendor',
-  bundler_tags_file: 'tags'
-}
+# ctags_bundler_options = {
+#   binary: '~/bin/rtags',
+#   arguments: '-R',
+#   bundler_tags_file: 'tags'
+# }
 
-guard 'ctags-bundler', ctags_bundler_options do
-  watch(%r{/^(app|lib|spec)\/.*\.rb$/})
-  watch('Gemfile.lock')
-end
+# guard 'ctags-bundler', ctags_bundler_options do
+#   watch(%r{/^(app|lib|spec)(\/.*)+\.rb$/})
+#   watch('Gemfile.lock')
+# end
 
 yard_options = {
   server: true,
