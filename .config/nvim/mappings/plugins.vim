@@ -96,4 +96,4 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " mattn/calendar-vim
 "   @ Calendar and diary helper
 "
-map <silent> <Leader>C :Calendar
+map <silent> <Leader>C :Calendar<CR>

@@ -79,7 +79,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Tags
 Plug 'universal-ctags/ctags'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'liuchengxu/vista.vim', { 'on': ['Vista', 'Vista!!'] }
+Plug 'liuchengxu/vista.vim' ", { 'on': ['Vista', 'Vista!!'] }
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
