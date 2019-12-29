@@ -1,0 +1,21 @@
+add_newline = true
+
+[character]
+symbol = "λ"
+
+# [battery]
+# full_symbol = "🔋"
+# charging_symbol = "⚡️"
+# discharging_symbol = " 🔌 "
+
+# [[battery.display]]
+# threshold = 15
+# style = "bold red"
+
+# [[battery.display]]
+# threshold = 35
+# style = "bold yellow"
+
+[cmd_duration]
+min_time = 500
+prefix = "underwent "

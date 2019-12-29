@@ -31,20 +31,8 @@ export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 
 source $ZSH/oh-my-zsh.sh
 
-# Purs ZSH Prompt
-function zle-line-init zle-keymap-select {
-  PROMPT=`$HOME/sources/purs/target/release/purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-autoload -Uz add-zsh-hook
-
-function _prompt_purs_precmd() {
-  $HOME/sources/purs/target/release/purs precmd
-}
-add-zsh-hook precmd _prompt_purs_precmd
+# `cargo install starship`
+eval "$(starship init zsh)"
 
 # Make Ctrl-z also resume background process
 fancy-ctrl-z () {
@@ -60,6 +48,7 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 plugins=(
+  vi-mode
   fzf
   # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
   zsh-autosuggestions
@@ -108,6 +97,13 @@ if [ -f /usr/bin/sw_vers ]; then
 else
   source ~/.config/zsh/linux
 fi
+
+# Vi
+#
+# Easier, more vim-like editor opening
+bindkey -M vicmd "^V" edit-command-line
+export KEYTIMEOUT=1
+
 
 # Start TMUX
 if [ "$TMUX" -eq "" ]; then
