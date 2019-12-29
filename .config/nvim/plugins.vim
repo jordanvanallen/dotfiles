@@ -14,9 +14,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Make VIM sensible
 Plug 'tpope/vim-repeat'
 
-" Org Mode from Emacs
-Plug 'jceb/vim-orgmode', { 'for': 'org' }
-
 " Dates made easy
 Plug 'tpope/vim-speeddating'
 

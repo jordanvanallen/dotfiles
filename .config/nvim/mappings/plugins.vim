@@ -75,7 +75,7 @@ nnoremap <Leader>s :Rg<CR>
 nnoremap <Leader>S :Rg <C-r><C-W><CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>H :History:<CR>
-nnoremap <Leader>C :Colors<CR>
+nnoremap <Leader>0 :Colors<CR>
 
 nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 
@@ -91,3 +91,9 @@ nnoremap <silent> <Leader>vf :Vista finder<CR>
 "   @ File explorer
 "
 map <silent> <C-n> :NERDTreeToggle<CR>
+
+""
+" mattn/calendar-vim
+"   @ Calendar and diary helper
+"
+map <silent> <Leader>C :Calendar
