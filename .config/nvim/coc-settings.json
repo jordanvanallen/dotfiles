@@ -1,0 +1,10 @@
+{
+  // Solargraph
+  "solargraph.useBundler": true,
+  "solargraph.completion": true,
+  "solargraph.hover": true,
+  "solargraph.autoformat": true,
+  "solargraph.definitions": true,
+  "solargraph.rename": true,
+  "solargraph.references": true
+}

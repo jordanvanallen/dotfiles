@@ -85,4 +85,7 @@ augroup Smartf
   autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
 augroup end
 
-
+""
+" coc-json
+"
+autocmd FileType json syntax match Comment +\/\/.\+$+
