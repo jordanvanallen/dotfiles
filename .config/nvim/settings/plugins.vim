@@ -261,3 +261,9 @@ let g:vista#renderer#enable_icon = 1
 let NERDTreeShowHidden = 1   " Show hidden files in explorer
 let g:NERDTreeQuitOnOpen = 1 " Close NERDTree after opening a file
 
+""
+" mattn/calendar-vim
+"   @ Calendar and diary helper
+"
+let g:calendar_filetype = 'org'
+let g:calendar_diary_extension = '.org'

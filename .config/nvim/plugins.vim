@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-repeat'
 
 " Org Mode from Emacs
-Plug 'jceb/vim-orgmode'
+Plug 'jceb/vim-orgmode', { 'for': 'org' }
 
 " Dates made easy
 Plug 'tpope/vim-speeddating'
@@ -100,6 +100,9 @@ Plug 'ryanoasis/vim-devicons'
 
 " Integrate status bar from nvim with TMUX
 Plug 'edkolev/tmuxline.vim'
+
+" Calendar
+Plug 'mattn/calendar-vim'
 
 " Tableize things!
 Plug 'godlygeek/tabular', { 'on': ['<Plug>Tabularize', 'Tabularize'] }
