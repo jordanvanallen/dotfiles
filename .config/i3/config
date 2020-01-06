@@ -182,5 +182,5 @@ bindsym $mod+Shift+x exec betterlockscreen -l dim
 # HHKB audio key mappings
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
-bindsym XF86AudioMute exec -D pulse set Master 1+ toggle
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
 
