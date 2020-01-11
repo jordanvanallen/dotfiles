@@ -178,6 +178,7 @@ endfunction
 "   @ Paired with janko-m/vim-test due to test strategy being `vtr`
 "
 let test#strategy = "vtr"
+let test#ruby#rspec#options = '--format documentation'
 
 ""
 " tpope/vim-surround

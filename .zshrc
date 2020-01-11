@@ -75,6 +75,7 @@ alias magit='vim -c MagitOnly'
 alias guard='guard --no-bundler-warning'
 alias tmux='tmux -f $HOME/.tmux.conf'
 alias vi="nvim"
+alias rspec="bundle exec rspec --format documentation"
 
 # Config Aliases
 alias zshconfig="vi ~/dotfiles/.zshrc"
