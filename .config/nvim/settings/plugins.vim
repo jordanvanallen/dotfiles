@@ -203,7 +203,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 "   @ Tag settings for Universal CTAGS
 "
 " set tags=~/.cache/tags/.tags;,.tags
-set tags+=tags
+set tags+=tags;
 " set tags+=~/.cache/tags/
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project', 'Gemfile']
 let g:gutentags_ctags_tagfile = 'tags'
@@ -211,7 +211,7 @@ let g:gutentags_ctags_tagfile = 'tags'
 let g:gutentags_modules = ['ctags']
 
 let g:gutentags_cache_dir = expand('~/.cache/tags')
-let g:gutentags_ctags_executable_ruby = 'rtags'
+let g:gutentags_ctags_executable_ruby = 'rtags -R --extra=q'
 " let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 " let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 " let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
