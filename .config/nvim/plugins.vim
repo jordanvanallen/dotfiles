@@ -60,6 +60,7 @@ Plug 'wellle/targets.vim'
 
 " VIM language packs
 Plug 'prurigro/vim-polyglot-darkcloud'
+Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 
 " Distration free writing when needed
 Plug 'junegunn/goyo.vim', { 'on': ['<Plug>Goyo', 'Goyo'] }
