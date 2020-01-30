@@ -300,6 +300,8 @@ bind -r C-l send-keys -R
 # set -g prefix C-a
 # bind C-a send-prefix
 
+prefix : set -g mode-mouse off
+
 # move status line to top
 #set -g status-position top
 set -s escape-time 0

@@ -25,6 +25,10 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Crenv (Crystal Version Manager)
+export PATH="$HOME/.crenv/bin:$PATH"
+eval "$(crenv init -)"
+
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
