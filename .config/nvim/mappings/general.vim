@@ -21,6 +21,12 @@ nnoremap <Space>fed :e ~/dotfiles/.config/nvim/init.vim<CR>
 nnoremap <silent> <CR> :noh<CR><CR>
 
 ""
+" Save and quit
+"
+nnoremap <silent> <Space>s :w<CR>
+nnoremap <silent> <Space>q :q<CR>
+
+""
 " NO ARROW KEYS ALLOWED ON THE PLAYGROUND
 "
 noremap <Up> <NOP>
