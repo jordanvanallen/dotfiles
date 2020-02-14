@@ -19,7 +19,7 @@ Plug 'tpope/vim-speeddating'
 
 " Easy rails directory navigations
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby'] }
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby', 'crystal'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-rbenv', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
@@ -112,6 +112,8 @@ Plug 'timonv/vim-cargo', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
 
 " Colourschemes
+Plug 'icymind/NeoSolarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'taigacute/gruvbox9'

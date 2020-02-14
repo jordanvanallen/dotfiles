@@ -11,7 +11,8 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'solarized'
 set statusline+=%{gutentags#statusline()}
 
 " Fix slowdowns with Powerline/Airline when switching to and from insert mode
