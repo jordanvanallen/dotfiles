@@ -2,7 +2,7 @@ configuration {
     modi: "combi,windowcd,run";
     lines: 10;
     columns: 2;
-    font: "sans 13";
+    font: "Fira Code Nerd Font 13";
     bw: 0;
     location: 0;
     padding: 0;

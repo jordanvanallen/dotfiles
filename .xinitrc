@@ -63,5 +63,4 @@ get_session(){
 	echo "dbus-launch ${dbus_args[*]}"
 }
 
-# Use last wal scheme
 exec $(get_session)
