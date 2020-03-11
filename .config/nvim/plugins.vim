@@ -46,9 +46,6 @@ Plug 'tpope/vim-fugitive'
 " Git editing for commits and diffs
 Plug 'jreybert/vimagit', { 'on': ['<Plug>Magit', '<Plug>MagitOnly', 'MagitOnly', 'Magit'] }
 
-" Debugging
-Plug 'sebdah/vim-delve', { 'for': 'go' }
-
 " Auto pairing
 Plug 'Raimondi/delimitMate'
 
@@ -121,6 +118,8 @@ Plug 'morhetz/gruvbox'
 Plug 'dylanaraps/wal.vim'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'romainl/Apprentice', { 'branch': 'fancylines-and-neovim' }
 
 call plug#end()
 " END OF PLUGINS

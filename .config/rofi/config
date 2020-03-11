@@ -1,8 +1,0 @@
-rofi.color-enabled: true
-rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
-rofi.separator-style:solid
-rofi.font:xos4 Hack 13
-rofi.bw: 2
-rofi.width: -80
-rofi.scroll-method: 1
-rofi.fixed-num-lines: false

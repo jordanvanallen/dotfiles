@@ -64,5 +64,4 @@ get_session(){
 }
 
 # Use last wal scheme
-wal -R
 exec $(get_session)
