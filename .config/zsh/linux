@@ -1,6 +1,3 @@
-# Import colorscheme from wal
-(cat ~/.cache/wal/sequences &)
-
 # Control to escape when tapped
 xcape -e "Control_L=Escape"
 
