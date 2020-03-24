@@ -6,3 +6,4 @@
 tags
 /.local/share/**
 /.rbenv
+.config/ranger/plugins/__pycache__/**

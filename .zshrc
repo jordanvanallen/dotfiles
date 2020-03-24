@@ -21,14 +21,6 @@ export NVM_LAZY_LOAD=true
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# Rbenv (Ruby Version Manager)
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Crenv (Crystal Version Manager)
-export PATH="$HOME/.crenv/bin:$PATH"
-eval "$(crenv init -)"
-
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
@@ -108,3 +100,6 @@ if [ "$TMUX" -eq "" ]; then
   vi -c ":q" && tmux new-session
   # Auto-enable TMUX statusline from nvim
 fi 2>/dev/null
+
+# start asdf
+. $HOME/.asdf/asdf.sh
