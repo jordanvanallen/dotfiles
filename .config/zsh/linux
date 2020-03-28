@@ -1,11 +1,6 @@
 # Control to escape when tapped
 xcape -e "Control_L=Escape"
 
-# Kitty Terminal
-autoload -Uz compinit
-compinit
-kitty + complete setup zsh | source /dev/stdin
-
 if [ -f ~/.fehbg ]; then
   source ~/.fehbg
 fi

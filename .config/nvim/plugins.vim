@@ -89,8 +89,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Icons for the status bar
 Plug 'ryanoasis/vim-devicons'
 
-" Integrate status bar from nvim with TMUX
-Plug 'edkolev/tmuxline.vim'
+" TMUX
+Plug 'edkolev/tmuxline.vim' " TMUX Bar uses airline bar
+Plug 'christoomey/vim-tmux-navigator'
 
 " Calendar
 Plug 'mattn/calendar-vim'
