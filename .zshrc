@@ -1,9 +1,10 @@
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.emacs.d/bin:$HOME/.asdf/shims:$PATH
 
 export EDITOR='nvim'
 
 # Oh my ZSH
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 export UPDATE_ZSH_DAYS=7
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 export ZSH_TMUX_AUTOSTART=true
@@ -27,9 +28,6 @@ export GOPATH="$HOME/.go"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 
-# `cargo install starship`
-eval "$(starship init zsh)"
-
 # Z
 . $HOME/sources/z/z.sh
 
@@ -40,19 +38,17 @@ else
 fi
 
 plugins=(
-  fzf
-  # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  tmux
-  asdf
-  fancy-ctrl-z
-  ripgrep
-  fd
+  fzf                       # OhMyZsh
+  zsh-autosuggestions       # Git
+  zsh-syntax-highlighting   # Git
+  tmux                      # OhMyZsh
+  asdf                      # OhMyZsh
+  fancy-ctrl-z              # OhMyZsh
 )
 
-# start asdf
-. $HOME/.asdf/asdf.sh
+# Powerlevel10k Prompt
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Run OhMyZSH and plugins
 autoload -Uz compinit
@@ -61,7 +57,9 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.config/zsh/aliases
 
-# This needs to happen last
 if [ -f /sbin/kitty ]; then
   kitty + complete setup zsh | source /dev/stdin
 fi
+
+# Starting asdf needs to happen last
+. $HOME/.asdf/asdf.sh

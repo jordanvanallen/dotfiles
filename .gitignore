@@ -7,4 +7,6 @@ tags
 /.local/share/**
 /.rbenv
 .config/ranger/plugins/__pycache__/**
-.config/ranger/plugins/__pycache__/*
+.config/coc/**
+.config/configstore/**
+.config/karabiner/automatic_backups/**

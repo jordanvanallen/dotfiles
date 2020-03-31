@@ -17,6 +17,8 @@ alias viconfig="vi ~/dotfiles/.vimrc"
 alias sourcezsh="source ~/.zshrc"
 
 # Handy
-alias weather='curl wttr.in/43.6404,-79.4238'
+alias weather='curl wttr.in'
 alias yt="mpv"
 alias lock="betterlockscreen -l dim"
+alias covid="curl https://trackercli.com"
+alias covid_canada="curl https://trackercli.com/canada"

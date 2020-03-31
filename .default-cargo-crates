@@ -1,0 +1,6 @@
+// Packages added to this file will automatically be
+// installed when asdf installs a new version of rust
+
+ripgrep
+fd-find
+exa
