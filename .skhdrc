@@ -51,7 +51,7 @@ ctrl + cmd - k : yabai -m window south --resize top:0:-20 2> /dev/null || yabai 
 ctrl + cmd - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
 # Toggle window fullscreen zoom
-rcmd + shift - f : yabai -m window --toggle zoom-fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
 
 # Rotate tree
 ralt - r : yabai -m space --rotate 90
