@@ -10,9 +10,6 @@
 "   @ coc-diagnostic
 "     => Floating diagnostic window
 "
-"   @ coc-eslint
-"     => ESLint support
-"
 "   @ coc-git
 "     => Git integration
 "
@@ -24,9 +21,6 @@
 "
 "   @ coc-json
 "     => JSON LSP
-"
-"   @ coc-python
-"     => Python LSP
 "
 "   @ coc-rls
 "     => Rust LSP
@@ -46,12 +40,6 @@
 "   @ coc-tag
 "     => Tags support
 "
-"   @ coc-tslint-plugin
-"     => Typescript/Javascript Linting Aid
-"
-"   @ coc-tsserver
-"     => Typescript/Javascript LSP
-"
 "   @ coc-yaml
 "     => YAML LSP
 "
@@ -60,20 +48,15 @@
 "
 let g:coc_global_extensions = [
   \ 'coc-diagnostic',
-  \ 'coc-eslint',
   \ 'coc-git',
-  \ 'coc-go',
   \ 'coc-html',
   \ 'coc-json',
-  \ 'coc-python',
   \ 'coc-rls',
   \ 'coc-smartf',
   \ 'coc-snippets',
   \ 'coc-solargraph',
   \ 'coc-syntax',
   \ 'coc-tag',
-  \ 'coc-tslint-plugin',
-  \ 'coc-tsserver',
   \ 'coc-yaml',
   \ 'coc-yank',
   \ ]

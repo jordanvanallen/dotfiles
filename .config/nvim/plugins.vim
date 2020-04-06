@@ -28,9 +28,6 @@ Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 " Helps with indenting by FileType
 Plug 'tpope/vim-sleuth'
 
-" Prettier formatting
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript'] }
-
 " Allow for S to group in visual mode and then surround text object with brackets, etc.
 Plug 'tpope/vim-surround'
 
@@ -110,16 +107,8 @@ Plug 'timonv/vim-cargo', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
 
 " Colourschemes
-Plug 'icymind/NeoSolarized'
-Plug 'lifepillar/vim-solarized8'
-Plug 'liuchengxu/space-vim-theme'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'taigacute/gruvbox9'
 Plug 'morhetz/gruvbox'
-Plug 'dylanaraps/wal.vim'
-Plug 'YorickPeterse/happy_hacking.vim'
-Plug 'cocopon/iceberg.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'romainl/Apprentice', { 'branch': 'fancylines-and-neovim' }
 
 call plug#end()

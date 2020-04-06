@@ -4,7 +4,7 @@ export EDITOR='nvim'
 
 # Oh my ZSH
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_THEME="powerlevel10k/powerlevel10k"
+export ZSH_THEME=""
 export UPDATE_ZSH_DAYS=7
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 export ZSH_TMUX_AUTOSTART=true
@@ -46,9 +46,8 @@ plugins=(
   fancy-ctrl-z              # OhMyZsh
 )
 
-# Powerlevel10k Prompt
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Load Starship prompt
+eval "$(starship init zsh)"
 
 # Run OhMyZSH and plugins
 autoload -Uz compinit
