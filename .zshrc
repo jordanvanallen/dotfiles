@@ -42,7 +42,6 @@ plugins=(
   zsh-autosuggestions       # Git
   zsh-syntax-highlighting   # Git
   tmux                      # OhMyZsh
-  asdf                      # OhMyZsh
   fancy-ctrl-z              # OhMyZsh
 )
 
@@ -60,5 +59,7 @@ if [ -f /sbin/kitty ]; then
   kitty + complete setup zsh | source /dev/stdin
 fi
 
+# Rbenv
+eval "$(rbenv init -)"
 # Starting asdf needs to happen last
 . $HOME/.asdf/asdf.sh

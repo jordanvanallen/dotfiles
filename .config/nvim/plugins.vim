@@ -11,6 +11,8 @@ unlet autoload_plug_path
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'vimwiki/vimwiki'
+
 " Make VIM sensible
 Plug 'tpope/vim-repeat'
 
@@ -56,17 +58,11 @@ Plug 'wellle/targets.vim'
 Plug 'prurigro/vim-polyglot-darkcloud'
 Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 
-" Distration free writing when needed
-Plug 'junegunn/goyo.vim', { 'on': ['<Plug>Goyo', 'Goyo'] }
-
 " Async Linting
 Plug 'dense-analysis/ale'
 
 " Visual Studio like completion framework
-Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
-
-" NERD Tree will be lazy loaded on first call to NERDTreeToggle
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Tags
 Plug 'ludovicchabant/vim-gutentags'

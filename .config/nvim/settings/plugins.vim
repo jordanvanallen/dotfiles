@@ -189,16 +189,6 @@ autocmd FileType eruby let g:surround_61 = "<%= \r %>"
 autocmd FileType eruby let g:surround_33 = "```\r```"
 
 ""
-" junegunn/goyo.vim
-"   @ Enables relativenumber in Goyo
-"
-function! s:goyo_enter()
-  set relativenumber
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-
-""
 " ludovicchabant/vim-gutentags
 "   @ Tag settings for Universal CTAGS
 "
@@ -219,14 +209,6 @@ let g:gutentags_ctags_executable_ruby = 'rtags -R --extra=q'
 " let g:gutentags_ctags_extra_args += ['--exclude=node_modules']
 " let g:tagbar_ctags_bin = '/sbin/ctags'
 
-""
-" prettier/vim-prettier
-"   @ Prettier code formatting
-"
-let g:prettier#autoformat = 0          " Disable auto formatting in favour of autocmd
-let g:prettier#exec_cmd_async = 1      " Prettify in async
-let g:prettier#quickfix_auto_focus = 0 " Don't autofocus quickfix window
-
 " TODO make this less instrusive! and match ESLint
 " autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
@@ -236,17 +218,6 @@ let g:prettier#quickfix_auto_focus = 0 " Don't autofocus quickfix window
 "
 let g:delimitMate_autoclose = 1
 let g:delimitMate_expand_cr = 1
-""
-" sebdah/vim-delve
-"   @ Golang Debugger
-"
-let g:delve_backend = 'native'
-
-""
-" majutsushi/tags
-"   @ Display tags on the fly
-"
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 ""
 " liuchengxu/vista.vim
@@ -256,13 +227,6 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'ctags'
 let g:vista_fzf_preview = ['right:65%']
 let g:vista#renderer#enable_icon = 1
-
-""
-" scrooloose/nerdtree
-"   @ File explorer
-"
-let NERDTreeShowHidden = 1   " Show hidden files in explorer
-let g:NERDTreeQuitOnOpen = 1 " Close NERDTree after opening a file
 
 ""
 " mattn/calendar-vim

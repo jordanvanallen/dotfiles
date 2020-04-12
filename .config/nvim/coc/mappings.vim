@@ -17,19 +17,19 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 " nnoremap <silent> <Leader>gf <Plug>(coc-references)
 
 " Alternative mappings to above
-nnoremap <silent> gd :call CocAction('jumpDefinition')<CR>
-nnoremap <silent> gr :call CocAction('jumpReferences')<CR>
-nnoremap <silent> <Leader>gt :call CocAction('jumpTypeDefinition')<CR>
-nnoremap <silent> <Leader>gi :call CocAction('jumpImplementation')<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Diagnostics navigation
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 ""
 " Rename variable
 "
-nnoremap <Leader>lr <Plug>(coc-rename)
+nmap <Leader>lr <Plug>(coc-rename)
 
 ""
 " Display documentation for word under cursor
@@ -55,8 +55,8 @@ nmap F <Plug>(coc-smartf-backward)
 ""
 " coc-snippets
 "
-inoremap <C-l> <Plug>(coc-snippets-expand)
-vnoremap <C-j> <Plug>(coc-snippets-expand-jump)
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -66,4 +66,4 @@ vnoremap <C-j> <Plug>(coc-snippets-expand-jump)
 "     => `-A` gives auto preview
 "     => `--normal` to open list in normal mode for easier navigation
 "
-nnoremap <silent> <Leader>y :<C-u>CocList -A --normal yank<CR>
+nmap <silent> <Leader>y :<C-u>CocList -A --normal yank<CR>
