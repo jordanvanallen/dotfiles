@@ -22,3 +22,6 @@ alias yt="mpv"
 alias lock="betterlockscreen -l dim"
 alias covid="curl https://trackercli.com"
 alias covid_canada="curl https://trackercli.com/canada"
+
+# Git
+alias st='git status'

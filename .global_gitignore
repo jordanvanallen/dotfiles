@@ -1,3 +1,5 @@
 .env
 tags
 .ruby-version
+.rufo
+todo.org

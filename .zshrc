@@ -10,6 +10,10 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=true
 export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOCONNECT=false
 
+if [ -f ~/.env ]; then
+  source ~/.env
+fi
+
 # ZSH Settings
 COMPLETION_WAITING_DOTS="true"
 
