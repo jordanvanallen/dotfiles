@@ -53,6 +53,7 @@ autocmd GUIEnter * set visualbell t_vb=
 nnoremap <silent> <Space>w/ :vsplit<CR>
 nnoremap <silent> <Space>w- :split<CR>
 nnoremap <silent> <Space><Tab> :b#<CR>
+nnoremap <silent> <Space>bl :b#<CR>
 
 " Sensible buffer movement
 map <C-H> <C-W>h

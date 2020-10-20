@@ -69,6 +69,8 @@ autocmd Filetype go nnoremap <leader>dd :DlvDebug<CR>
 "   @ FZF Fuzzing finding ft. Ripgrep
 "
 nmap ; :Buffers<CR>
+nnoremap <Space><Space> :Files<CR>
+nnoremap <Space>/ :Rg<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>F :GFiles?<CR>
 nnoremap <Leader>s :Rg<CR>

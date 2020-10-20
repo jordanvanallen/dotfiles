@@ -27,6 +27,9 @@ Plug 'tpope/vim-rbenv', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
 Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
 
+" Go Development
+Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }
+
 " Helps with indenting by FileType
 Plug 'tpope/vim-sleuth'
 
@@ -75,6 +78,9 @@ Plug 'junegunn/fzf.vim'
 " Snippets
 Plug 'honza/vim-snippets'
 
+" Multi-cursor for Visual mode
+Plug 'mg979/vim-visual-multi'
+
 " Status Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -106,6 +112,7 @@ Plug 'mhinz/vim-startify'
 Plug 'taigacute/gruvbox9'
 Plug 'morhetz/gruvbox'
 Plug 'romainl/Apprentice', { 'branch': 'fancylines-and-neovim' }
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 " END OF PLUGINS

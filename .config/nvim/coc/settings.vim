@@ -49,6 +49,7 @@
 let g:coc_global_extensions = [
   \ 'coc-diagnostic',
   \ 'coc-git',
+  \ 'coc-go',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-rls',

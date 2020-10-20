@@ -1,20 +1,25 @@
 {
 
   "languageserver": {
-  },
+    // Solargraph (Ruby)
+    //"solargraph.useBundler": true,
+    "solargraph.completion": true,
+    "solargraph.hover": true,
+    "solargraph.autoformat": true,
+    "solargraph.definitions": true,
+    "solargraph.rename": true,
+    "solargraph.references": true,
+    "solargraph.diagnostics": true,
+    "solargraph.transport": "socket",
 
-  // Solargraph
-  //"solargraph.useBundler": true,
-  "solargraph.completion": true,
-  "solargraph.hover": true,
-  "solargraph.autoformat": true,
-  "solargraph.definitions": true,
-  "solargraph.rename": true,
-  "solargraph.references": true,
-  "solargraph.diagnostics": true,
-  "solargraph.transport": "socket",
+    // smartf
+    "smartf.timeout": 750,
+    "smartf.wordJump": false,
 
-  // smartf
-  "smartf.timeout": 750,
-  "smartf.wordJump": false
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git", ".hg"],
+      "filetypes": ["go"]
+    }
+  }
 }

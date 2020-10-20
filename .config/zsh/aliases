@@ -20,8 +20,8 @@ alias sourcezsh="source ~/.zshrc"
 alias weather='curl wttr.in'
 alias yt="mpv"
 alias lock="betterlockscreen -l dim"
-alias covid="curl https://trackercli.com"
-alias covid_canada="curl https://trackercli.com/canada"
+alias covid="curl https://covid19.trackercli.com"
+alias covid_canada="curl https://covid19.trackercli.com/canada"
 
 # Git
 alias st='git status'

@@ -9,4 +9,4 @@ endif
 
 set background=dark
 
-colorscheme apprentice
+colorscheme codedark

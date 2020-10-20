@@ -7,6 +7,10 @@ tags
 /.local/share/**
 /.rbenv
 .config/ranger/plugins/__pycache__/**
+.config/ranger/plugins/__pycache__/**.**.**.pyc
+.config/ranger/plugins/__pycache__/__init__.cpython-38.opt-1.pyc
+.config/ranger/plugins/__pycache__/devicons.cpython-38.opt-1.pyc
+.config/ranger/plugins/__pycache__/devicons_linemode.cpython-38.opt-1.pyc
 .config/ranger/plugins/*.pyo
 .config/coc/**
 .config/configstore/**

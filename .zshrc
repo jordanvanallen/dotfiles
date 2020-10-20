@@ -64,6 +64,6 @@ if [ -f /sbin/kitty ]; then
 fi
 
 # Rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 # Starting asdf needs to happen last
 . $HOME/.asdf/asdf.sh

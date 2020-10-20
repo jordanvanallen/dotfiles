@@ -23,7 +23,7 @@ nnoremap <silent> <CR> :noh<CR><CR>
 ""
 " Save and quit
 "
-nnoremap <silent> <Space>s :w<CR>
+nnoremap <silent> <Space>fs :w<CR>
 nnoremap <silent> <Space>q :q<CR>
 
 ""
