@@ -53,7 +53,10 @@ Plug 'jreybert/vimagit', { 'on': ['<Plug>Magit', '<Plug>MagitOnly', 'MagitOnly',
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim' ", { 'on': ['Vista', 'Vista!!'] }
 
-" --- Language Specific ---
+" --- Language/Syntax Specific ---
+"
+" -- i3
+Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 "
 " -- Crystal
 Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
@@ -61,6 +64,12 @@ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 " -- Go
 Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' } " -- Go project navigation, etc.
 Plug 'sebdah/vim-delve', { 'for': ['go'] }                        " -- Debugger
+"
+" -- GraphQL
+Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
+"
+" -- Lua
+Plug 'tbastos/vim-lua', { 'for': ['lua'] }
 "
 " -- Ruby (+Rails)
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                     " -- Ruby support
@@ -71,6 +80,9 @@ Plug 'keith/rspec.vim', { 'for': ['ruby'] }                       " -- Better rs
 "
 " -- Rust
 Plug 'timonv/vim-cargo', { 'for': 'rust' } " -- Provides cargo commands
+"
+" -- Wiki
+Plug 'vimwiki/vimwiki'
 
 " --- Unit Testing ---
 Plug 'janko-m/vim-test'
@@ -89,9 +101,6 @@ Plug 'mhinz/vim-startify'
 
 " --- Status Bar --
 Plug 'vim-airline/vim-airline'
-
-" --- Wiki Writing ---
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 

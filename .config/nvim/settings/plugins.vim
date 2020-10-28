@@ -245,6 +245,17 @@ let g:go_info_mode='gopls'
 let g:go_def_mapping_enabled = 0
 
 ""
+" mboughaba/i3config.vim
+"   @ i3 configuration file highlighting
+"
+" Specify i3 config file
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+  au BufNewFile,BufRead ~/dotfiles/.config/i3/config set filetype=i3config
+aug end
+
+""
 " Raimondi/delimitMate
 "   @ Allow expansion on auto pairing
 "

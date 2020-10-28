@@ -18,4 +18,3 @@ symbol = "λ"
 
 [cmd_duration]
 min_time = 500
-prefix = "underwent "
