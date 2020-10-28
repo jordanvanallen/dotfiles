@@ -21,6 +21,12 @@ nnoremap <Space>fed :e ~/dotfiles/.config/nvim/init.vim<CR>
 nnoremap <silent> <CR> :noh<CR><CR>
 
 ""
+" Yank to clipboard
+"
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+
+""
 " Save and quit
 "
 nnoremap <silent> <Space>fs :w<CR>

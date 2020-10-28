@@ -12,6 +12,9 @@ syntax enable
 
 set backspace=indent,eol,start
 
+" Yank to clipboard
+set clipboard+=unnamedplus
+
 set encoding=utf-8
 set number relativenumber
 

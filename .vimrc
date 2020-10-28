@@ -30,7 +30,6 @@ set backspace=indent,eol,start
 
 let g:mapleader = ","
 
-set encoding=utf-8
 set number relativenumber
 
 set nobackup

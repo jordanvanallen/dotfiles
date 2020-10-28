@@ -78,6 +78,8 @@ nnoremap <Leader>S :Rg <C-r><C-W><CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>H :History:<CR>
 nnoremap <Leader>0 :Colors<CR>
+nnoremap <leader>gc :Commits
+nnoremap <leader>gC :BCommits
 
 nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 

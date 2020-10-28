@@ -1,4 +1,4 @@
-" Autoload NVIM Plug for new machines
+" Auto install Plug for new machines
 let plug_install = 0
 let autoload_plug_path = stdpath('config') . '/autoload/plug.vim'
 if !filereadable(autoload_plug_path)
@@ -11,111 +11,89 @@ unlet autoload_plug_path
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'vimwiki/vimwiki'
+" --- General ---
+Plug 'tpope/vim-sensible'   " -- Bring in sensible settings such as allowing 'u' keybind for undo
+Plug 'tpope/vim-repeat'     " -- Repeat commands
+Plug 'tpope/vim-sleuth'     " -- Helps with indenting by FileType
+Plug 'Raimondi/delimitMate' " -- Auto pairing
+Plug 'Yggdroot/indentLine'  " -- Provide visuals for identation
 
-" Make VIM sensible
-Plug 'tpope/vim-repeat'
+" --- TMUX ---
+Plug 'edkolev/tmuxline.vim'           " -- TMUX Bar uses airline bar
+Plug 'christoomey/vim-tmux-navigator' " -- Seamlessly move between nvim and tmux buffers
+Plug 'christoomey/vim-tmux-runner'    " -- Run nvim commands (ie: tests) in tmux buffers
 
-" Dates made easy
-Plug 'tpope/vim-speeddating'
+" --- Autocompletion and Linting ---
+Plug 'neoclide/coc.nvim', { 'branch': 'release' } " -- Visual Studio like completion framework
+Plug 'dense-analysis/ale'                         " -- Async linting
 
-" Easy rails directory navigations
-Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby', 'crystal'] }
-Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-rbenv', { 'for': ['ruby', 'eruby'] }
-Plug 'tpope/vim-bundler', { 'for': ['ruby', 'eruby'] }
-Plug 'ngmy/vim-rubocop', { 'for': ['ruby', 'eruby'] }
+" --- Snippets ---
+Plug 'honza/vim-snippets' " -- Snippets to feed CocSnippets
 
-" Go Development
-Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }
-
-" Helps with indenting by FileType
-Plug 'tpope/vim-sleuth'
-
-" Allow for S to group in visual mode and then surround text object with brackets, etc.
-Plug 'tpope/vim-surround'
-
-" Allow gcc keybind for easy commenting
-Plug 'tpope/vim-commentary'
-
-" Bring in sensible settings such as allowing 'u' keybind for undo
-Plug 'tpope/vim-sensible'
-
-" Provide Git blame
-Plug 'tpope/vim-fugitive'
-
-" Git editing for commits and diffs
-Plug 'jreybert/vimagit', { 'on': ['<Plug>Magit', '<Plug>MagitOnly', 'MagitOnly', 'Magit'] }
-
-" Auto pairing
-Plug 'Raimondi/delimitMate'
-
-" Provide visual line to show indentation for easier reading and refactoring
-Plug 'Yggdroot/indentLine'
-
-" Improve cursor positioning for using ciX based commands
-Plug 'wellle/targets.vim'
-
-" VIM language packs
-Plug 'prurigro/vim-polyglot-darkcloud'
-Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
-
-" Async Linting
-Plug 'dense-analysis/ale'
-
-" Visual Studio like completion framework
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-" Tags
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'liuchengxu/vista.vim' ", { 'on': ['Vista', 'Vista!!'] }
-
-" Fuzzy finding
+" --- Fuzzy Finding ---
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Snippets
-Plug 'honza/vim-snippets'
+" --- File Manipulation ---
+Plug 'tpope/vim-eunuch' " -- Unix commands
 
-" Multi-cursor for Visual mode
-Plug 'mg979/vim-visual-multi'
+" --- Text Manipulation ---
+Plug 'wellle/targets.vim'     " -- Improve cursor positioning for using ciX based commands
+Plug 'tpope/vim-commentary'   " -- Allow gcc keybind for easy commenting
+Plug 'tpope/vim-speeddating'  " -- Make dates easy
+Plug 'tpope/vim-surround'     " -- Allow for S to group and surround text objects in visual mode with brackets, etc
+Plug 'mg979/vim-visual-multi' " -- Multi-cursor for Visual mode
+Plug 'godlygeek/tabular', { 'on': ['<Plug>Tabularize', 'Tabularize'] } " -- Tableize things!
 
-" Status Bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" --- Git ---
+Plug 'tpope/vim-fugitive' " -- Provide Git blame
+Plug 'jreybert/vimagit', { 'on': ['<Plug>Magit', '<Plug>MagitOnly', 'MagitOnly', 'Magit'] } " -- Git editing for commits and diffs
 
-" Icons for the status bar
-Plug 'ryanoasis/vim-devicons'
+" --- Tags ---
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'liuchengxu/vista.vim' ", { 'on': ['Vista', 'Vista!!'] }
 
-" TMUX
-Plug 'edkolev/tmuxline.vim' " TMUX Bar uses airline bar
-Plug 'christoomey/vim-tmux-navigator'
+" --- Language Specific ---
+"
+" -- Crystal
+Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
+"
+" -- Go
+Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' } " -- Go project navigation, etc.
+Plug 'sebdah/vim-delve', { 'for': ['go'] }                        " -- Debugger
+"
+" -- Ruby (+Rails)
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                     " -- Ruby support
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }              " -- Rails project navigations
+Plug 'tpope/gem-ctags', { 'for': ['ruby', 'eruby'] }              " -- Ctags automation for gems
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'eruby', 'crystal'] } " -- Automatically add 'end' statements for ruby
+Plug 'keith/rspec.vim', { 'for': ['ruby'] }                       " -- Better rspec syntax highlighting
+"
+" -- Rust
+Plug 'timonv/vim-cargo', { 'for': 'rust' } " -- Provides cargo commands
 
-" Calendar
-Plug 'mattn/calendar-vim'
-
-" Tableize things!
-Plug 'godlygeek/tabular', { 'on': ['<Plug>Tabularize', 'Tabularize'] }
-
-" Testing and send tests to TMUX
-Plug 'christoomey/vim-tmux-runner'
+" --- Unit Testing ---
 Plug 'janko-m/vim-test'
 
-" Provide cargo commands
-Plug 'timonv/vim-cargo', { 'for': 'rust' }
-
-" Startup screen
+" --- Pretty Visuals (Colourschemes, Icons, etc) ---
+"
+" -- Colourschemes
+Plug 'taigacute/gruvbox9'   " -- For 256 colour scheme
+Plug 'morhetz/gruvbox'      " -- For airline theme to match colour scheme
+"
+" -- Icons
+Plug 'ryanoasis/vim-devicons'
+"
+" -- Startup
 Plug 'mhinz/vim-startify'
 
-" Colourschemes
-Plug 'taigacute/gruvbox9'
-Plug 'morhetz/gruvbox'
-Plug 'romainl/Apprentice', { 'branch': 'fancylines-and-neovim' }
-Plug 'tomasiser/vim-code-dark'
+" --- Status Bar --
+Plug 'vim-airline/vim-airline'
+
+" --- Wiki Writing ---
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
-" END OF PLUGINS
 
 if plug_install
     PlugInstall --sync
