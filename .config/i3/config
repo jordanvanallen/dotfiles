@@ -3,82 +3,25 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 
-set $mod Mod4
-set $resize_px 10
-set $gap_size 5
-
+# --- Variables ---
+#
+# -- Mod keys
+set $mod   Mod1
+set $hyper Mod4
+#
+# -- Window management sizing
+set $resize_increment 10
+set $gap_size         15
+#
+# -- Audio
+set $audio_increment 5
+set $sink_volume     0
+#
+# -- Executables
 set $terminal kitty
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font Fira Code Nerd Font:monospace 12
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec --no-startup-id $terminal
-
-# Window management
-gaps inner $gap_size
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# Rofi program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run -show-icons -sidebar-mode -terminal $terminal
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# split in vertical orientation
-bindsym $mod+v split h
-
-# split in horizontal orientation
-bindsym $mod+x split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+set $rofi_command rofi -show run -show-icons -sidebar-mode -terminal $terminal
+#
+# -- Workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -90,83 +33,127 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
-
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
-  # Pressing down will grow the window’s height.
-  bindsym h resize shrink width $resize_px px or $resize_px ppt
-  bindsym j resize grow height $resize_px px or $resize_px ppt
-  bindsym k resize shrink height $resize_px px or $resize_px ppt
-  bindsym l resize grow width $resize_px px or $resize_px ppt
-
-  # back to normal: Enter or Escape or $mod+r
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# ============
-# Custom
-# ============
-
-# Run display setup through XRANDR script
-#exec_always --no-startup-id $HOME/bin/set_display
-
-# Fix black bars
+# --- General Settings ---
+#
+# -- Font
+font DejaVu Sans Mono 12
+#
+# -- Mouse
+focus_follows_mouse no
+#
+# -- Removes borders
 for_window [class="^.*"] border pixel 0
 
-# Set desktop background
-exec_always --no-startup-id source ~/.fehbg
-# exec --no-startup-id betterlockscreen
+# --- i3 Keybinds ---
+#
+# -- Reload config
+bindsym $hyper+Shift+c reload
+# -- Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $hyper+Shift+r restart
+# -- Exit i3 (logs you out of your X session)
+bindsym $hyper+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Start redshift to not burn out your retinas
-exec --no-startup-id redshift-gtk -O 4000
+# --- Window Settings ---
+#
+# -- Gaps
+gaps inner $gap_size
+gaps outer $gap_size
 
-# Compton
-#exec --no-startup-id compton -b
+# --- Window/Container Management ---
+#
+# -- Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+#
+# -- Move within workspace
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+#
+# -- Resize
+bindsym $hyper+h resize shrink width $resize_increment px or $resize_increment ppt
+bindsym $hyper+j resize grow height $resize_increment px or $resize_increment ppt
+bindsym $hyper+k resize shrink height $resize_increment px or $resize_increment ppt
+bindsym $hyper+l resize grow width $resize_increment px or $resize_increment ppt
+#
+# -- Splits
+bindsym $mod+v split h
+bindsym $mod+s split v
+#
+# -- Fullscreen
+bindsym $mod+f fullscreen toggle
+#
+# -- Floating
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+# Toggle floating mode for container
+bindsym $mod+Shift+space floating toggle
+# Change focus between tiling / floating windows
+bindsym $hyper+space focus mode_toggle
+#
+# -- Container layout
+# * Currently these are un-used
+# bindsym $hyper+s layout stacking
+# bindsym $hyper+w layout tabbed
+# bindsym $hyper+e layout toggle split
+#
+# -- Kill
+bindsym $mod+Shift+q kill
 
-# Bind for lockscreen
+# --- Workspaces ---
+#
+# -- Switch workspace
+bindsym $hyper+1 workspace $ws1
+bindsym $hyper+2 workspace $ws2
+bindsym $hyper+3 workspace $ws3
+bindsym $hyper+4 workspace $ws4
+bindsym $hyper+5 workspace $ws5
+bindsym $hyper+6 workspace $ws6
+bindsym $hyper+7 workspace $ws7
+bindsym $hyper+8 workspace $ws8
+bindsym $hyper+9 workspace $ws9
+bindsym $hyper+0 workspace $ws10
+#
+# -- Move focused container to workspace
+bindsym $hyper+Shift+1 move container to workspace $ws1
+bindsym $hyper+Shift+2 move container to workspace $ws2
+bindsym $hyper+Shift+3 move container to workspace $ws3
+bindsym $hyper+Shift+4 move container to workspace $ws4
+bindsym $hyper+Shift+5 move container to workspace $ws5
+bindsym $hyper+Shift+6 move container to workspace $ws6
+bindsym $hyper+Shift+7 move container to workspace $ws7
+bindsym $hyper+Shift+8 move container to workspace $ws8
+bindsym $hyper+Shift+9 move container to workspace $ws9
+bindsym $hyper+Shift+0 move container to workspace $ws10
+
+# --- Executables ---
+#
+# -- Terminal
+bindsym $mod+Return exec --no-startup-id $terminal
+#
+# -- Rofi program launcher
+bindsym $mod+space exec --no-startup-id $rofi_command
+#
+# -- Lockscreen
 bindsym $mod+Shift+x exec betterlockscreen -l dim
 
-# HHKB audio key mappings
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+# --- Audio ---
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink_volume +$audio_increment%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink_volume -$audio_increment%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink_volume toggle
 
+# --- Startup ---
+#
+# -- Background
+exec_always --no-startup-id source ~/.fehbg
+#
+# -- Redshift
+exec_always --no-startup-id redshift-gtk -O 5000
+#
+# -- Picom
+exec_always --no-startup-id picom -b
