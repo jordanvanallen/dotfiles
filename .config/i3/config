@@ -134,7 +134,7 @@ bindsym $hyper+Shift+0 move container to workspace $ws10
 # --- Executables ---
 #
 # -- Terminal
-bindsym $mod+Return exec --no-startup-id $terminal
+bindsym $hyper+Return exec --no-startup-id $terminal
 #
 # -- Rofi program launcher
 bindsym $mod+space exec --no-startup-id $rofi_command
