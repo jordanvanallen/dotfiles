@@ -19,5 +19,8 @@
 
   // smartf
   "smartf.timeout": 750,
-  "smartf.wordJump": false
+  "smartf.wordJump": false,
+
+  // yank
+  "yank.highlight.duration": 300
 }
