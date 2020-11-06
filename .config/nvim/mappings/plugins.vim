@@ -3,6 +3,14 @@
 " ===========================
 
 ""
+" tpope/vim-eunuch
+"   @ Unix commands
+nnoremap <Space>fd :Delete<CR>
+nnoremap <Space>fu :Unlink<CR>
+nnoremap <Space>fm :Move<Space>
+nnoremap <Space>fwa :Wall<CR>
+
+""
 " tpope/fugitive
 "   @ Gives a Git Blame window
 "
