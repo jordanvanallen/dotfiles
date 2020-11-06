@@ -19,7 +19,7 @@ Plug 'Raimondi/delimitMate' " -- Auto pairing
 Plug 'Yggdroot/indentLine'  " -- Provide visuals for identation
 
 " --- TMUX ---
-Plug 'edkolev/tmuxline.vim'           " -- TMUX Bar uses airline bar
+Plug 'edkolev/tmuxline.vim'           " -- TMUX Bar uses lightline bar
 Plug 'christoomey/vim-tmux-navigator' " -- Seamlessly move between nvim and tmux buffers
 Plug 'christoomey/vim-tmux-runner'    " -- Run nvim commands (ie: tests) in tmux buffers
 
@@ -63,7 +63,6 @@ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 "
 " -- Go
 Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' } " -- Go project navigation, etc.
-Plug 'sebdah/vim-delve', { 'for': ['go'] }                        " -- Debugger
 "
 " -- GraphQL
 Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
@@ -91,7 +90,7 @@ Plug 'janko-m/vim-test'
 "
 " -- Colourschemes
 Plug 'taigacute/gruvbox9'   " -- For 256 colour scheme
-Plug 'morhetz/gruvbox'      " -- For airline theme to match colour scheme
+Plug 'shinchu/lightline-gruvbox.vim'
 "
 " -- Icons
 Plug 'ryanoasis/vim-devicons'
@@ -100,7 +99,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
 
 " --- Status Bar --
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 

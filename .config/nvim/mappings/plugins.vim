@@ -9,13 +9,6 @@
 nnoremap <silent> <Leader>gb :Gblame<CR>
 
 ""
-" tpope/vim-rails
-"   @ Easy rails directory navigations
-"
-nnoremap <silent> <Leader>a :A<CR>
-nnoremap <silent> <Leader>r :R<CR>
-
-""
 " jreybert/vimagit
 "   @ Brings up Git Magit window
 "
@@ -55,16 +48,6 @@ nnoremap <silent> <Leader>tl :TestLast<CR>
 nnoremap <silent> <Leader>tv :TestVisit<CR>
 
 ""
-" sebdah/vim-delve
-"   @ Golang Debugger
-"
-autocmd FileType go nnoremap <Leader>dbp :DlvToggleBreakpoint<CR>
-autocmd FileType go nnoremap <Leader>dtp :DlvToggleTracepoint<CR>
-autocmd FileType go nnoremap <Leader>dtt :DlvTest<CR>
-autocmd FileType go nnoremap <Leader>dca :DlvClearAll<CR>
-autocmd Filetype go nnoremap <leader>dd :DlvDebug<CR>
-
-""
 " junegunn/fzf.vim
 "   @ FZF Fuzzing finding ft. Ripgrep
 "
@@ -89,15 +72,3 @@ nnoremap <silent> <c-p> :call fzf#vim#tags("'" . expand('<cword>'))<cr>
 "
 nnoremap <silent> <C-t> :Vista!!<CR>
 nnoremap <silent> <Leader>vf :Vista finder<CR>
-
-""
-" scrooloose/nerdtree
-"   @ File explorer
-"
-map <silent> <C-n> :NERDTreeToggle<CR>
-
-""
-" mattn/calendar-vim
-"   @ Calendar and diary helper
-"
-map <silent> <Leader>C :Calendar<CR>

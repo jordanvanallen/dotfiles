@@ -21,6 +21,8 @@ set number relativenumber
 set nobackup
 set noswapfile
 
+set hidden
+
 set autoindent
 filetype plugin indent on
 

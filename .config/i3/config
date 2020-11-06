@@ -153,7 +153,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink_volume togg
 exec_always --no-startup-id source ~/.fehbg
 #
 # -- Redshift
-exec_always --no-startup-id redshift-gtk -O 5000
+exec --no-startup-id redshift-gtk -O 5000
 #
 # -- Picom
 exec_always --no-startup-id picom -b
