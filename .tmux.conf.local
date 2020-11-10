@@ -295,3 +295,5 @@ bind C-a send-prefix
 # Clear Screen
 bind -r C-l send-keys -R
 
+# Tmuxline config
+if-shell "test -f ~/.config/tmuxline/config" "source ~/.config/tmuxline/config"

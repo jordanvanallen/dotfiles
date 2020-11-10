@@ -16,6 +16,8 @@ let g:lightline = {
       \             [ 'gutentags'],
       \            ],
       \ },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead',
       \   'gutentags': 'gutentags#statusline',
@@ -27,8 +29,6 @@ augroup MyGutentagsStatusLineRefresher
   autocmd User GutentagsUpdating call lightline#update()
   autocmd User GutentagsUpdated call lightline#update()
 augroup END
-
-let g:tmuxline_powerline_separators = 1
 
 " " Fix slowdowns with Powerline/Airline when switching to and from insert mode
 " " https://github.com/vim-airline/vim-airline/issues/421
