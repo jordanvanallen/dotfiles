@@ -7,7 +7,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [
       \             [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+      \             [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ]
       \           ],
       \   'right': [
       \             [ 'percent' ],
@@ -21,6 +21,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead',
       \   'gutentags': 'gutentags#statusline',
+      \   'cocstatus': 'coc#status'
       \ },
       \ }
 

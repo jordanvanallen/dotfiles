@@ -1,8 +1,7 @@
 // Packages added to this file will automatically be
 // installed when asdf installs a new version of rust
 
-ripgrep        // Fast file content searching
-fd-find        // Fast file/directory finding
-exa            // `ls` replacement
-starship       // ZSH Prompt
-cargo-check    // #'cargo-process-check in Doom Emacs
+ripgrep
+fd-find
+exa
+starship

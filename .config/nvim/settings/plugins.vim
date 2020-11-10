@@ -86,7 +86,7 @@ let g:startify_custom_header = [
 "   @ FZF fuzzy finding ft. Ripgrep
 "
 let g:fzf_buffers_jump = 1
-let g:fzf_tags_command = 'ctags -R'
+" let g:fzf_tags_command = 'ctags -R'
 
 let g:fzf_action = {
       \ 'ctrl-x': 'split',

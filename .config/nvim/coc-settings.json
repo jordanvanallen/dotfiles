@@ -1,4 +1,6 @@
 {
+  "codeLens.enable": true,
+
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -6,16 +8,6 @@
       "filetypes": ["go"]
     }
   },
-
-  // Ruby Solargraph
-  "codeLens.enable": true,
-  "solargraph.completion": true,
-  "solargraph.hover": true,
-  "solargraph.autoformat": true,
-  "solargraph.definitions": true,
-  "solargraph.rename": true,
-  "solargraph.references": true,
-  "solargraph.diagnostics": true,
 
   // smartf
   "smartf.timeout": 750,
