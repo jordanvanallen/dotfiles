@@ -63,7 +63,5 @@ if [ -f /sbin/kitty ]; then
   kitty + complete setup zsh | source /dev/stdin
 fi
 
-# Rbenv
-# eval "$(rbenv init -)"
 # Starting asdf needs to happen last
 . $HOME/.asdf/asdf.sh
