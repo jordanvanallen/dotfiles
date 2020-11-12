@@ -22,8 +22,11 @@
 "   @ coc-json
 "     => JSON LSP
 "
-"   @ coc-rls
+"   @ coc-rust-analyzer
 "     => Rust LSP
+"
+"   @ coc-sh
+"     => Bash LSP using bash-language-server
 "
 "   @ coc-smartf
 "     => Make f mapping smarter and more like easyMotion
@@ -52,7 +55,8 @@ let g:coc_global_extensions = [
   \ 'coc-go',
   \ 'coc-html',
   \ 'coc-json',
-  \ 'coc-rls',
+  \ 'coc-rust-analyzer',
+  \ 'coc-sh',
   \ 'coc-smartf',
   \ 'coc-snippets',
   \ 'coc-solargraph',

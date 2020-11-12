@@ -16,7 +16,7 @@ setw -g window-status-activity-style "none"
 setw -g window-status-separator ""
 setw -g window-status-style "none,fg=colour243,bg=colour237"
 set -g status-left "#[fg=colour235,bg=colour142] #S #[fg=colour142,bg=colour237,nobold,nounderscore,noitalics]"
-set -g status-right "#[fg=colour142]#[fg=colour235,bg=colour142]#(tmux-spotify both) #[fg=colour235]#[fg=colour243,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour235,bg=colour243] %Y-%m-%d  %H:%M #[fg=colour243,bg=colour243,nobold,nounderscore,noitalics]#[fg=colour235,bg=colour243] #h "
+set -g status-right "#[fg=colour142]#[fg=colour235,bg=colour142]#(tmux_player both) #[fg=colour235]#[fg=colour243,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour235,bg=colour243] %Y-%m-%d  %H:%M #[fg=colour243,bg=colour243,nobold,nounderscore,noitalics]#[fg=colour235,bg=colour243] #h "
 setw -g window-status-format "#[fg=colour243,bg=colour237] #I #[fg=colour243,bg=colour237] #W "
 setw -g window-status-current-format "#[fg=colour237,bg=colour241,nobold,nounderscore,noitalics]#[fg=colour245,bg=colour241] #I #[fg=colour245,bg=colour241] #W #[fg=colour241,bg=colour237,nobold,nounderscore,noitalics]"
 

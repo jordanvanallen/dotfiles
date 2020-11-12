@@ -3,5 +3,9 @@ super + Escape
 	"$XDG_CONFIG_HOME"/sxhkd/functions
 
 Super key + enter
-Super key + space bar
+
+
+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink_volume +$audio_increment%
+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink_volume -$audio_increment%
+XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink_volume toggle
 

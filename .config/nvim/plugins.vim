@@ -80,6 +80,9 @@ Plug 'keith/rspec.vim', { 'for': ['ruby'] }                       " -- Better rs
 " -- Rust
 Plug 'timonv/vim-cargo', { 'for': 'rust' } " -- Provides cargo commands
 "
+" -- Sxhkd
+Plug 'kovetskiy/sxhkd-vim' " -- Syntax highlighting for sxhkdrc files
+"
 " -- Wiki
 Plug 'vimwiki/vimwiki'
 
