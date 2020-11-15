@@ -3,7 +3,7 @@
 " ===========================
 
 nnoremap <silent> <Space>w/ :vsplit<CR>
-nnoremap <silent> <Space>wv :vsplit
+nnoremap <silent> <Space>wv :vsplit<CR>
 nnoremap <silent> <Space>w- :split<CR>
 nnoremap <silent> <Space>ws :split<CR>
 

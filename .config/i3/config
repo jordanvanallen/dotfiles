@@ -137,10 +137,21 @@ bindsym $hyper+Shift+0 move container to workspace $ws10
 bindsym $hyper+Return exec --no-startup-id $terminal
 #
 # -- Rofi program launcher
+bindsym $hyper+d exec --no-startup-id $rofi_command
 bindsym $mod+space exec --no-startup-id $rofi_command
 #
 # -- Lockscreen
 bindsym $mod+Shift+x exec betterlockscreen -l dim
+#
+# -- Screenshots
+bindsym $mod+$hyper+d exec deepin-screenshot
+
+# --- Scripts ---
+#
+# Pause/Play audio player
+bindsym $mod+p exec ~/bin/tmux_player pause_play
+bindsym $mod+n exec ~/bin/tmux_player next
+bindsym $mod+Shift+n exec ~/bin/tmux_player previous
 
 # --- Audio ---
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink_volume +$audio_increment%
