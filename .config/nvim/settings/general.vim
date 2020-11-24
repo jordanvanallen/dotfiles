@@ -19,9 +19,15 @@ set encoding=utf-8
 set number relativenumber
 
 set nobackup
+set nowritebackup
 set noswapfile
 
 set hidden
+
+set updatetime=300
+
+" Coc - Don't pass messages to |ins-completion-menu|
+set shortmess+=c
 
 set autoindent
 filetype plugin indent on

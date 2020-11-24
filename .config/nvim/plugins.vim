@@ -15,8 +15,21 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'   " -- Bring in sensible settings such as allowing 'u' keybind for undo
 Plug 'tpope/vim-repeat'     " -- Repeat commands
 Plug 'tpope/vim-sleuth'     " -- Helps with indenting by FileType
-Plug 'Raimondi/delimitMate' " -- Auto pairing
+Plug 'jiangmiao/auto-pairs' " -- Auto pairing
 Plug 'Yggdroot/indentLine'  " -- Provide visuals for identation
+
+" --- Debugging ---
+Plug 'puremourning/vimspector', {
+    \ 'for': [
+    \   'c',
+    \   'rust',
+    \   'python',
+    \   'go',
+    \   'lua',
+    \   'javascript',
+    \   'typescript',
+    \ ]
+    \ }
 
 " --- TMUX ---
 Plug 'edkolev/tmuxline.vim'           " -- TMUX Bar uses lightline bar

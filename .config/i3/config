@@ -137,14 +137,13 @@ bindsym $hyper+Shift+0 move container to workspace $ws10
 bindsym $hyper+Return exec --no-startup-id $terminal
 #
 # -- Rofi program launcher
-bindsym $hyper+d exec --no-startup-id $rofi_command
 bindsym $mod+space exec --no-startup-id $rofi_command
 #
 # -- Lockscreen
 bindsym $mod+Shift+x exec betterlockscreen -l dim
 #
 # -- Screenshots
-bindsym $mod+$hyper+d exec deepin-screenshot
+bindsym $hyper+d exec deepin-screenshot
 
 # --- Scripts ---
 #

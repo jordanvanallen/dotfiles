@@ -258,8 +258,9 @@ aug end
 " Raimondi/delimitMate
 "   @ Allow expansion on auto pairing
 "
-let g:delimitMate_autoclose = 1
-let g:delimitMate_expand_cr = 1
+" let g:delimitMate_autoclose = 1
+" let g:delimitMate_expand_cr = 1
+" let g:delimitMate_expand_space = 1
 
 ""
 " liuchengxu/vista.vim
