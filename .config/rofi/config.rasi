@@ -1,13 +1,13 @@
 configuration {
     modi: "combi,windowcd,run";
     lines: 10;
-    columns: 2;
+    columns: 1;
     font: "Fira Code Nerd Font 13";
     bw: 0;
     location: 0;
     padding: 0;
     fixed-num-lines: true;
-    show-icons: false;
+    show-icons: true;
     sidebar-mode: true;
     combi-modi: "window,run";
     separator-style: "none";
@@ -33,7 +33,7 @@ configuration {
     kb-accept-entry: "Control+m,Return,KP_Enter,Alt+m";
     kb-mode-next: "Shift+Right,Control+Tab,Alt+l,Alt+Tab";
     kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Alt+h";
-    kb-row-left: "Control+Page_Up,Control+Alt+h";
+    kb-row-left: "Control+l,Control+Page_Up,Control+Alt+h";
     kb-row-right: "Control+Page_Down,Control+Alt+l";
     kb-row-up: "Up,Control+p,ISO_Left_Tab,Alt+k";
     kb-row-down: "Down,Control+n,Alt+j";
@@ -87,8 +87,8 @@ window {
     border-color: @x14;
     border-radius: 12px;
     padding: 40;
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
 }
 mainbox {
     border: 0;
@@ -205,4 +205,4 @@ textbox-prompt-colon {
     text-color: inherit;
 }
 
-@import "colours.rasi"
+@import "gruvbox-dark-soft.rasi"
