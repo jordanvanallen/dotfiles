@@ -3,7 +3,6 @@
 # pgrep -x sxhkd > /dev/null || sxhkd &
 sxhkd &
 picom -b
-redshift-gtk -O 5000
 
 bspc monitor -d I
 
@@ -15,6 +14,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 source ~/.fehbg
+redshift-gtk -O 5000
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Chromium desktop='^2'
