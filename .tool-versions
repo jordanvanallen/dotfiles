@@ -1,7 +1,9 @@
 ruby 2.7.2
 python 3.8.0
-rust 1.47.0
-crystal 0.33.0
+rust 1.48.0
+crystal 0.35.1
 nodejs 15.1.0
 yarn 1.22.4
 golang 1.15.3
+helm 3.4.2
+kubectl 1.20
