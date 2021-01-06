@@ -6,4 +6,5 @@ nodejs 15.1.0
 yarn 1.22.4
 golang 1.15.3
 helm 3.4.2
-kubectl 1.20
+kubectl 1.18.10
+terraform 0.14.2
