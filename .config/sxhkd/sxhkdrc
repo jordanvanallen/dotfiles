@@ -3,10 +3,8 @@
 super + Return
 	kitty
 
-alt + @space
+super + @space
 	rofi -show run -show-icons -sidebar-mode -terminal kitty
-
-super + shift + 1
 
 XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink_volume +$audio_increment%
 XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink_volume -$audio_increment%
@@ -14,6 +12,16 @@ XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink_volume toggle
 
 
 # BSPWM bindings
+
+# Workspace
+super + {1-9,0}
+  bspc desktop -f {I,II,III,IV,V,VI,VII,VIII,IX,X}
+
+# send to workspace
+super + shift + {1-9}
+	bspc node -d '^{1-9}'
+
+# Node Bindings
 
 # Reload functions
 super + Escape
@@ -28,11 +36,14 @@ super + alt + {q, r}
 super + {_,shift + }q
 	bspc node -{c,k}
 
-# workspace switching
-# send to workspace
-super + shift + {1-9}
-	bspc node -d '^{1-9}'
-
 alt + {h,j,k,l}
     bspc node -p {west,south,north,east}
 
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
