@@ -14,3 +14,7 @@ let g:gruvbox_transp_bg = 1
 
 set background=dark
 colorscheme gruvbox9_soft
+
+" Make background transparent
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+

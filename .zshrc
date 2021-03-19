@@ -18,7 +18,9 @@ fi
 COMPLETION_WAITING_DOTS="true"
 
 # Disable Wayland window borders
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# export XDG_SESSION_TYPE=wayland
+# export GDK_BACKEND=wayland
 
 # FZF
 export FZF_BASE="$HOME/.fzf"

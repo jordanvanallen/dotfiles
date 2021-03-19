@@ -107,6 +107,7 @@ Plug 'janko-m/vim-test'
 " -- Colourschemes
 Plug 'taigacute/gruvbox9'   " -- For 256 colour scheme
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'liuchengxu/space-vim-dark'
 "
 " -- Icons
 Plug 'ryanoasis/vim-devicons'
