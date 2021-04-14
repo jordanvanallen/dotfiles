@@ -3,9 +3,15 @@
 super + Return
 	alacritty
 
+# Tabbed terminal
+super + shift + Return
+	tabbed alacrity --embed
+
+# Rofi Program Launcher
 super + @space
 	rofi -show run -show-icons -sidebar-mode -terminal alacritty
 
+# Audio keys
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5%
 XF86AudioLowerVolume
