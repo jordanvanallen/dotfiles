@@ -6,13 +6,15 @@
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git", ".hg"],
       "filetypes": ["go"]
+    },
+    "nim": {
+      "command": "nimlsp",
+      "filetypes": ["nim"]
     }
   },
 
-  // smartf
   "smartf.timeout": 750,
   "smartf.wordJump": false,
 
-  // yank
   "yank.highlight.duration": 300
 }

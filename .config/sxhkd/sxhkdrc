@@ -1,10 +1,10 @@
 
 # Open terminal
 super + Return
-	kitty
+	alacritty
 
 super + @space
-	rofi -show run -show-icons -sidebar-mode -terminal kitty
+	rofi -show run -show-icons -sidebar-mode -terminal alacritty
 
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5%
@@ -57,6 +57,9 @@ super + alt + {q, r}
 # close and kill node
 super + {_,shift + }q
 	bspc node -{c,k}
+
+super + d
+	deepin-screenshot
 
 
 # expand a window by moving one of its side outward

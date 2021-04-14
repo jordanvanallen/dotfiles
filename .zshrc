@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.emacs.d/bin:$HOME/.asdf/shims:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.nimble/bin:$HOME/.emacs.d/bin:$HOME/.asdf/shims:$PATH
 
 export EDITOR='nvim'
 

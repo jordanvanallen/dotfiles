@@ -83,6 +83,9 @@ Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
 " -- Lua
 Plug 'tbastos/vim-lua', { 'for': ['lua'] }
 "
+" -- Nim
+Plug 'zah/nim.vim', { 'for': ['nim'] }
+
 " -- Ruby (+Rails)
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                     " -- Ruby support
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }              " -- Rails project navigations

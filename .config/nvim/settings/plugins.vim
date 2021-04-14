@@ -137,6 +137,15 @@ function! FloatingFZF()
 endfunction
 
 ""
+" dense-analysis/ale
+"   @ Linting
+"
+" -- Settings for Nim Lang
+let g:ale_linters = {'nim': ['nimsuggest', 'nimlsp'],}
+let g:ale_fixers = {'nim': ['nimpretty'],}
+let g:ale_nim_nimpretty_options = '--maxLineLen:180 --indent:4'
+
+""
 " christoomey/vim-tmux-runner
 "   @ Creates a socket between VIM and TMUX for easy test running
 "   @ Paired with janko-m/vim-test due to test strategy being `vtr`

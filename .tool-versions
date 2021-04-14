@@ -6,6 +6,7 @@ nodejs 15.1.0
 yarn 1.22.4
 golang 1.15.3
 elixir 1.11.3
+nim 1.4.4
 
 helm 3.4.2
 kubectl 1.18.10
