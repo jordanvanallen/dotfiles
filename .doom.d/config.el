@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Jordan Van Allen"
-      user-mail-address "jordanvanallen@pm.me")
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -19,7 +19,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Anonymous Pro" :size 19))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18 :weight 'semi-light))
+      ; doom-variable-pitch-font (font-spec :family "sans" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -34,10 +35,11 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type `relative)
 
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package' for configuring packages
+;; - `use-package!' for configuring packages
 ;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to
 ;;   this file. Emacs searches the `load-path' when you load packages with
@@ -45,22 +47,15 @@
 ;; - `map!' for binding new keys
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
 ;; This will open documentation for it, including demos of how they are used.
 ;;
-;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
+;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; ----------------------------------
-;; CUSTOM SETTINGS
-;; ----------------------------------
-
-;; Deleting trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-; (add-hook! 'before-save-hook (enh-ruby-mode ruby-mode) 'rubocop-autocorrect-current-file)
-
-;; Rust ;;
-(setq rustic-lsp-server 'rust-analyzer)
+(after! cc-mode
+  (add-hook 'c-mode-common-hook #'rainbow-delimiters-mode))
 
 ;; ----------------------------------
 ;; CUSTOM MAPPINGS
@@ -73,3 +68,4 @@
       :g "C-l" #'evil-window-right)
 
 (map! :leader "/" #'+default/search-project)
+(map! :n ",f" #'projectile-find-file)

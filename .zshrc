@@ -47,7 +47,7 @@ plugins=(
   fzf                       # OhMyZsh
   zsh-autosuggestions       # Git
   zsh-syntax-highlighting   # Git
-  tmux                      # OhMyZsh
+#  tmux                      # OhMyZsh
   fancy-ctrl-z              # OhMyZsh
 )
 
