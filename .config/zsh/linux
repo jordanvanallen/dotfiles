@@ -1,0 +1,8 @@
+# Control to escape when tapped
+xcape -e "Control_L=Escape"
+
+if [ -f ~/.fehbg ]; then
+  source ~/.fehbg
+fi
+
+

@@ -1,0 +1,29 @@
+# Unix Command Overrides
+alias dd='dd status=progress'
+alias top='vtop'
+alias ls='exa --icons'
+alias la='exa -la --icons'
+alias magit='vim -c MagitOnly'
+alias guard='guard --no-bundler-warning'
+alias vi="nvim"
+alias rspec="bundle exec rspec --format documentation"
+
+# Config Aliases
+alias dotfilesconfig="vi ~/dotfiles"
+alias zshconfig="vi ~/dotfiles/.zshrc"
+
+# Sourcing
+alias sourcezsh="source ~/.zshrc"
+
+# Handy
+alias weather='curl wttr.in'
+alias yt="mpv"
+alias lock="betterlockscreen -l dim"
+alias getip="curl -s http://ipinfo.io/ip"
+
+# Rust
+alias cwb="cargo-watch --clear -x build"
+alias cwr="cargo-watch --clear -x run"
+
+# Git
+alias st='git status'

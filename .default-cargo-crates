@@ -1,0 +1,35 @@
+// Packages added to this file will automatically be
+// installed when asdf installs a new version of rust
+
+cargo-watch
+ripgrep
+fd-find
+exa
+starship
+evcxr_repl
+
+// Testing
+bacon
+
+// Result type helper, with colourful errors
+eyre
+
+// Event based diagnostics
+tracing
+
+// HTTP Requests
+reqwest
+
+// Parallelism made easy
+rayon
+
+// make CLI based apps easy
+clap
+
+// SQL
+sqlx
+
+// Datetime library
+//chrono
+
+

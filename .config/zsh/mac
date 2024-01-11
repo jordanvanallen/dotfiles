@@ -1,0 +1,6 @@
+# Add Postgres and Python bin to PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin:/opt/homebrew/bin
+# SSL for Crystal
+# export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+#export ZSH_TMUX_ITERM2=true
+alias ctags=$(brew --prefix)/bin/ctags

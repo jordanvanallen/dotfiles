@@ -1,0 +1,77 @@
+
+# Open terminal
+super + Return
+	alacritty
+
+# Tabbed terminal
+super + shift + Return
+	tabbed alacrity --embed
+
+# Rofi Program Launcher
+super + @space
+	rofi -show run -show-icons -sidebar-mode -terminal alacritty
+
+# Audio keys
+XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+  pactl set-sink-volume 0 -5%
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+
+# BSPWM bindings
+
+# Workspace
+super + {1-9,0}
+  bspc desktop -f {I,II,III,IV,V,VI,VII,VIII,IX,X}
+
+# send to workspace
+super + shift + {1-9}
+	bspc node -d '^{1-9}'
+
+# Node Bindings
+
+# Direction for creating next node
+alt + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+# focus the node in the given direction
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous window in the current desktop
+super + s
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# Reload functions
+super + Escape
+	pkill -USR1 -x sxhkd
+	# "$XDG_CONFIG_HOME"/sxhkd/functions
+
+# quit/restart bspwm
+super + alt + {q, r}
+	bspc {quit, wm -r}
+
+# close and kill node
+super + {_,shift + }q
+	bspc node -{c,k}
+
+super + d
+	deepin-screenshot
+
+
+# expand a window by moving one of its side outward
+super + {h,j,k,l}
+    "$HOME"/bin/bspwm_resize {west 100,south 50,north 50,east 100}
+
+# Fullscreen
+super + f
+  bspc node -t \~fullscreen

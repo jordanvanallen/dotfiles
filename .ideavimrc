@@ -1,0 +1,217 @@
+" Enable plug
+Plug '<extension-github-reference>'
+"Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+"Plug 'machakann/vim-highlightedyank'
+
+"set easymotion
+set surround
+set commentary
+set quickscope
+"set highlightedyank
+
+" ===========================
+" General
+" ===========================
+
+" Show the current line you are working on
+set cursorline
+
+set lazyredraw
+set regexpengine=1
+
+set visualbell
+
+syntax enable
+
+set backspace=indent,eol,start
+
+" Yank to clipboard
+set clipboard+=unnamedplus
+set encoding=utf-8
+set number relativenumber
+set hidden
+"set updatetime=300
+set autoindent
+filetype plugin indent on
+
+" Trim whitespace on save
+au BufWritePre * :%s/\s\+$//e
+
+" Remove Satan's bell
+set noeb vb t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+let mapleader = ","
+
+" Open Terminal window
+noremap <C-t> :action ActivateTerminalToolWindow<CR>
+
+" After block yank and paste, move cursor to the end of operated text and don't override register
+vnoremap y y`]
+vnoremap p "_dP`]
+nnoremap p p`]
+
+" Yank and paste from clipboard
+nnoremap ,y "+y
+vnoremap ,y "+y
+nnoremap ,yy "+yy
+nnoremap ,p "+p
+
+" have x (removes single character) not go into the default registry
+nnoremap x "_x
+" Make X an operator that removes without placing text in the default registry
+nmap X "_d
+nmap XX "_dd
+vmap X "_d
+vmap x "_d
+
+" Enable Ctrl+N and Ctrl+P movement in command-line mode
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+
+
+" ===========================
+" Window Mappings
+" ===========================
+
+nnoremap <silent> <Space>w/ :vsplit<CR>
+nnoremap <silent> <Space>wv :vsplit<CR>
+nnoremap <silent> <Space>w- :split<CR>
+nnoremap <silent> <Space>ws :split<CR>
+
+" Tabs
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+
+" Switch to last buffer used
+nnoremap <silent> <Space><Tab> :b#<CR>
+
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+""
+" Multi-cursor
+"
+nnoremap cn *``cgn
+nnoremap cN #``cgN
+
+""
+" Remove highlighting with return key
+"
+nnoremap <silent> <CR> :noh<CR><CR>
+
+nnoremap <silent> <Space>fs :w<CR>
+
+" IDEA specific binds
+
+"map <leader>f <Plug>(easymotion-s)
+"map <leader>e <Plug>(easymotion-f)
+
+map <leader>f :action GotoFile<CR>
+map <leader>C :action GotoClass<CR>
+map <Space>/ :action FindInPath<CR>
+
+map <leader>d :action Debug<CR>
+"map <leader>c :action Stop<CR>
+map <leader>r :action RenameElement<CR>
+map <leader>z :action ToggleDistractionFreeMode<CR>
+
+map <leader>s :action SelectInProjectView<CR>
+
+" Git Blame
+map <leader>gb :action Annotate<CR>
+map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
+map <S-Space> :action GotoNextError<CR>
+
+map <leader>b :action ToggleLineBreakpoint<CR>
+map <leader>o :action FileStructurePopup<CR>
+
+" Run and debug
+nmap <Space>r :action Run<CR>
+nmap <Space>d :action Debug<CR>
+nmap <leader>cb :action Build<CR>
+
+" Plugins
+vmap <leader>t :action StringManipulation.AlignToColumns<CR>
+" Tests
+map <leader>a :action GoToTest<CR>
+
+" Rerun
+" RerunFailedTests
+" RerunTests
+" Run                                                <M-A-S-R> <A-R>
+" RunClass                                           <C-S-R>
+" RunConfiguration
+" RunContextGroup
+" RunContextPopupGroup
+" RunCoverage
+" RunGc
+" RunInspection                                      <M-A-S-I>
+" RunJsbtTask                                        <A-F11>
+" RunMenu
+"
+" Cargo.AttachCargoProject
+" Cargo.DetachCargoProject                           <Del>
+" Cargo.RefreshCargoProject
+" Cargo.RunCargoCommand
+" Cargo.RunExternalLinter
+" Cargo.RustfmtCargoProject
+" Cargo.RustfmtFile
+" Cargo.ShowSettings
+" Cargo.ToggleExternalLinterOnTheFlyAction
+"
+" Rust.Build                                         <C-F9>
+" Rust.Cargo
+" Rust.ConsoleREPL
+" Rust.GenerateConstructor
+" Rust.GenerateGetter
+" Rust.GenerateSetter
+" Rust.MacroExpansionActions
+" Rust.NewCargoCrate
+" Rust.NewRustFile
+" Rust.ProjectView
+" Rust.RebuildAllDefMaps
+" Rust.RebuildCurrentDefMap
+" Rust.ReexpandMacrosAction
+" Rust.RsConvertToNamedFields
+" Rust.RsConvertToTuple
+" Rust.RsDowngradeModuleToFile
+" Rust.RsExtractEnumVariant
+" Rust.RsExtractStructFields
+" Rust.RsExtractTrait
+" Rust.RsPromoteModuleToDirectoryAction
+" Rust.ShareInPlayground
+" Rust.ShowRecursiveMacroExpansionAction
+" Rust.ShowSingleStepMacroExpansionAction
+" Rust.Tools
+
+if has('ide')
+  if &ide =~? 'dataspell'
+    nmap <leader>cb :action NotebookInsertCellBelowAction<CR>
+    nmap <leader>ca :action NotebookInsertCellAboveAction<CR>
+
+    nmap <leader>cd :action NotebookDeleteCellAction<CR>
+    nmap <leader>cx :action NotebookCutCellAction<CR>
+    nmap <leader>cp :action NotebookPasteCellAction<CR>
+    nmap <leader>cy :action NotebookCopyCellAction<CR>
+
+    nmap <leader>cJ :action NotebookMergeCellBelowAction<CR>
+
+    nmap <leader>cj :action NotebookMoveCellDownAction<CR>
+    nmap <leader>ck :action NotebookMoveCellUpAction<CR>
+
+    nmap <leader>r :action ReformatCode<CR>
+  endif
+  if &ide =~? 'webstorm'
+  endif
+  if &ide =~? 'rustrover'
+    nmap <leader>cb :action Rust.Build<CR>
+  endif
+endif
