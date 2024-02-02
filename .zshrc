@@ -115,9 +115,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Initialize TMUX
-# if [ -n "$WINDOWID" ] && [[ ! $TERM =~ screen ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
+if [ -n "$WINDOWID" ] && [[ ! $TERM =~ screen ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 # opam configuration
 [[ ! -r /home/san/.opam/opam-init/init.zsh ]] || source /home/san/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
