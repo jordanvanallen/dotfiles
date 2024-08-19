@@ -16,3 +16,4 @@ tags
 .config/configstore/**
 .config/karabiner/automatic_backups/**
 bin/snowsql
+bin/keymapp

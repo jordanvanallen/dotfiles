@@ -182,7 +182,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink_volume togg
 # --- Startup ---
 #
 # -- Redshift
-exec --no-startup-id redshift -O 5000
+# exec --no-startup-id redshift -O 5000
 # -- NMCLI --
 exec --no-startup-id nm-applet &
 #

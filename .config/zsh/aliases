@@ -22,8 +22,9 @@ alias lock="betterlockscreen -l dim"
 alias getip="curl -s http://ipinfo.io/ip"
 
 # Rust
-alias cwb="cargo-watch --clear -x build"
-alias cwr="cargo-watch --clear -x run"
+alias cwb="source .env && cargo-watch --clear -x build"
+alias cwr="source .env && cargo-watch --clear -x run"
+alias cwt="source .env && cargo-watch --clear -x check -x test -x run"
 
 # Git
 alias st='git status'
