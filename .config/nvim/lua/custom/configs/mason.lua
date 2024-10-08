@@ -1,14 +1,10 @@
-
 return {
-  "williamboman/mason.nvim",
-  opts = {
-    ensure_installed = {
-      "rust-analyzer",
-      "typescript-language-server",
-      "ansible-language-server",
-      "dockerfile-language-server",
-      "rubocop",
-      "ruby-lsp",
-    },
-  },
+	"williamboman/mason.nvim",
+	opts = {
+		ensure_installed = {
+			"rust-analyzer",
+			"ansible-language-server",
+			"dockerfile-language-server",
+		},
+	},
 }
