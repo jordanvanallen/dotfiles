@@ -3,7 +3,7 @@ python 3.8.13
 rust 1.71.1
 crystal 0.35.1
 yarn 1.22.18
-golang 1.22.3
+golang 1.23.2
 elixir 1.13.0
 nim 1.6.0
 lua 5.4.3
