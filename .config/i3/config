@@ -48,6 +48,7 @@ for_window [class="^.*"] border pixel 0
 #
 # -- Reload config
 bindsym $win+Shift+c reload
+bindsym $win+Shift+m exec "xrandr --auto"
 # -- Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $win+Shift+r restart
 # -- Exit i3 (logs you out of your X session)
@@ -132,21 +133,21 @@ bindsym $win+Shift+9 move container to workspace $ws9
 bindsym $win+Shift+0 move container to workspace $ws10
 
 # --- Redshift Mode ---
-bindsym $mod+r mode "$mode_redshift"
-set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
-set $kill_redshift pkill -9 redshift;
-mode "$mode_redshift" {
-    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
-    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
-    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
-    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
-    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
-    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
-
-    # Exit mode by pressing "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+# bindsym $mod+r mode "$mode_redshift"
+# set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
+# set $kill_redshift pkill -9 redshift;
+# mode "$mode_redshift" {
+#     bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
+#     bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+#     bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
+#     bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
+#     bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
+#     bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
+#
+#     # Exit mode by pressing "Enter" or "Escape"
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
 
 # --- Executables ---
 #
@@ -165,9 +166,6 @@ bindsym $mod+Shift+x exec betterlockscreen -l dim
 bindsym $win+d exec deepin-screenshot
 
 # --- Scripts ---
-#
-# Automatic Tiling
-exec_always --no-startup-id ~/sources/i3-alternating-layout/alternating_layouts.py
 #
 # Pause/Play audio player
 bindsym $mod+p exec ~/bin/tmux_player pause_play
