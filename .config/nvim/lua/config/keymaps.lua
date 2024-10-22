@@ -21,3 +21,4 @@ map("n", ",f", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" })
 --
 -- -- Buffers
 map("n", "<Leader>;", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
+map("n", "<Space>k", ":b#<CR>", { desc = "Go to last buffer" })

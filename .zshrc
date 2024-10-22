@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # export JAVA_HOME=$(/usr/libexec/java_home)
 export CUDA_HOME=/usr/local/cuda-11.7
 export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.nimble/bin:$HOME/.emacs.d/bin:$HOME/.asdf/shims:$HOME/sources/jetbrains-toolbox:/opt/anaconda/bin:$HOME/sources/LightGBM:$CUDA_HOME/bin:$PATH
@@ -10,7 +17,7 @@ export LD_LIBRARY_PATH=/usr/local/lib/:$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="half-life"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export EDITOR='nvim'
 
@@ -33,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # FZF
 export FZF_BASE="$HOME/.fzf"
-export FZF_DEFAULT_COMMAND="rg --files --hidden"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Go
@@ -121,3 +128,13 @@ fi
 
 # opam configuration
 [[ ! -r /home/san/.opam/opam-init/init.zsh ]] || source /home/san/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# bun completions
+[ -s "/home/san/.bun/_bun" ] && source "/home/san/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
