@@ -1,8 +1,8 @@
 # Unix Command Overrides
 alias dd='dd status=progress'
 alias top='vtop'
-alias ls='exa --icons'
-alias la='exa -la --icons'
+alias ls='eza --icons'
+alias la='eza -la --icons'
 alias magit='vim -c MagitOnly'
 alias guard='guard --no-bundler-warning'
 alias vi="nvim"
