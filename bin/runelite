@@ -1,6 +1,0 @@
-#!/bin/sh
-
-dir=$(pwd)
-cd ~/sources
-./RuneLite.AppImage &
-cd $dir

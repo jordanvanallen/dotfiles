@@ -3,3 +3,5 @@
 -- Add any additional options here
 local opt = vim.opt
 opt.wrap = true
+-- Use system clipboard to yank to for easy copy-pasta
+opt.clipboard = "unnamedplus"

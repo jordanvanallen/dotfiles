@@ -14,6 +14,9 @@ map("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<CR>", { desc = "Navigate window up (N
 map("n", "cN", "*``cgN", { desc = "Delete Macro Next Backward" })
 map("n", "cn", "*``cgn", { desc = "Delete Macro Next Forward" })
 
+-- Save
+map("n", "<Leader>fs", ":w<CR>", { desc = "Save" })
+
 -- Better telescope Find
 -- map("n", ",f", "<cmd>Telescope find_files<CR>", { desc = "Find Files" })
 map("n", ",f", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" })

@@ -1,140 +1,247 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# =============================================================================
+# ENVIRONMENT VARIABLES
+# =============================================================================
 
-# export JAVA_HOME=$(/usr/libexec/java_home)
+# Core paths and tools
+export EDITOR='nvim'
+export ASDF_DATA_DIR="$HOME/.asdf"
+export GOPATH="$HOME/.go"
+
+# CUDA setup
 export CUDA_HOME=/usr/local/cuda-11.7
-export PATH=$HOME/bin:/usr/local/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$HOME/.go/bin:$HOME/.nimble/bin:$HOME/.emacs.d/bin:$HOME/.asdf/shims:$HOME/sources/jetbrains-toolbox:/opt/anaconda/bin:$HOME/sources/LightGBM:$CUDA_HOME/bin:$PATH
-
-export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-
-# For XGBoost
-# export LD_LIBRARY_PATH=/usr/local/lib/:$CUDA_HOME/lib64:/opt/anaconda/lib:$LD_LIBRARY_PATH
+export LIBOPENCL=/opt/cuda/lib64
 export LD_LIBRARY_PATH=/usr/local/lib/:$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
-export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-export EDITOR='nvim'
-
-# Cuda for LLM
-export LIBOPENCL=/opt/cuda/lib64
+# Compiler setup
 export CC=/usr/bin/gcc-11
 export CXX=/usr/bin/g++-11
 
-if [ -f ~/.env ]; then
-  source ~/.env
-fi
+# SSL certificates
+export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
-# ZSH Settings
-COMPLETION_WAITING_DOTS="true"
-
-# Disable Wayland window borders
-# export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-# export XDG_SESSION_TYPE=wayland
-# export GDK_BACKEND=wayland
-
-# FZF
-export FZF_BASE="$HOME/.fzf"
-export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore .git"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Go
-export GOPATH="$HOME/.go"
-
-# SSH
+# SSH keys
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export SSH_PUB_KEY_PATH="~/.ssh/rsa_id.pub"
 
-# Z
-. $HOME/sources/z/z.sh
+# FZF configuration
+export FZF_BASE="$HOME/.fzf"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore .git"
 
-if [ -f /usr/bin/sw_vers ]; then
-  source ~/.config/zsh/mac
+# Bun
+export BUN_INSTALL="$HOME/.bun"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/anaconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-else
-  source ~/.config/zsh/linux
-fi
+# =============================================================================
+# PATH CONSTRUCTION
+# =============================================================================
 
-# Load Starship prompt
-# eval "$(starship init zsh)"
-
-source ~/.config/zsh/aliases
-
-# if [ -f /sbin/kitty ]; then
-#   kitty + complete setup zsh | source /dev/stdin
-# fi
-
-plugins=(
-  git
-  asdf
-  zsh-autosuggestions
-  sudo
-  magic-enter
-  tmux
+# Build PATH systematically to avoid duplicates
+typeset -U path  # This ensures unique entries in PATH
+path=(
+  $HOME/bin
+  $HOME/.local/bin
+  $HOME/.npm/bin
+  $HOME/.cargo/bin
+  $HOME/.go/bin
+  $HOME/.nimble/bin
+  $HOME/.emacs.d/bin
+  $HOME/.spicetify
+  $HOME/sources/jetbrains-toolbox
+  $HOME/sources/LightGBM
+  $BUN_INSTALL/bin
+  $ASDF_DATA_DIR/shims
+  $CUDA_HOME/bin
+  /usr/local/bin
+  /sbin
+  /usr/sbin
+  # /opt/anaconda/bin  # Removed - uncomment if you need conda
+  $path
 )
 
-source $ZSH/oh-my-zsh.sh
+# =============================================================================
+# ZINIT PLUGIN MANAGER (Modern alternative to oh-my-zsh)
+# =============================================================================
 
-# Starting asdf needs to happen last
-if [ -f $HOME/.asdf/asdf.sh ]; then
-  # Linux
-  . $HOME/.asdf/asdf.sh
-elif [ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
-  # Mac
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+# Install zinit if not present
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -f $ZINIT_HOME/zinit.zsh ]]; then
+  print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+  command mkdir -p "$ZINIT_HOME" && command chmod g-rwX "$ZINIT_HOME"
+  command git clone https://github.com/zdharma-continuum/zinit "$ZINIT_HOME" && \
+    print -P "%F{33} %F{34}Installation successful.%f%b" || \
+    print -P "%F{160} The clone has failed.%f%b"
 fi
 
-# Source Rustup
-source $HOME/.cargo/env
+source "$ZINIT_HOME/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+# =============================================================================
+# PLUGINS (Fast and modern alternatives)
+# =============================================================================
+
+# Load critical plugins first (fast loading)
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+
+# Load zsh-defer for deferred loading
+zinit light "romkatv/zsh-defer"
+
+# Defer non-critical plugins for faster startup
+zinit ice wait"0" lucid
+zinit light zsh-users/zsh-completions
+
+zinit ice wait"0" lucid
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+
+zinit ice wait"0" lucid  
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
+
+zinit ice wait"0" lucid
+zinit light "Aloxaf/fzf-tab"
+
+zinit ice wait"0" lucid
+zinit light "agkozak/zsh-z"
+
+# Defer development tools
+zinit ice wait"1" lucid
+zinit snippet OMZ::plugins/asdf/asdf.plugin.zsh
+
+# Rust completions - generate them properly (deferred)
+zinit ice wait"1" lucid atload'
+if command -v rustup >/dev/null 2>&1; then
+  mkdir -p ~/.local/share/zsh/completions
+  
+  if [[ ! -f ~/.local/share/zsh/completions/_rustup ]]; then
+    rustup completions zsh > ~/.local/share/zsh/completions/_rustup
+  fi
+  
+  if [[ ! -f ~/.local/share/zsh/completions/_cargo ]]; then
+    rustup completions zsh cargo > ~/.local/share/zsh/completions/_cargo
+  fi
+  
+  fpath=(~/.local/share/zsh/completions $fpath)
+fi
+'
+zinit load zdharma-continuum/null
+
+# Fast completion loading
+autoload -Uz compinit
+# Only rebuild completion cache once per day
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
 else
-    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/anaconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Initialize TMUX
-if [ -n "$WINDOWID" ] && [[ ! $TERM =~ screen ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  compinit -C
 fi
 
-# opam configuration
-[[ ! -r /home/san/.opam/opam-init/init.zsh ]] || source /home/san/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# =============================================================================
+# ZSH CONFIGURATION
+# =============================================================================
 
-# bun completions
-[ -s "/home/san/.bun/_bun" ] && source "/home/san/.bun/_bun"
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# Completion behavior
+setopt COMPLETE_ALIASES
+setopt COMPLETE_IN_WORD
+setopt ALWAYS_TO_END
+setopt AUTO_MENU
+setopt AUTO_LIST
+setopt AUTO_PARAM_SLASH
+setopt MENU_COMPLETE
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Directory navigation
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
+# Misc
+setopt INTERACTIVE_COMMENTS
+setopt MULTIOS
+setopt NOTIFY
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+
+# =============================================================================
+# EXTERNAL TOOL INTEGRATIONS (Optimized for speed)
+# =============================================================================
+
+# Load private environment variables
+[[ -f ~/.env ]] && source ~/.env
+
+# Platform-specific configurations (defer if possible)
+if [[ -f /usr/bin/sw_vers ]]; then
+  # macOS
+  [[ -f ~/.config/zsh/mac ]] && source ~/.config/zsh/mac
+else
+  # Linux  
+  [[ -f ~/.config/zsh/linux ]] && source ~/.config/zsh/linux
+fi
+
+# Load aliases
+[[ -f ~/.config/zsh/aliases ]] && source ~/.config/zsh/aliases
+
+# Defer heavy integrations
+defer_rust() {
+  [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
+}
+
+defer_opam() {
+  [[ -f ~/.opam/opam-init/init.zsh ]] && source ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
+}
+
+defer_bun() {
+  [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
+}
+
+defer_direnv() {
+  command -v direnv >/dev/null && eval "$(direnv hook zsh)"
+}
+
+# Load immediately for interactive use
+defer_rust
+
+# Defer others after shell loads - these are the slowest
+zsh-defer defer_opam
+zsh-defer defer_bun  
+zsh-defer defer_direnv
+
+# FZF - defer loading since it's slow
+defer_fzf() {
+  [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+}
+
+# Only load FZF if interactive and defer it
+if [[ -o interactive ]]; then
+  zsh-defer defer_fzf
+fi
+
+# =============================================================================
+# PROMPT
+# =============================================================================
+
+# Initialize Starship prompt
+eval "$(starship init zsh)"
+
+# =============================================================================
+# TMUX AUTO-START (Fixed)
+# =============================================================================
+
+# Auto-start tmux for interactive shells (but not if already in tmux/screen)
+if [[ -z "$TMUX" ]] && [[ -z "$SCREEN" ]] && [[ "$TERM" != "screen"* ]] && [[ -n "$SSH_TTY" || -n "$DISPLAY" ]]; then
+  # Only auto-start if tmux is available and this is an interactive session
+  if command -v tmux >/dev/null 2>&1 && [[ $- == *i* ]]; then
+    exec tmux new-session -A -s main
+  fi
+fi
+
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

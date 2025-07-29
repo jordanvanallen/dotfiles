@@ -1,0 +1,199 @@
+# Use custom format for optimal performance and information density
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$rust\
+$python\
+$nodejs\
+$package\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$line_break\
+$character"""
+
+# Enable command timeout for better performance
+command_timeout = 1000
+
+# Directory configuration
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+fish_style_pwd_dir_length = 1
+use_logical_path = true
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+read_only = "🔒"
+read_only_style = "red"
+
+# Git branch - show current branch with clean styling
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = " "
+style = "bold purple"
+truncation_length = 20
+truncation_symbol = "…"
+only_attached = false
+
+# Git status - comprehensive but fast
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+stashed = "📦"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+up_to_date = "✓"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "="
+deleted = "✘"
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+
+# Git state - show ongoing git operations
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+cherry_pick = "🍒 PICKING"
+bisect = "🔍 BISECTING"
+am = "📧 AM"
+am_or_rebase = "📧 AM/REBASE"
+merge = "🔀 MERGING"
+rebase = "📝 REBASING"
+
+# Git metrics - show commit info (disable if too slow)
+[git_metrics]
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+added_style = "bold green"
+deleted_style = "bold red"
+only_nonzero_diffs = true
+disabled = false
+
+# Rust configuration - optimized for Rust development
+[rust]
+format = "[$symbol($version )]($style)"
+version_format = "v${major}.${minor}"
+symbol = "🦀 "
+style = "bold red"
+disabled = false
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml", "Cargo.lock"]
+detect_folders = ["src"]
+
+# Python configuration
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "🐍 "
+style = "yellow bold"
+pyenv_version_name = false
+pyenv_prefix = "pyenv "
+python_binary = ["python", "python3", "python2"]
+detect_extensions = ["py"]
+detect_files = [
+  ".python-version",
+  "Pipfile",
+  "pyproject.toml",
+  "requirements.txt",
+  "setup.py",
+  "tox.ini",
+]
+detect_folders = ["venv", ".venv"]
+
+# Node.js configuration
+[nodejs]
+format = "[$symbol($version )]($style)"
+version_format = "v${major}.${minor}"
+symbol = "⬢ "
+style = "bold green"
+disabled = false
+not_capable_style = "bold red"
+detect_extensions = ["js", "mjs", "cjs", "ts", "tsx"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+# Package version - show current project version
+[package]
+format = "[$symbol$version]($style) "
+symbol = "📦 "
+style = "208 bold"
+display_private = false
+disabled = false
+
+# Command duration - show long-running commands
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style) "
+style = "yellow bold"
+show_milliseconds = false
+disabled = false
+
+# Background jobs indicator
+[jobs]
+format = "[$symbol$number]($style) "
+symbol = "✦"
+style = "bold blue"
+number_threshold = 1
+symbol_threshold = 1
+
+# Battery indicator (useful for laptops)
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+unknown_symbol = "❓"
+empty_symbol = "❗"
+
+[[battery.display]]
+threshold = 25
+style = "bold red"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+# Time display
+[time]
+disabled = false
+format = '🕐 [$time]($style) '
+time_format = "%R"
+utc_time_offset = "local"
+style = "bold yellow"
+
+# Character prompt
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
+format = "$symbol "
+
+# Performance optimizations - disable slow modules
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[docker_context]
+disabled = true
+
+# Optional: Enable these if you use them, but they can slow down the prompt
+[terraform]
+disabled = true
+
+[helm]
+disabled = true
+
+[conda]
+disabled = true
