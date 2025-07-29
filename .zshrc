@@ -4,7 +4,6 @@
 
 # Core paths and tools
 export EDITOR='nvim'
-export ASDF_DATA_DIR="$HOME/.asdf"
 export GOPATH="$HOME/.go"
 
 # CUDA setup
@@ -48,7 +47,6 @@ path=(
   $HOME/sources/jetbrains-toolbox
   $HOME/sources/LightGBM
   $BUN_INSTALL/bin
-  $ASDF_DATA_DIR/shims
   $CUDA_HOME/bin
   /usr/local/bin
   /sbin
@@ -102,10 +100,6 @@ zinit light "Aloxaf/fzf-tab"
 zinit ice wait"0" lucid
 zinit light "agkozak/zsh-z"
 
-# Defer development tools
-zinit ice wait"1" lucid
-zinit snippet OMZ::plugins/asdf/asdf.plugin.zsh
-
 # Rust completions - generate them properly (deferred)
 zinit ice wait"1" lucid atload'
 if command -v rustup >/dev/null 2>&1; then
@@ -127,7 +121,7 @@ zinit load zdharma-continuum/null
 # Fast completion loading
 autoload -Uz compinit
 # Only rebuild completion cache once per day
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+if [[ -n ${HOME}/.zcompdump(#qN.mh+24) ]]; then
   compinit
 else
   compinit -C
@@ -206,6 +200,10 @@ defer_direnv() {
   command -v direnv >/dev/null && eval "$(direnv hook zsh)"
 }
 
+defer_mise() {
+  command -v mise >/dev/null && eval "$(mise activate zsh)"
+}
+
 # Load immediately for interactive use
 defer_rust
 
@@ -213,6 +211,7 @@ defer_rust
 zsh-defer defer_opam
 zsh-defer defer_bun  
 zsh-defer defer_direnv
+zsh-defer defer_mise
 
 # FZF - defer loading since it's slow
 defer_fzf() {
