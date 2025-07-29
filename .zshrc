@@ -58,7 +58,7 @@ path=(
 )
 
 # =============================================================================
-# ZINIT PLUGIN MANAGER (Modern alternative to oh-my-zsh)
+# ZINIT PLUGIN MANAGER
 # =============================================================================
 
 # Install zinit if not present
@@ -76,7 +76,7 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # =============================================================================
-# PLUGINS (Fast and modern alternatives)
+# PLUGINS
 # =============================================================================
 
 # Load critical plugins first (fast loading)
@@ -171,7 +171,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 
 # =============================================================================
-# EXTERNAL TOOL INTEGRATIONS (Optimized for speed)
+# EXTERNAL TOOL INTEGRATIONS
 # =============================================================================
 
 # Load private environment variables
@@ -225,6 +225,12 @@ if [[ -o interactive ]]; then
 fi
 
 # =============================================================================
+# KIRO
+# =============================================================================
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# =============================================================================
 # PROMPT
 # =============================================================================
 
@@ -232,7 +238,7 @@ fi
 eval "$(starship init zsh)"
 
 # =============================================================================
-# TMUX AUTO-START (Fixed)
+# TMUX AUTO-START
 # =============================================================================
 
 # Auto-start tmux for interactive shells (but not if already in tmux/screen)
@@ -242,6 +248,3 @@ if [[ -z "$TMUX" ]] && [[ -z "$SCREEN" ]] && [[ "$TERM" != "screen"* ]] && [[ -n
     exec tmux new-session -A -s main
   fi
 fi
-
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
